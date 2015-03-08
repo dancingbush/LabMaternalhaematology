@@ -9,6 +9,8 @@
 // Code that manages everything LogIn related
 
 import UIKit
+import CoreData
+
 
 
 // Set Global Values that can be accesed from every Screen:
@@ -174,6 +176,136 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // When the Screen Shows Up or the App is Loaded, check id there is some User Data stored in the Apps Cache.
+        
+        
+        
+        
+        // set up database
+        //get context objxt and create a user entry with it
+        
+        var appDel : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate;
+        
+        var context : NSManagedObjectContext = appDel.managedObjectContext!;
+        
+        var newEntry = NSEntityDescription.insertNewObjectForEntityForName("Cases", inManagedObjectContext: context) as NSManagedObject; // enity = the table name whoch is TableName in this case
+        
+        
+        // do this just once as the entry will besaved as new entry everytme we run the app
+        
+        // n= 16 attributes
+        
+        //HISTORY
+        newEntry.setValue("baby X with Jaundice", forKey: "history");
+        newEntry.setValue("case1a", forKey: "image1");
+        newEntry.setValue("case1b", forKey: "image2");
+        
+        //Q 1
+        newEntry.setValue("What are abnormalites from blood film?", forKey: "question1");
+        newEntry.setValue("Schictocytosis", forKey: "answer1option1");
+        newEntry.setValue("Targets", forKey: "answer1option2");
+        newEntry.setValue("Poik", forKey: "answer1option3");
+        newEntry.setValue("Schictocytosis", forKey: "answer1");
+        
+        //Q2
+        
+        newEntry.setValue("What IS poosible diagnosis?", forKey: "question2");
+        newEntry.setValue("ABo", forKey: "answer2option1");
+        newEntry.setValue("Rhesus Disaese", forKey: "answer2option2");
+        newEntry.setValue("transfsion reaction", forKey: "answer2option3");
+         newEntry.setValue("Rhesus Disaese", forKey: "answer2");
+        
+        //Results
+        newEntry.setValue("FBC \n HB=125 Plt = 67", forKey: "results");
+        
+        //Parse Image = nil if not downloadung form parse
+        newEntry.setValue(nil, forKey: "parseimage");
+        
+        newEntry.setValue("HDN", forKey: "answer1");
+        newEntry.setValue("case1b", forKey: "image2");
+        newEntry.setValue("case1b", forKey: "image2");
+        newEntry.setValue("case1b", forKey: "image2");
+        
+        //Summary
+        newEntry.setValue("HDN is a disase of newborn vlah b;ah b;ah", forKey: "summary");
+        
+        
+        
+        var error : NSError? = nil;
+        
+        // save to DB and handle error if present
+        context.save(&error);
+        
+        
+        
+        
+        // GET DATA FTOM DB
+        var request = NSFetchRequest(entityName: "Cases"); // enoty = table name
+        
+        
+        // for beta 4 xcode only
+        request.returnsObjectsAsFaults = false;
+        
+        
+        // do a search, thos will return a results array with search results only!
+        //request.predicate = NSPredicate(format: "username = %@", "Susan"); //%@ is placeholede r for string we want to search for
+        
+        
+        
+        // get array of results
+        var results = context.executeFetchRequest(request, error: nil);
+        println("Results from DB \(results)");
+        
+        
+        //loop through results array and fist check result not null
+        
+        if results?.count > 0{
+            
+            
+            for result : AnyObject in results! {
+                
+                
+                println(result);
+                
+                // Handle result : anyobject optional type by using a if - let staement
+//                if let username = result.valueForKey("username") as? String {
+//                    
+//                    println(username);
+//                    
+//                    // delete a result
+//                    if (username == "Susan"){
+//                        
+//                        // DELETE AN ENTRY
+//                        //context.deleteObject(result as NSManagedObject); // forse downcast result : anyobject to NSMAnagedObject
+//                        //println(username + " has been deleted");
+//                        
+//                        
+//                        //UPDATE A ENTRY IE PASSWORD
+//                        result.setValue("betterPassword", forKey: "password");
+//                        var newP = result.valueForKey("password") as String;
+//                        
+//                        println(username + " password changed to " + newP);
+//                        
+//                        
+//                    }
+//                    
+//                    
+//                }
+                
+                
+                
+                // Search database for result
+                
+                // save changes
+                context.save(nil);
+                
+                
+            }
+        } else{
+            
+            println("No Data, no of entries = \(results?.count)");
+        }
+        
+
             }
     
     override func didReceiveMemoryWarning() {
