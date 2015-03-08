@@ -9,6 +9,7 @@
         <attribute name="answer2option1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="answer2option2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="answer2option3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="case" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image2" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,6 +23,6 @@
         </fetchedProperty>
     </entity>
     <elements>
-        <element name="Cases" positionX="-63" positionY="-18" width="128" height="314"/>
+        <element name="Cases" positionX="-63" positionY="-18" width="128" height="329"/>
     </elements>
 </model>

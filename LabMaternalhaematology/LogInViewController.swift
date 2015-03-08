@@ -189,10 +189,15 @@ class LogInViewController: UIViewController {
         
         var newEntry = NSEntityDescription.insertNewObjectForEntityForName("Cases", inManagedObjectContext: context) as NSManagedObject; // enity = the table name whoch is TableName in this case
         
+        //context.deletedObjects;
+        
         
         // do this just once as the entry will besaved as new entry everytme we run the app
         
         // n= 16 attributes
+        
+        newEntry.setValue(1, forKey: "case");
+        
         
         //HISTORY
         newEntry.setValue("baby X with Jaundice", forKey: "history");
@@ -264,7 +269,9 @@ class LogInViewController: UIViewController {
             for result : AnyObject in results! {
                 
                 
-                println(result);
+                println("Delting: \(result)");
+                
+                //context.delete(result);
                 
                 // Handle result : anyobject optional type by using a if - let staement
 //                if let username = result.valueForKey("username") as? String {
