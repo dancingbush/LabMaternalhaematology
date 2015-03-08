@@ -10,8 +10,6 @@
 		504528FD1AACBB7B001FB7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504528FC1AACBB7B001FB7C8 /* AppDelegate.swift */; };
 		504529001AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 504528FE1AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld */; };
 		504529021AACBB7B001FB7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504529011AACBB7B001FB7C8 /* ViewController.swift */; };
-		504529051AACBB7B001FB7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504529031AACBB7B001FB7C8 /* Main.storyboard */; };
-		504529071AACBB7B001FB7C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504529061AACBB7B001FB7C8 /* Images.xcassets */; };
 		5045290A1AACBB7B001FB7C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504529081AACBB7B001FB7C8 /* LaunchScreen.xib */; };
 		504529161AACBB7B001FB7C8 /* LabMaternalhaematologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504529151AACBB7B001FB7C8 /* LabMaternalhaematologyTests.swift */; };
 		504529201AACBBCB001FB7C8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5045291F1AACBBCB001FB7C8 /* Bolts.framework */; };
@@ -27,6 +25,9 @@
 		504529351AACBC5E001FB7C8 /* header.m in Sources */ = {isa = PBXBuildFile; fileRef = 504529341AACBC5E001FB7C8 /* header.m */; };
 		504529371AACBC96001FB7C8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 504529361AACBC96001FB7C8 /* libz.dylib */; };
 		504529391AACBCA2001FB7C8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 504529381AACBCA2001FB7C8 /* libsqlite3.dylib */; };
+		5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5045293A1AACBDAF001FB7C8 /* Main.storyboard */; };
+		5045293D1AACBDBF001FB7C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5045293C1AACBDBF001FB7C8 /* Images.xcassets */; };
+		5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,6 @@
 		504528FC1AACBB7B001FB7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		504528FF1AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LabMaternalhaematology.xcdatamodel; sourceTree = "<group>"; };
 		504529011AACBB7B001FB7C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		504529041AACBB7B001FB7C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		504529061AACBB7B001FB7C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		504529091AACBB7B001FB7C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5045290F1AACBB7B001FB7C8 /* LabMaternalhaematologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabMaternalhaematologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		504529141AACBB7B001FB7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +64,9 @@
 		504529341AACBC5E001FB7C8 /* header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = header.m; sourceTree = "<group>"; };
 		504529361AACBC96001FB7C8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		504529381AACBCA2001FB7C8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5045293A1AACBDAF001FB7C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5045293C1AACBDBF001FB7C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +132,13 @@
 		504528F91AACBB7B001FB7C8 /* LabMaternalhaematology */ = {
 			isa = PBXGroup;
 			children = (
+				5045293C1AACBDBF001FB7C8 /* Images.xcassets */,
+				5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */,
+				5045293A1AACBDAF001FB7C8 /* Main.storyboard */,
 				504529211AACBBDA001FB7C8 /* Parse.framework */,
 				504528FC1AACBB7B001FB7C8 /* AppDelegate.swift */,
 				504529011AACBB7B001FB7C8 /* ViewController.swift */,
 				5045291F1AACBBCB001FB7C8 /* Bolts.framework */,
-				504529031AACBB7B001FB7C8 /* Main.storyboard */,
-				504529061AACBB7B001FB7C8 /* Images.xcassets */,
 				504529081AACBB7B001FB7C8 /* LaunchScreen.xib */,
 				504528FE1AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld */,
 				504528FA1AACBB7B001FB7C8 /* Supporting Files */,
@@ -248,9 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504529051AACBB7B001FB7C8 /* Main.storyboard in Resources */,
+				5045293D1AACBDBF001FB7C8 /* Images.xcassets in Resources */,
+				5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */,
 				5045290A1AACBB7B001FB7C8 /* LaunchScreen.xib in Resources */,
-				504529071AACBB7B001FB7C8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +274,7 @@
 				504529351AACBC5E001FB7C8 /* header.m in Sources */,
 				504529021AACBB7B001FB7C8 /* ViewController.swift in Sources */,
 				504529001AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld in Sources */,
+				5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */,
 				504528FD1AACBB7B001FB7C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,14 +298,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		504529031AACBB7B001FB7C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				504529041AACBB7B001FB7C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		504529081AACBB7B001FB7C8 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -476,6 +472,7 @@
 				5045291B1AACBB7B001FB7C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5045291C1AACBB7B001FB7C8 /* Build configuration list for PBXNativeTarget "LabMaternalhaematologyTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +481,7 @@
 				5045291E1AACBB7B001FB7C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
