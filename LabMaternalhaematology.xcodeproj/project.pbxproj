@@ -28,6 +28,8 @@
 		5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5045293A1AACBDAF001FB7C8 /* Main.storyboard */; };
 		5045293D1AACBDBF001FB7C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5045293C1AACBDBF001FB7C8 /* Images.xcassets */; };
 		5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */; };
+		50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */; };
+		50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		5045293A1AACBDAF001FB7C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5045293C1AACBDBF001FB7C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloodfilm.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				5045293C1AACBDBF001FB7C8 /* Images.xcassets */,
+				50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */,
 				5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */,
 				5045293A1AACBDAF001FB7C8 /* Main.storyboard */,
+				50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */,
 				504529211AACBBDA001FB7C8 /* Parse.framework */,
 				504528FC1AACBB7B001FB7C8 /* AppDelegate.swift */,
 				504529011AACBB7B001FB7C8 /* ViewController.swift */,
@@ -251,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */,
 				5045293D1AACBDBF001FB7C8 /* Images.xcassets in Resources */,
 				5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */,
 				5045290A1AACBB7B001FB7C8 /* LaunchScreen.xib in Resources */,
@@ -276,6 +283,7 @@
 				504529001AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld in Sources */,
 				5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */,
 				504528FD1AACBB7B001FB7C8 /* AppDelegate.swift in Sources */,
+				50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

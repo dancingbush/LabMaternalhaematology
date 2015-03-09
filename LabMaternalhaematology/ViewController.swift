@@ -14,10 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // test parse
-        var testObject = PFObject(className: "TestObject2");
-        testObject["foo"] = "bar";
-        testObject.saveInBackground();
+//        // test parse
+//        var testObject = PFObject(className: "TestObject2");
+//        testObject["foo"] = "bar";
+//        testObject.saveInBackground();
 
     }
 
