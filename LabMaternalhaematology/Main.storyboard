@@ -2536,6 +2536,53 @@
             </objects>
             <point key="canvasLocation" x="571.5" y="99.75"/>
         </scene>
+        <!--Scroll View-->
+        <scene sceneID="gna-mB-E6R">
+            <objects>
+                <viewController id="eNL-Vl-lKL" customClass="ScrollView" customModule="LabMaternalhaematology" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jmr-ii-42M"/>
+                        <viewControllerLayoutGuide type="bottom" id="fas-Bk-t3o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NkO-fJ-Hhy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="17" translatesAutoresizingMaskIntoConstraints="NO" id="AT4-5v-LJG">
+                                <rect key="frame" x="0.0" y="-8" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="IMage Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3y-In-Mqk">
+                                <rect key="frame" x="118" y="28" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6s-iK-5Et">
+                                <rect key="frame" x="0.0" y="57" width="320" height="476"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="y6s-iK-5Et" secondAttribute="trailing" constant="-16" id="4V5-uF-JwS"/>
+                            <constraint firstItem="AT4-5v-LJG" firstAttribute="top" secondItem="NkO-fJ-Hhy" secondAttribute="topMargin" constant="-8" id="5Ye-t0-YZ7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AT4-5v-LJG" secondAttribute="trailing" constant="-16" id="Ee4-fE-n7d"/>
+                            <constraint firstItem="y6s-iK-5Et" firstAttribute="top" secondItem="T3y-In-Mqk" secondAttribute="bottom" constant="8" id="MRB-Fn-B1G"/>
+                            <constraint firstItem="fas-Bk-t3o" firstAttribute="top" secondItem="y6s-iK-5Et" secondAttribute="bottom" constant="8" id="V8o-2I-Xep"/>
+                            <constraint firstItem="y6s-iK-5Et" firstAttribute="leading" secondItem="NkO-fJ-Hhy" secondAttribute="leadingMargin" constant="-16" id="lH3-KN-z88"/>
+                            <constraint firstItem="AT4-5v-LJG" firstAttribute="leading" secondItem="NkO-fJ-Hhy" secondAttribute="leadingMargin" constant="-16" id="st8-fI-jYV"/>
+                            <constraint firstItem="fas-Bk-t3o" firstAttribute="top" secondItem="AT4-5v-LJG" secondAttribute="bottom" constant="8" id="xCz-tn-sqz"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageScollView" destination="y6s-iK-5Et" id="pia-Pg-VNa"/>
+                        <outlet property="myLabel" destination="T3y-In-Mqk" id="QT8-dW-rw0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bP3-sw-WXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="759"/>
+        </scene>
         <!--My Products Table View-->
         <scene sceneID="k1h-Vd-hl1">
             <objects>
@@ -3026,7 +3073,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eI-tU-KGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174.5" y="99"/>
+            <point key="canvasLocation" x="779" y="20"/>
         </scene>
         <!--Item Detail View Controller-->
         <scene sceneID="12R-7t-jUA">
@@ -4438,7 +4485,7 @@
         <!--Layout Controller2-->
         <scene sceneID="Vba-ya-Bns">
             <objects>
-                <viewController id="WYc-HH-cno" customClass="LayoutController2" customModule="PinterestLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WYc-HH-cno" customClass="LayoutController2" customModule="LabMaternalhaematology" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fHE-Gc-7ul"/>
                         <viewControllerLayoutGuide type="bottom" id="WVT-Y8-iuI"/>
@@ -4453,7 +4500,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-Da-HES">
                                 <rect key="frame" x="0.0" y="5" width="320" height="532"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uwD-vg-bFu">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.25" maximumZoomScale="4" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uwD-vg-bFu">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="355"/>
                                         <color key="backgroundColor" red="0.94314586570000003" green="0.95544379950000002" blue="0.71577968199999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lWz-rm-vAb">
@@ -4463,7 +4510,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collCell" id="9PQ-qT-rLr" customClass="CollectionViewCell" customModule="PinterestLayout" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collCell" id="9PQ-qT-rLr" customClass="CollectionViewCell" customModule="LabMaternalhaematology" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4486,6 +4533,7 @@
                                                 <connections>
                                                     <outlet property="pinImage2" destination="Dcw-4C-KVe" id="PBL-yB-HVh"/>
                                                     <outlet property="title2" destination="kWp-KS-mNa" id="3ZF-Vn-6KF"/>
+                                                    <segue destination="eNL-Vl-lKL" kind="show" identifier="segueToDetailScrollView" id="pG6-q0-A1T"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -4550,10 +4598,21 @@
                                     <constraint firstItem="41L-Df-iKD" firstAttribute="top" secondItem="uwD-vg-bFu" secondAttribute="bottom" constant="-34" id="Bac-zx-etz"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-RN-5pr">
+                                <rect key="frame" x="103" y="538" width="122" height="30"/>
+                                <state key="normal" title="Larger Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttOnLargerImage:" destination="WYc-HH-cno" eventType="touchUpInside" id="E0V-sk-Frg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Kal-RN-5pr" secondAttribute="centerX" id="619-i3-enO"/>
                             <constraint firstItem="WVT-Y8-iuI" firstAttribute="top" secondItem="4Tc-Da-HES" secondAttribute="bottom" id="E44-Kb-Oce"/>
+                            <constraint firstItem="Kal-RN-5pr" firstAttribute="top" secondItem="41L-Df-iKD" secondAttribute="bottom" constant="-48" id="KhK-Yg-76b"/>
                             <constraint firstItem="Fh7-YM-CWK" firstAttribute="leading" secondItem="agH-cs-BuW" secondAttribute="leadingMargin" constant="-16" id="Lwq-79-1Xq"/>
                             <constraint firstItem="4Tc-Da-HES" firstAttribute="leading" secondItem="agH-cs-BuW" secondAttribute="leadingMargin" constant="-16" id="Yyb-oy-Ob7"/>
                             <constraint firstItem="Fh7-YM-CWK" firstAttribute="top" secondItem="agH-cs-BuW" secondAttribute="topMargin" id="jMN-sQ-BGo"/>
@@ -4572,12 +4631,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bl5-u4-TXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965" y="226"/>
+            <point key="canvasLocation" x="920" y="62"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="43V-ZU-7Kc">
             <objects>
-                <viewController id="3lr-fQ-UqH" customClass="DetailViewController" customModule="PinterestLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3lr-fQ-UqH" customClass="DetailViewController" customModule="LabMaternalhaematology" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qT5-a8-Lyg"/>
                         <viewControllerLayoutGuide type="bottom" id="EX4-cu-ZSo"/>
@@ -4586,8 +4645,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kq-w0-vLj">
-                                <rect key="frame" x="55" y="82" width="498" height="344"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQl-tF-fuA">
+                                <rect key="frame" x="109" y="28" width="112" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="9kq-Zf-SQ1"/>
+                                    <constraint firstAttribute="height" constant="21" id="JIV-O0-HnR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kq-w0-vLj">
+                                <rect key="frame" x="16" y="62" width="293" height="461"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="498" id="fEA-9M-iIV"/>
                                     <constraint firstAttribute="height" constant="344" id="tLH-T0-wbw"/>
@@ -4596,13 +4665,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7kq-w0-vLj" firstAttribute="top" secondItem="qT5-a8-Lyg" secondAttribute="bottom" constant="18" id="9n1-3Q-ZUa"/>
+                            <constraint firstItem="7kq-w0-vLj" firstAttribute="leading" secondItem="JD2-DG-UCQ" secondAttribute="leadingMargin" id="8ja-U6-dVZ"/>
+                            <constraint firstItem="7kq-w0-vLj" firstAttribute="top" secondItem="aQl-tF-fuA" secondAttribute="bottom" constant="13" id="SeN-Bm-ZIT"/>
+                            <constraint firstItem="aQl-tF-fuA" firstAttribute="top" secondItem="qT5-a8-Lyg" secondAttribute="bottom" constant="8" id="Uhr-CP-jbZ"/>
+                            <constraint firstAttribute="centerX" secondItem="7kq-w0-vLj" secondAttribute="centerX" id="i5K-VG-YFK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7kq-w0-vLj" secondAttribute="trailing" constant="-5" id="xL4-8F-tQs"/>
+                            <constraint firstAttribute="centerX" secondItem="aQl-tF-fuA" secondAttribute="centerX" id="zxK-PE-wQg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="si9-KR-EG9"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="myImageView" destination="7kq-w0-vLj" id="kur-oC-iZk"/>
+                        <outlet property="myLabel" destination="aQl-tF-fuA" id="EbZ-Ae-G34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2S-Q2-a7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4612,6 +4687,7 @@
     </scenes>
     <resources>
         <image name="15" width="1024" height="768"/>
+        <image name="17" width="1024" height="768"/>
         <image name="3doceanIcon" width="33" height="33"/>
         <image name="Background" width="325" height="578"/>
         <image name="LogInApiKey_BG" width="500" height="88"/>

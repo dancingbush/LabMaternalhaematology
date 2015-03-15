@@ -16,7 +16,7 @@ For second type of collection view with delage data source collection subview ro
 import UIKit
 import Foundation
 
-class LayoutController2 : UIViewController , UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
+class LayoutController2 : UIViewController , UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
 
     
     // feilds
@@ -113,9 +113,19 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     }
    
     
+    
+    @IBAction func buttOnLargerImage(sender: AnyObject) {
+        
+        // navigate to detail controller for larger view
+        
+        self.performSegueWithIdentifier("segueToDetailView", sender: sender);
+        
+    }
+    
     override func viewDidLoad() {
        super.viewDidLoad()
         
+        //self.collectionView
         
         scrollView.contentSize = self.view.frame.size;
         //scrollView.addSubview(imageView)
@@ -214,6 +224,15 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             return sectionInsets
     }
     
+    //MARK: - UICollectionViewDelegate
+    
+    func collectionView(collection: UICollectionView, selectedItemIndex: NSIndexPath)
+    {
+        //As sender send any data you need from the current Selected CollectionView
+        self.performSegueWithIdentifier("segueToDetailView", sender: self)
+    }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         println(segue.identifier)
         println(sender)
@@ -228,7 +247,10 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         println("SEGUE SELECTED:  \(segue.identifier)");
         
-        if(segue.identifier == "detail2"){
+        if(segue.identifier == "segueToDetailScrollView"){
+            
+            // pass the cell 
+            
             
             let cell = sender as CollectionViewCell;
             
@@ -239,7 +261,9 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             
             //alterante viewcontroller object with black background
             
-            let vc = segue.destinationViewController as DetailViewController2ViewController;
+            //let vc = segue.destinationViewController as DetailViewController;
+            
+            let vc = segue.destinationViewController as ScrollView;
             
             var image = arrayOfIUmages[indexPath!.row];
             

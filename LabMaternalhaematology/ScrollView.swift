@@ -33,53 +33,61 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var buttonScrollView: UIScrollView!
     
-    
     @IBOutlet weak var imageScollView: UIScrollView!
+    
+    @IBOutlet weak var myLabel: UILabel!
+    //@IBOutlet weak var imageScollView: UIScrollView!
     
 //    Just like the scrolling buttons we just have to make a view, add it to the scroll view and set the content size. Next make an UIImageView in the declaration just below the outlets:
     
-    var imageView = UIImageView(image: UIImage(named: "pizza")); //imahe os in image assets and is 70kn 400w x 400h
+   var imageView = UIImageView(image: UIImage(named: "pizza")); //imahe os in image assets and is 70kn 400w x 400h
+    
+    var currImage: UIImage?
+    var textHeading: String?
+    
+    //var imageView  = UIImageView(;
+   
     
     
     
-    func colorButtonsView(buttonSize:CGSize, buttonCount:Int) -> UIView {
-        //creates color buttons in a UIView
-        let buttonView = UIView()
-        
-        buttonView.backgroundColor = UIColor.blackColor()
-        buttonView.frame.origin = CGPointMake(0,0)
-        
-        let padding = CGSizeMake(10, 10)
-        buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(buttonCount)
-        buttonView.frame.size.height = (buttonSize.height +  2.0 * padding.height)
-
-        
-        //add buttons to the view
-        var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
-        let buttonIncrement = buttonSize.width + padding.width
-        let hueIncrement = 1.0 / CGFloat(buttonCount)
-        var newHue = hueIncrement
-        
-        for i in 0...(buttonCount - 1)  {
-            var button = UIButton.buttonWithType(.Custom) as UIButton
-            button.frame.size = buttonSize
-            button.frame.origin = buttonPosition
-            buttonPosition.x = buttonPosition.x + buttonIncrement
-            button.backgroundColor = UIColor(hue: newHue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-            newHue = newHue + hueIncrement
-            button.addTarget(self, action: "colorButtonPressed:", forControlEvents: .TouchUpInside)
-            buttonView.addSubview(button)
-        }
-
-        
-        return buttonView
-    }
-    
-    
-    func colorButtonPressed(sender:UIButton){
-        buttonScrollView.backgroundColor = sender.backgroundColor
-    }
-    
+//    func colorButtonsView(buttonSize:CGSize, buttonCount:Int) -> UIView {
+//        //creates color buttons in a UIView
+//        let buttonView = UIView()
+//        
+//        buttonView.backgroundColor = UIColor.blackColor()
+//        buttonView.frame.origin = CGPointMake(0,0)
+//        
+//        let padding = CGSizeMake(10, 10)
+//        buttonView.frame.size.width = (buttonSize.width + padding.width) * CGFloat(buttonCount)
+//        buttonView.frame.size.height = (buttonSize.height +  2.0 * padding.height)
+//
+//        
+//        //add buttons to the view
+//        var buttonPosition = CGPointMake(padding.width * 0.5, padding.height)
+//        let buttonIncrement = buttonSize.width + padding.width
+//        let hueIncrement = 1.0 / CGFloat(buttonCount)
+//        var newHue = hueIncrement
+//        
+//        for i in 0...(buttonCount - 1)  {
+//            var button = UIButton.buttonWithType(.Custom) as UIButton
+//            button.frame.size = buttonSize
+//            button.frame.origin = buttonPosition
+//            buttonPosition.x = buttonPosition.x + buttonIncrement
+//            button.backgroundColor = UIColor(hue: newHue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+//            newHue = newHue + hueIncrement
+//            button.addTarget(self, action: "colorButtonPressed:", forControlEvents: .TouchUpInside)
+//            buttonView.addSubview(button)
+//        }
+//
+//        
+//        return buttonView
+//    }
+//    
+//    
+//    func colorButtonPressed(sender:UIButton){
+//        buttonScrollView.backgroundColor = sender.backgroundColor
+//    }
+//    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,15 +96,19 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
 //        Line 1 gets a view. once we have the view we have it’s size which we make the contentSize of the scrollingView. If you skip this step the scroll view will not work. We add the view to the buttonScroll and we are set tot go. The last two lines add a scroll indicator for cosmetic purposes.
         
         
-        //scrolling pageview
-        let scrollingView = colorButtonsView(CGSizeMake(100.0,50.0), buttonCount: 10)
-        buttonScrollView.contentSize = scrollingView.frame.size
-        buttonScrollView.addSubview(scrollingView)
-        buttonScrollView.showsHorizontalScrollIndicator = true
-        buttonScrollView.indicatorStyle = .Default
+//        //scrolling pageview
+//        let scrollingView = colorButtonsView(CGSizeMake(100.0,50.0), buttonCount: 10)
+//        buttonScrollView.contentSize = scrollingView.frame.size
+//        buttonScrollView.addSubview(scrollingView)
+//        buttonScrollView.showsHorizontalScrollIndicator = true
+//        buttonScrollView.indicatorStyle = .Default
         
         
         //Image scolling view, voew made dynamically bleow outlets, now add to bootom scrollvoew and set the scroollveiw content size to the imageview we have put in it
+        
+        println("Detail view controller")
+        myLabel.text = textHeading
+        imageView.image = currImage
         
         
         imageScollView.contentSize = imageView.frame.size;
