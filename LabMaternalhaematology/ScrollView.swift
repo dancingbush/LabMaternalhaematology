@@ -11,6 +11,8 @@
 Tutorial for horizonta button and Image zoom view
 http://makeapppie.com/2014/12/11/swift-swift-using-uiscrollview-with-autolayout/
 
+For simple scrollvoiew with no images https://www.youtube.com/watch?v=4oCWxHLBQ-A
+
 Remeber to set the scrollview delage to the viewcontroller by dragging ot viewcontrolling and - Dlegate (like tableview)
 
 
