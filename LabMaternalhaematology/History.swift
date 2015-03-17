@@ -34,12 +34,22 @@ class History: UIViewController {
     
     @IBOutlet weak var labelBlooDpressure: UILabel!
     
+    @IBOutlet weak var labelAPGAR: UILabel!
     
-    @IBOutlet weak var labelHistory: UILabel!
+  
     
     
+    @IBOutlet weak var history: UITextView!
     
     //Instances
+    
+    var historyText = "Prem, 34 weeks, jaundiced, normal delivery, \n APGAR 5."
+    var sex = "M";
+    var APGAR = "5";
+    var temp = "37";
+    var age = "2 Weeks";
+    
+    
     
     
     @IBAction func backButtonPressed(sender: AnyObject) {
@@ -49,6 +59,13 @@ class History: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        history.text = historyText;
+        labelAge.text = age;
+        labelPulse.text = temp;
+        labelAPGAR.text = APGAR;
+        labelSex.text = sex;
         
        
     }
