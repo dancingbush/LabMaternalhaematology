@@ -37,7 +37,6 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
         //navugate back to previous view
         self.performSegueWithIdentifier("segueBackToImages", sender: self);
         
-        
     }
     
     @IBOutlet weak var imageScollView: UIScrollView!

@@ -48,6 +48,7 @@
 		5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */; };
 		50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */; };
 		50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */; };
+		50B471771AB899D40084C45D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B471761AB899D40084C45D /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloodfilm.jpg; sourceTree = "<group>"; };
+		50B471761AB899D40084C45D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */,
 				5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */,
 				5045293A1AACBDAF001FB7C8 /* Main.storyboard */,
+				50B471761AB899D40084C45D /* History.swift */,
 				50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */,
 				504529211AACBBDA001FB7C8 /* Parse.framework */,
 				504528FC1AACBB7B001FB7C8 /* AppDelegate.swift */,
@@ -349,6 +352,7 @@
 				50201D4E1AB5E03F00F555EF /* LayoutController2.swift in Sources */,
 				504529351AACBC5E001FB7C8 /* header.m in Sources */,
 				50201D521AB5E0F800F555EF /* CollectionViewCell.swift in Sources */,
+				50B471771AB899D40084C45D /* History.swift in Sources */,
 				504529021AACBB7B001FB7C8 /* ViewController.swift in Sources */,
 				504529001AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld in Sources */,
 				5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */,
