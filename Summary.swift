@@ -21,7 +21,7 @@ class Summary: UIViewController {
     
     
     // Instances
-    var summary = "Correct Ansers: \n\nMicrscopy: AML\nFurther Tests : Cytogentics\nDiagnosis: TAM\n\nYou answerd\nMicrsopy: Acthancytes\nAppropiate Tests: Bone Marrow\nDiagnssis: AML\n\nTAM is a clicncal diagnosis usually asscoated wityhe Trsiomy 21. It is sef lemiting and often assocatied wth M6, meagkarocytic linage. Most resvole spontanpusely but may re-occur as a ALL or AML at 2 years of life.";
+    var summary = "Micrscopy: AML\nFurther Tests : Cytogentics\nDiagnosis: TAM\n\nYou answerd\nMicrsopy: Acthancytes\nAppropiate Tests: Bone Marrow\nDiagnssis: AML\n\nTAM is a clicncal diagnosis usually asscoated wityhe Trsiomy 21. It is sef lemiting and often assocatied wth M6, meagkarocytic linage. Most resvole spontanpusely but may re-occur as a ALL or AML at 2 years of life.";
     
     var caseNumber = 1; //get from global
     var result = "Average";
@@ -58,22 +58,13 @@ class Summary: UIViewController {
         
         
         // USe attribured strings to add to summary
-        // Define attributes
-        let theString : NSString = "Correct Answers: "
-        let labelFont = UIFont(name: "HelveticaNeue-Bold", size: 18)
-        let attributes : Dictionary = [NSFontAttributeName : labelFont]
-        
-        // Create attributed string
-//        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 18.0)!])
-        //Add more attributes here
-        
-        //Apply to the label
-        //myLabel.attributedText = myMutableString
-//        var addStringAttributed = NSAttributedString(string: theString, attributes: attributes);
-//       // var attrString = NSAttributedString(string: "Foo", attributes:attributes);
-        
-        //label.attributedText = attrString
-        // set labels and image view as soon as subviews load
+        let labelFont = UIFont(name: "HelveticaNeue-Bold", size: 14)
+        let attributes = [NSFontAttributeName : labelFont!]
+        var attrString = NSMutableAttributedString(string: "Correct Answers:\n\n", attributes: attributes)
+        let newString = NSAttributedString(string: self.summary);
+        attrString.appendAttributedString(newString)
+        println(attrString.description)
+        textFieldSummary.attributedText = attrString;
         
         
         labelCaseNumber.text = "1";
@@ -84,7 +75,7 @@ class Summary: UIViewController {
         
         
         //textFieldSummary.text = attrString  + summary;
-        textFieldSummary.text = summary;
+        //textFieldSummary.text = summary;
         
     
         //labelResult.text = result;
