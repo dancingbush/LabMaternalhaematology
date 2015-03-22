@@ -54,6 +54,7 @@
 		5096D1E41ABF0ABA004980FE /* Labs1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E31ABF0ABA004980FE /* Labs1.swift */; };
 		5096D1E61ABF1EB3004980FE /* Question2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E51ABF1EB3004980FE /* Question2.swift */; };
 		5096D1E81ABF4FD0004980FE /* Question3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E71ABF4FD0004980FE /* Question3.swift */; };
+		5096D1EA1ABF6947004980FE /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E91ABF6947004980FE /* Summary.swift */; };
 		50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */; };
 		50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */; };
 		50B471771AB899D40084C45D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B471761AB899D40084C45D /* History.swift */; };
@@ -122,6 +123,7 @@
 		5096D1E31ABF0ABA004980FE /* Labs1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labs1.swift; sourceTree = "<group>"; };
 		5096D1E51ABF1EB3004980FE /* Question2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question2.swift; sourceTree = "<group>"; };
 		5096D1E71ABF4FD0004980FE /* Question3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question3.swift; sourceTree = "<group>"; };
+		5096D1E91ABF6947004980FE /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Summary.swift; path = ../Summary.swift; sourceTree = "<group>"; };
 		50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloodfilm.jpg; sourceTree = "<group>"; };
 		50B471761AB899D40084C45D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				50201D321AB5E00B00F555EF /* ios_hellp.jpg */,
 				50201D511AB5E0F800F555EF /* CollectionViewCell.swift */,
 				50201D331AB5E00B00F555EF /* ios_klh.jpg */,
+				5096D1E91ABF6947004980FE /* Summary.swift */,
 				50201D341AB5E00B00F555EF /* ios_klh2.JPG */,
 				50201D531AB5F09D00F555EF /* DetailViewController.swift */,
 				50201D4F1AB5E04800F555EF /* DetailViewController2ViewController.swift */,
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50201D4E1AB5E03F00F555EF /* LayoutController2.swift in Sources */,
+				5096D1EA1ABF6947004980FE /* Summary.swift in Sources */,
 				504529351AACBC5E001FB7C8 /* header.m in Sources */,
 				50201D521AB5E0F800F555EF /* CollectionViewCell.swift in Sources */,
 				50B471771AB899D40084C45D /* History.swift in Sources */,

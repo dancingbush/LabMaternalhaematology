@@ -163,7 +163,8 @@ class Question3: UIViewController {
             
             self.disableAllButtons();
         
-//            self.performSegueWithIdentifier(<#identifier: String?#>, sender: self);// naviaget to ext view
+           self.performSegueWithIdentifier("segueToSummary", sender: self);// naviaget to ext view
+            
         }));
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
