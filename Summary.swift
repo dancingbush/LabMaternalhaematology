@@ -21,10 +21,13 @@ class Summary: UIViewController {
     
     
     // Instances
+    var timer = NSTimer();
+    
     var summary = "Micrscopy: AML\nFurther Tests : Cytogentics\nDiagnosis: TAM\n\nYou answerd\nMicrsopy: Acthancytes\nAppropiate Tests: Bone Marrow\nDiagnssis: AML\n\nTAM is a clicncal diagnosis usually asscoated wityhe Trsiomy 21. It is sef lemiting and often assocatied wth M6, meagkarocytic linage. Most resvole spontanpusely but may re-occur as a ALL or AML at 2 years of life.";
     
     var caseNumber = 1; //get from global
     var result = "Average";
+    var frameNumber = 1; //animations
     
     
     
@@ -56,6 +59,10 @@ class Summary: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // animate image
+        // run animate function every 0.1 of second
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:  Selector ("animate"), userInfo: nil, repeats: true);
         
         // USe attribured strings to add to summary
         let labelFont = UIFont(name: "HelveticaNeue-Bold", size: 14)
@@ -80,11 +87,47 @@ class Summary: UIViewController {
     
         //labelResult.text = result;
     }
+    
+    override func viewDidLayoutSubviews() {
+        //before subviews loaded we will hide the image view to the left off screen
+        
+        self.imageView.frame = CGRectMake(80, 20, 0, 0);
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // after views have been downloaded slowlu move image view to center pf screen
+        
+        UIView.animateWithDuration(3, animations: { () -> Void in
+            self.imageView.frame = CGRectMake(40, 70, 320, 150); //x,y,width, height
+        });
+    
+    }
+    
+    
+    func animate(){
+        
+        //change image in imageview every time thi fucn called by NSTimer in viewDidlOad
+        
+        if(frameNumber>2){
+            
+            frameNumber=1;//only have two images to aniamte
+        }
+        
+        let frame2 = UIImage(named: "oldpeople\(frameNumber)");
+        
+        imageView.image = frame2;
+        
+        frameNumber++;
+        
+        
+    }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func setImageAndResult(){
         
