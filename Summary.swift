@@ -28,6 +28,7 @@ class Summary: UIViewController {
     var caseNumber = 1; //get from global
     var result = "Average";
     var frameNumber = 1; //animations
+    var noOfCorrectAnwsers = "";
     
     
     
@@ -62,6 +63,9 @@ class Summary: UIViewController {
         // animate image
         // run animate function every 0.1 of second
         
+       // noOfCorrectAnwsers = labelCorrectAnswers.text!;
+        noOfCorrectAnwsers = "1";
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:  Selector ("animate"), userInfo: nil, repeats: true);
         
         // USe attribured strings to add to summary
@@ -73,8 +77,7 @@ class Summary: UIViewController {
         println(attrString.description)
         textFieldSummary.attributedText = attrString;
         
-        
-        labelCaseNumber.text = "1";
+               labelCaseNumber.text = "1";
         labelCorrectAnswers.text = "1";
         labelInCorrectAnswers.text = "1";
         
@@ -92,13 +95,19 @@ class Summary: UIViewController {
         //before subviews loaded we will hide the image view to the left off screen
         
         self.imageView.frame = CGRectMake(80, 20, 0, 0);
+        
+        // imageAlien.frame = CGRectMake(80, 20, 0, 0);
     }
     
     override func viewDidAppear(animated: Bool) {
         // after views have been downloaded slowlu move image view to center pf screen
         
         UIView.animateWithDuration(3, animations: { () -> Void in
-            self.imageView.frame = CGRectMake(40, 70, 320, 150); //x,y,width, height
+            
+            
+            // self.imageAlien.frame = CGRectMake(40, 70, 300, 300);
+            self.imageView.frame = CGRectMake(0, 75, 320, 150); //x,y,width, height
+            
         });
     
     }
@@ -106,18 +115,77 @@ class Summary: UIViewController {
     
     func animate(){
         
-        //change image in imageview every time thi fucn called by NSTimer in viewDidlOad
+        //change image in imageview every time thi fucn called by NSTimer in viewDidlOad, vary image shown according
+        // to number of answers correct
         
-        if(frameNumber>2){
+        
+        switch noOfCorrectAnwsers {
             
-            frameNumber=1;//only have two images to aniamte
+        case "1":
+            
+            //  study up
+            
+            
+            if(frameNumber>8){
+                
+                frameNumber=1;//only have two images to aniamte
+            }
+
+            
+            let frame2 = UIImage(named: "book\(frameNumber)");
+            
+            imageView.image = frame2;
+            
+            frameNumber++;
+
+            
+        case "2":
+            
+            // slam dunk
+            
+            if(frameNumber>43){
+                
+                frameNumber=1;//only have two images to aniamte
+                
+            } else if (frameNumber == 12){
+                
+                // missing a number
+                
+                frameNumber = 13;
+            } else if (frameNumber == 31){
+                
+                frameNumber = 32;
+            }
+            
+            
+            let frame2 = UIImage(named: "slam\(frameNumber)");
+            
+            imageView.image = frame2;
+            
+            frameNumber++;
+        
+        case "3":
+            
+            // old people dancing
+            
+            
+            if(frameNumber>2){
+                
+                frameNumber=1;//only have two images to aniamte
+            }
+
+            
+            let frame2 = UIImage(named: "oldpeople\(frameNumber)");
+            
+            imageView.image = frame2;
+            
+            frameNumber++;
+
+        default:
+            
+            println();
+
         }
-        
-        let frame2 = UIImage(named: "oldpeople\(frameNumber)");
-        
-        imageView.image = frame2;
-        
-        frameNumber++;
         
         
     }
@@ -134,7 +202,7 @@ class Summary: UIViewController {
         
         // set image first
         
-        var noOfCorrectAnwsers = labelCorrectAnswers.text!;
+        
         
         
         
@@ -142,15 +210,15 @@ class Summary: UIViewController {
         
         case "1":
             
-            imageView.image = UIImage(named: "splash");
+            //imageView.image = UIImage(named: "splash");
             
-            labelResult.text = "Poor!";
+            labelResult.text = "Study Up!";
             
             println("Image set to 1 Correct Answer");
             
         case "2":
             
-            imageView.image = UIImage(named: "pizza");
+            //imageView.image = UIImage(named: "pizza");
             
             labelResult.text = "Good!";
             
@@ -158,7 +226,7 @@ class Summary: UIViewController {
 
         default:
             
-            imageView.image = UIImage(named: "default-placeholder");
+            //imageView.image = UIImage(named: "default-placeholder");
             
             labelResult.text = "Perfect!";
             
