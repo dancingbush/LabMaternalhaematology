@@ -23,12 +23,12 @@ class Summary: UIViewController {
     // Instances
     var timer = NSTimer();
     
-    var summary = "Micrscopy: AML\nFurther Tests : Cytogentics\nDiagnosis: TAM\n\nYou answerd\nMicrsopy: Acthancytes\nAppropiate Tests: Bone Marrow\nDiagnssis: AML\n\nTAM is a clicncal diagnosis usually asscoated wityhe Trsiomy 21. It is sef lemiting and often assocatied wth M6, meagkarocytic linage. Most resvole spontanpusely but may re-occur as a ALL or AML at 2 years of life.";
+    var theSummary = summary;
     
-    var caseNumber = 1; //get from global
-    var result = "Average";
+    var theCaseNumber = caseNumber; //get from global
+    var result = "";
     var frameNumber = 1; //animations
-    var noOfCorrectAnwsers = "";
+    var noOfCorrectAnwsers = numberOfCorrectANswers;
     
     
     
@@ -60,36 +60,51 @@ class Summary: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // print users answers 
+        
+        println("USERS ANSWERS : \(usersAnsersToAllQuestions)");
         // animate image
         // run animate function every 0.1 of second
         
        // noOfCorrectAnwsers = labelCorrectAnswers.text!;
-        noOfCorrectAnwsers = "1";
+        //noOfCorrectAnwsers = "1";
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:  Selector ("animate"), userInfo: nil, repeats: true);
         
+        
         // USe attribured strings to add to summary
         let labelFont = UIFont(name: "HelveticaNeue-Bold", size: 14)
+        
         let attributes = [NSFontAttributeName : labelFont!]
+        
         var attrString = NSMutableAttributedString(string: "Correct Answers:\n\n", attributes: attributes)
-        let newString = NSAttributedString(string: self.summary);
-        attrString.appendAttributedString(newString)
+        
+        let userAnswers = NSAttributedString(string: "\n\(usersAnsersToAllQuestions)" );
+        
+        let newString = NSAttributedString(string: "\n\n\(theSummary)");
+        
+        //let summaryAndUserAnswers = "\(userAnswers)\n\n\(newString)";
+        
+        attrString.appendAttributedString(userAnswers);
+        
+        attrString.appendAttributedString(newString);
+        
+        
         println(attrString.description)
+        
         textFieldSummary.attributedText = attrString;
         
-               labelCaseNumber.text = "1";
-        labelCorrectAnswers.text = "1";
-        labelInCorrectAnswers.text = "1";
+               labelCaseNumber.text = caseNumber;
+        
+        labelCorrectAnswers.text = numberOfCorrectANswers;
+        
+        labelInCorrectAnswers.text = numberOfIncorrectAnswers;
         
         setImageAndResult();
         
-        
-        //textFieldSummary.text = attrString  + summary;
-        //textFieldSummary.text = summary;
-        
+           }
     
-        //labelResult.text = result;
-    }
+    
     
     override func viewDidLayoutSubviews() {
         //before subviews loaded we will hide the image view to the left off screen

@@ -15,11 +15,11 @@ class Question2: UIViewController {
     
     //Instances
     var question = "";
-    var option1 = "Factor Studies";
-    var option2 = "Krotyping/Cytogentics";
-    var option3 = "Chromsomal Studies";
-    var option4 = "Bone Marrow/Trephine";
-    var theAnswer = "D";
+    var option1 = question2OptionA;
+    var option2 = question2OptionB;
+    var option3 = question2OptionC;
+    var option4 = question2OptionD;
+    var theAnswer = question2_answer;
     var usersGuess = "";
     var isUserAnwserCorrect : Bool = false; //checked in diiplaDalog
     var firstButtonAnswerPressed =  false;
@@ -30,10 +30,10 @@ class Question2: UIViewController {
     
     
     // results t display when a button clicked
-    var resultsA = "FVII = 0.25 - Low\nFIX = 0.90 - Norm\nvWF = 2.3 - Norm\nTT = 67s - High";
-    var resultsB = "karyotype XY\nFISH - Normal";
-    var resultsC = "No chromsomal Abnormalities";
-    var resultsD = "BM: Retuclin deposits.\n>80% blasts\nMyelodysplasia\nTrephine: No abnormalities.";
+    var resultsA = question2optionA_Selected;
+    var resultsB = question2optionB_Selected;
+    var resultsC = question2optionC_Selected;
+    var resultsD = question2optionD_Selected;
     
     
     
@@ -62,7 +62,7 @@ class Question2: UIViewController {
         
         firstButtonAnswerPressed = true;
         
-        displayResultsDialog(usersGuess);
+        displayResultsDialog(usersGuess, button : sender as UIButton);
         
         
 
@@ -88,7 +88,7 @@ class Question2: UIViewController {
         firstButtonAnswerPressed = true;
         
         
-               displayResultsDialog(usersGuess);
+        displayResultsDialog(usersGuess, button : sender as UIButton);
         
         
         
@@ -112,7 +112,7 @@ class Question2: UIViewController {
         
         firstButtonAnswerPressed = true;
         
-        displayResultsDialog(usersGuess);
+        displayResultsDialog(usersGuess, button: sender as UIButton);
         
         
         
@@ -135,7 +135,7 @@ class Question2: UIViewController {
         
         firstButtonAnswerPressed = true;
         
-        displayResultsDialog(usersGuess);
+        displayResultsDialog(usersGuess, button : sender as UIButton);
         
         
         
@@ -148,7 +148,7 @@ class Question2: UIViewController {
    
     
     
-    func displayResultsDialog(userGuess : String){
+    func displayResultsDialog(userGuess : String, button : UIButton){
         
     //when suer clicks button send the guess and dsiplay dialog accrodingly
         
@@ -156,7 +156,23 @@ class Question2: UIViewController {
         
         
         // check if answer correct or not first, this is only checked once the very fisrt button is pressed, doeb by bool flag
+        
         if (firstButtonAnswerPressed && userGuess == theAnswer && !questionAlreadyAnswered){
+            
+            // get he anser form button passed
+            
+            usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ2: \(button.titleLabel!.text!) - Correct!";
+            
+            
+            if (numberOfCorrectANswers == "1"){
+                
+                numberOfCorrectANswers = "2";
+                
+            } else {
+                
+                numberOfCorrectANswers = "0";
+            }
+            
             
             self.isUserAnwserCorrect = true;
             
@@ -166,7 +182,23 @@ class Question2: UIViewController {
             
             println("CORRECT ANSWER CHOSEN \(userGuess) and aswer is \(theAnswer)");
             
+            
         } else if (firstButtonAnswerPressed && userGuess != theAnswer && !questionAlreadyAnswered){
+            
+            
+            // get he anser form button passed
+            
+            usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ2: \(button.titleLabel!.text!) - InCorrect!";
+            
+            
+            if (numberOfIncorrectAnswers == "1"){
+                
+                numberOfIncorrectAnswers = "2";
+                
+            } else {
+                
+                numberOfIncorrectAnswers = "0";
+            }
             
             println("INCORRECT ANSWER CHOSEN \(userGuess) should of been \(self.theAnswer)");
             
@@ -209,6 +241,9 @@ class Question2: UIViewController {
         
         self.presentViewController(alert, animated: true, completion: nil);
         
+        
+        println("USER NASWER 2 = \(usersAnsersToAllQuestions)\nNO OF CORRECT-IN ANSWER = \(numberOfCorrectANswers) : \(numberOfIncorrectAnswers)");
+
     }
     
     
@@ -233,14 +268,16 @@ class Question2: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        println("USER NASWER 2 = \(usersAnsersToAllQuestions)\nNO OF CORRECT-IN ANSWER = \(numberOfCorrectANswers) : \(numberOfIncorrectAnswers)");
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

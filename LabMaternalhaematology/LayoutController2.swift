@@ -21,11 +21,11 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     // feilds
     
-    var theAnswer = "B"; // we will get this from the databse, so Button B is correct answer
+    var theAnswer = question1_answer;
     
     var usersGuess = ""; // this determineddeping on th buttin pressed ie A B C or D
     
-    //var imageSize = CGSizeMake(0,0); // for zooming reset
+    
 
    let reuseIdentifier = "collCell";
     
@@ -34,11 +34,13 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     
     //array to hold umage name from databse
-    let arrayOfIUmages = ["case1.jpg", "case1b.jpg", "case2a.jpg", "case2b.jpg", "case2c.jpg", "case3.jpg", "case3a.jpg"];
+    let arrayOfIUmages = [questoin1Image1, question1Image2, question1Image3, question1Image4 ];
+    //let arrayOfIUmages = ["case1.jpg", "case1b.jpg", "case2a.jpg", "case2b.jpg", "case2c.jpg", "case3.jpg", "case3a.jpg"];
     
     
     // titles from databse attribut Imagfe descroption:String
-    let titles = ["ALL x40","HDN x40","Oil","x20 Micrsopy","H&E", "H&E", "H&E", "H&E"];
+    let titles = [questoin1Image1Description,questoin1Image2Description,questoin1Image3Description,  questoin1Image4Description ];
+    //let titles = ["ALL x40","HDN x40","Oil","x20 Micrsopy","H&E", "H&E", "H&E", "H&E"];
     
     
     //Views get the collecyionView and the colection view cell
@@ -62,7 +64,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     @IBAction func buttonA(sender: AnyObject) {
         
-        println("ANSWER B CHOSEN");
+        println("ANSWER A CHOSEN");
         
         // if anser correct then change colour of button to grren
         
@@ -87,7 +89,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     @IBAction func buttonC(sender: AnyObject) {
         
-        println("ANSWER B CHOSEN");
+        println("ANSWER C CHOSEN");
         
         // if anser correct then change colour of button to grren
         
@@ -102,7 +104,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     @IBAction func buttonD(sender: AnyObject) {
         
         
-        println("ANSWER B CHOSEN");
+        println("ANSWER D CHOSEN");
         
         // if anser correct then change colour of button to grren
         
@@ -136,24 +138,29 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clearColor()
         
+       // buttonAnswer1.setTitle(option1, forState: UIControlState.Normal);
+
+        buttonA.setTitle(question1OptionA , forState: .Normal);
         buttonA.backgroundColor = UIColor.whiteColor()
         buttonA.layer.cornerRadius = 5
         buttonA.layer.borderWidth = 1
         buttonA.layer.borderColor = UIColor.blackColor().CGColor
         
         
+        buttonB.setTitle(question1OptionB, forState: .Normal);
         buttonB.backgroundColor = UIColor.whiteColor()
         buttonB.layer.cornerRadius = 5
         buttonB.layer.borderWidth = 1
         buttonB.layer.borderColor = UIColor.blackColor().CGColor
         
-        
+        buttonC.setTitle(question1OptionC, forState: .Normal);
         buttonC.backgroundColor = UIColor.whiteColor()
         buttonC.layer.cornerRadius = 5
         buttonC.layer.borderWidth = 1
         buttonC.layer.borderColor = UIColor.blackColor().CGColor
         
         
+        buttonD.setTitle(question1OptionD, forState: .Normal);
         buttonD.backgroundColor = UIColor.whiteColor()
         buttonD.layer.cornerRadius = 5
         buttonD.layer.borderWidth = 1
@@ -277,23 +284,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             vc.currImage = UIImage(named: arrayOfIUmages[indexPath!.row]);
             vc.textHeading = self.titles[indexPath!.row];
             
-            //vc.myImageView.image = currImage;
-            
-            
-            
-            //let cell = sender as CollectionViewCell
-            //let indexPath = collectionView?.indexPathForCell(cell)
-            //let vc = segue.destinationViewController as DetailViewController
-            
-            //            let curr = indexPath!.row % 5  + 1
-            //            let imgName = "pin\(curr).jpg"
-            //
-            //            println(vc)
-            //            vc.currImage = UIImage(named: imgName)
-            //            vc.textHeading = self.titles[indexPath!.row % 5]
-            //
-            //            vc.heading.text = self.titles[0]
-            // vc.imageView.image = UIImage(named: imgName)
+          
         }
     }
 
@@ -307,7 +298,10 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         if(usersGuess == theAnswer){
             
+            
             isAnswerCorrect = true;
+            
+            numberOfCorrectANswers = "1";
             
             switch theAnswer {
                 
@@ -316,20 +310,28 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 buttonA.backgroundColor = UIColor.greenColor();
                 buttonA.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " Correct!";
+                
                 
             case "B":
                 
                 buttonB.backgroundColor = UIColor.greenColor();
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " - Correct!";
+                
             case "C":
                 buttonC.backgroundColor = UIColor.greenColor();
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonC.titleLabel!.text! + " - Correct!";
                 
             case "D":
                 
                 buttonD.backgroundColor = UIColor.greenColor();
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " - Correct!";
                 
             default:
                 
@@ -343,9 +345,15 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             
             isAnswerCorrect = false;
             
+            numberOfIncorrectAnswers = "1";
+            
+            
             switch usersGuess {
                 
             case "A":
+                
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " InCorrect!";
+                
                 
                 buttonA.backgroundColor = UIColor.redColor();
                 buttonA.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -353,15 +361,20 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "B":
                 
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " InCorrect!";
                 buttonB.backgroundColor = UIColor.redColor();
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             case "C":
+                
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonC.titleLabel!.text! + " InCorrect!";
                 buttonC.backgroundColor = UIColor.redColor();
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             case "D":
                 
+            
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " InCorrect!";
                 buttonD.backgroundColor = UIColor.redColor();
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
@@ -413,6 +426,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         
         
+        println("USER NASWER 1 = \(usersAnsersToAllQuestions)\nNO OF CORRECT-IN ANSWER = \(numberOfCorrectANswers) : \(numberOfIncorrectAnswers)");
         
         
         

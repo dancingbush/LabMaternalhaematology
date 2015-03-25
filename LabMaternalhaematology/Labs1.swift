@@ -41,13 +41,13 @@ class Labs1: UIViewController {
         super.viewDidLoad()
 
         // populate labels
-        labelWCC.text = "12 - High";
-        labelHGB.text = "85-Low"
-        labelPLTS.text = "46-Low"
-        labelMCH.text = "28-Norm";
-        labelMCHC.text = "386-Norm"
-        labelMCV.text = "112-N";
-        labelOthers.text = "PT = 12s -N\nAPTT = 48s-N\nFib = 1.7 g/L-N";
+        labelWCC.text = wcc;
+        labelHGB.text = hgb;
+        labelPLTS.text = plts;
+        labelMCH.text = mch;
+        labelMCV.text = mcv;
+        labelMCHC.text = mchc;
+        labelOthers.text = others;
         
         
         

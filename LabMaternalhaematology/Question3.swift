@@ -16,11 +16,11 @@ class Question3: UIViewController {
     
     //Instances
     var question = "";
-    var option1 = "MyleoDyplasia";
-    var option2 = "Trisomy 21 / TAM ";
-    var option3 = "ALL";
-    var option4 = "Haemophilia B";
-    var theAnswer = "B";
+    var option1 = question3OptionA;
+    var option2 = question3OptionB;
+    var option3 = question3OptionC;
+    var option4 = question3OptionD;
+    var theAnswer = question3_answer;
     var usersGuess = "";
     var isUserAnwserCorrect : Bool = false; //checked in diiplaDalog
     
@@ -55,7 +55,7 @@ class Question3: UIViewController {
         
         
         
-                checkAnswer(usersGuess); // check anwer
+        checkAnswer(usersGuess, button : sender as UIButton); // check anwer
         
         
                 
@@ -76,7 +76,7 @@ class Question3: UIViewController {
         
         
         
-        checkAnswer(usersGuess); // check anwer
+        checkAnswer(usersGuess, button: sender as UIButton); // check anwer
         
         
         
@@ -95,7 +95,7 @@ class Question3: UIViewController {
         
         
         
-        checkAnswer(usersGuess); // check anwer
+        checkAnswer(usersGuess, button : sender as UIButton); // check anwer
         
         
         
@@ -113,7 +113,7 @@ class Question3: UIViewController {
         
         
         
-        checkAnswer(usersGuess); // check anwer
+        checkAnswer(usersGuess, button : sender as UIButton); // check anwer
         
         
         
@@ -126,7 +126,7 @@ class Question3: UIViewController {
     
     
     
-    func checkAnswer(userGuess : String){
+    func checkAnswer(userGuess : String, button : UIButton){
         
         //when suer clicks button send the guess and dsiplay dialog accrodingly
         
@@ -137,6 +137,27 @@ class Question3: UIViewController {
         if (userGuess == theAnswer){
             
             
+            // get he anser form button passed
+            
+            usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ3: \(button.titleLabel!.text!) - Correct!";
+            
+            
+          
+            if (numberOfCorrectANswers == "1"){
+                
+                numberOfCorrectANswers = "2";
+                
+                
+                
+            } else if (numberOfCorrectANswers == "0"){
+                
+                numberOfCorrectANswers = "1";
+                
+            } else {
+                
+                numberOfCorrectANswers = "3";
+            }
+
             
             println("CORRECT ANSWER CHOSEN \(userGuess) and aswer is \(theAnswer)");
             
@@ -145,6 +166,29 @@ class Question3: UIViewController {
             
         } else if (userGuess != theAnswer){
             
+            
+            // get he anser form button passed
+            
+            usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ2: \(button.titleLabel!.text!) - InCorrect!";
+            
+            
+            
+            if (numberOfIncorrectAnswers == "1"){
+                
+                numberOfIncorrectAnswers = "2";
+                
+            } else if (numberOfIncorrectAnswers == "0"){
+                
+                numberOfIncorrectAnswers = "1";
+                
+            } else {
+                
+                numberOfIncorrectAnswers = "3";
+            }
+            
+            
+            
+
             println("INCORRECT ANSWER CHOSEN \(userGuess) should of been \(self.theAnswer)");
             
             self.isUserAnwserCorrect = false;
@@ -215,6 +259,9 @@ class Question3: UIViewController {
         
          buttonAnswer4.titleLabel?.textColor = UIColor.blueColor();
         buttonAnswer4.enabled = false;
+        
+        println("USER NASWER 1 = \(usersAnsersToAllQuestions)\nNO OF CORRECT-IN ANSWER = \(numberOfCorrectANswers) : \(numberOfIncorrectAnswers)");
+
        
         
         
@@ -228,14 +275,16 @@ class Question3: UIViewController {
    
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        println("USER NASWER 1 = \(usersAnsersToAllQuestions)\nNO OF CORRECT-IN ANSWER = \(numberOfCorrectANswers) : \(numberOfIncorrectAnswers)");
     }
-    */
+
 
 }
