@@ -307,28 +307,39 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "A":
                 
-                buttonA.backgroundColor = UIColor.greenColor();
+                
+               // mySampleColorButton.backgroundColor = UIColor(red: 0.5, green: 128/255.0, blue: 0.5, alpha: 1.0) //10
+
+                
+                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonA.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " Correct!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " - Correct!";
                 
                 
             case "B":
                 
-                buttonB.backgroundColor = UIColor.greenColor();
+                //buttonB.backgroundColor = UIColor.greenColor();
+                
+                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
                 usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " - Correct!";
                 
             case "C":
-                buttonC.backgroundColor = UIColor.greenColor();
+                
+                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
                 usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonC.titleLabel!.text! + " - Correct!";
                 
             case "D":
                 
-                buttonD.backgroundColor = UIColor.greenColor();
+                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
                 usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " - Correct!";
@@ -352,30 +363,37 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "A":
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " InCorrect!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " - InCorrect!";
                 
                 
-                buttonA.backgroundColor = UIColor.redColor();
+                buttonA.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
+                
                 buttonA.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
                 
             case "B":
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " InCorrect!";
-                buttonB.backgroundColor = UIColor.redColor();
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " - InCorrect!";
+                //buttonB.backgroundColor = UIColor.redColor();
+                buttonB.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
+                
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             case "C":
                 
                 usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonC.titleLabel!.text! + " InCorrect!";
-                buttonC.backgroundColor = UIColor.redColor();
+                
+                buttonC.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
+                
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             case "D":
                 
             
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " InCorrect!";
-                buttonD.backgroundColor = UIColor.redColor();
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " - InCorrect!";
+                
+                buttonD.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
+                
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             default:
@@ -389,22 +407,33 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "A":
                 
-                buttonA.backgroundColor = UIColor.greenColor();
+                //buttonA.backgroundColor = UIColor.greenColor();
+                
+                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonA.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
                 
             case "B":
                 
-                buttonB.backgroundColor = UIColor.greenColor();
+                //buttonB.backgroundColor = UIColor.greenColor();
+                
+                buttonB.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             case "C":
-                buttonC.backgroundColor = UIColor.greenColor();
+                //buttonC.backgroundColor = UIColor.greenColor();
+                buttonC.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             case "D":
                 
-                buttonD.backgroundColor = UIColor.greenColor();
+                //buttonD.backgroundColor = UIColor.greenColor();
+                
+                buttonD.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
             default:

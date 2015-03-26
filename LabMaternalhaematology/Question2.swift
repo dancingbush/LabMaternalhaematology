@@ -14,7 +14,7 @@ class Question2: UIViewController {
 
     
     //Instances
-    var question = "";
+    var question = theQuestion2;
     var option1 = question2OptionA;
     var option2 = question2OptionB;
     var option3 = question2OptionC;
@@ -251,6 +251,8 @@ class Question2: UIViewController {
         super.viewDidLoad()
 
         // Set button texts to the options from DB after view has loaded
+        
+        labelQuestion.text = theQuestion2;
         
         buttonAnswer1.setTitle(option1, forState: UIControlState.Normal);
         

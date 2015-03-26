@@ -41,6 +41,7 @@ class Question3: UIViewController {
     //Views
     
     
+    @IBOutlet weak var labelQuestion: UILabel!
     
     @IBOutlet weak var buttonAnswer1: UIButton!
     
@@ -231,6 +232,8 @@ class Question3: UIViewController {
         super.viewDidLoad()
         
         // Set button texts to the options from DB after view has loaded
+        
+        labelQuestion.text = theQuestion3;
         
         buttonAnswer1.setTitle(option1, forState: UIControlState.Normal);
         

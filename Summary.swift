@@ -63,25 +63,25 @@ class Summary: UIViewController {
         // print users answers 
         
         println("USERS ANSWERS : \(usersAnsersToAllQuestions)");
-        // animate image
-        // run animate function every 0.1 of second
-        
-       // noOfCorrectAnwsers = labelCorrectAnswers.text!;
-        //noOfCorrectAnwsers = "1";
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:  Selector ("animate"), userInfo: nil, repeats: true);
         
         
         // USe attribured strings to add to summary
-        let labelFont = UIFont(name: "HelveticaNeue-Bold", size: 14)
+        let labelFont = UIFont(name: "HelveticaNeue-Bold", size: 16)
+        
+        let labelFont2 = UIFont(name: "HelveticaNeue", size: 14);
         
         let attributes = [NSFontAttributeName : labelFont!]
         
-        var attrString = NSMutableAttributedString(string: "Correct Answers:\n\n", attributes: attributes)
+        let attributes2 = [NSFontAttributeName : labelFont2!];
         
-        let userAnswers = NSAttributedString(string: "\n\(usersAnsersToAllQuestions)" );
         
-        let newString = NSAttributedString(string: "\n\n\(theSummary)");
+        var attrString = NSMutableAttributedString(string: "Discussion:\n\n", attributes: attributes)
+        
+        let userAnswers = NSAttributedString(string: "\n\(usersAnsersToAllQuestions)", attributes : attributes2 );
+        
+        let newString = NSAttributedString(string: "\n\n\(theSummary)", attributes : attributes2);
         
         //let summaryAndUserAnswers = "\(userAnswers)\n\n\(newString)";
         
@@ -112,6 +112,8 @@ class Summary: UIViewController {
         self.imageView.frame = CGRectMake(80, 20, 0, 0);
         
         // imageAlien.frame = CGRectMake(80, 20, 0, 0);
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -198,7 +200,22 @@ class Summary: UIViewController {
 
         default:
             
-            println();
+           
+            //  must be no questions answered so study up
+            
+            
+            if(frameNumber>8){
+                
+                frameNumber=1;//only have two images to aniamte
+            }
+            
+            
+            let frame2 = UIImage(named: "book\(frameNumber)");
+            
+            imageView.image = frame2;
+            
+            frameNumber++;
+
 
         }
         
@@ -238,12 +255,18 @@ class Summary: UIViewController {
             labelResult.text = "Good!";
             
             println("Image set to 2 Correct Answer");
+            
+        case "3":
+            
+            labelResult.text = "Excellant!";
+            
+            
 
         default:
             
             //imageView.image = UIImage(named: "default-placeholder");
             
-            labelResult.text = "Perfect!";
+            labelResult.text = "OMG!- Study!";
             
             println("Image set to 3 Correct Answer");
             

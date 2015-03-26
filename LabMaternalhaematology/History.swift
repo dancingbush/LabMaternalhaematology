@@ -50,6 +50,7 @@ var others = "key: N = Normal\nH= High\nL = Low\n SI units used.\nTotal Bilirubi
 
 
 // Question 2 of 3 First Multiple choice 
+var theQuestion2 = "Choose the most appropriate tests."
 var question2OptionA = "Bilirubin and DAT";
 var question2OptionB = "Sickle Screen";
 var question2OptionC = "G6PDH Screen";
@@ -63,8 +64,9 @@ var question2_answer = "A";
 
 
 // Question 3 what is diagnosis
+var theQuestion3 = "What is the Diagnosis?"
 var question3OptionA = "Rhesus HDN";
-var question3OptionB = "Transeint Abn Myleopooesis";
+var question3OptionB = "TAM";
 var question3OptionC = "ABO HDN";
 var question3OptionD = "Sepsis";
 var question3_answer = "C";
@@ -73,7 +75,7 @@ var question3_answer = "C";
 var numberOfCorrectANswers = "0";
 var numberOfIncorrectAnswers = "0";
 var usersAnsersToAllQuestions = "Your Answers: \nQ1: ";
-var summary = "The patient was diagnosed as hemo- lytic disease of the newborn due to ABO incom- patibility (ABO-HDN). The infant’s TB peaked at 16.1 mg/dl on day three (Fig. 2), which prompted 2 sessions of phototherapy and the transfusion of 30 ml of red blood cells. \n\nExchange transfusion was not required. \n\nThe infant was discharged on day 8 with a TB of 3.9 mg/dl.A maternal high titer (> or =64) of anti-Di(b) is associated with a higher risk of severe hyperbilirubinemia for mismatched newborns.\n\nThe neonatal blood smear showed changes typical of hemolysis (Fig.1). Inherited causes, such as G6PD deficiency and sickle cell disease, were excluded. Congenital infection screen- ing tests were negative. No other causes of transient or severe hemolysis could be identified.\n\n ABO-HDN is a common condition occurring in about 15% of infants with A or B blood types born to blood type O mothers and, unlike non- HDN-ABO incompatibility, usually a problem of the neonate rather than of the fetus.\n\nHydrops fetalis in association with ABO incompatibility is extremely rare [4-8], mainly because anti-ABO antibodies are typically IgM and do not cross the placenta. \n\nAdditionally, when IgG anti-A,B, -A, or -B antibodies are produced, ABO antigens on fetal tissues act as a sink for circulating maternal anti- bodies.\n\nFinally, A and B antigens are only weakly expressed on neonatal RBCs.\n ABO-HDN is there- fore usually mild and characterized by a negative or weakly positive DAT. ABO-HDN rarely requires red cell exchange transfusion, in contrast to HDN due to anti-D or other antibodies.  "
+var summary = "Microscopy demonstrated foetal cells in a kleiahuer bueke, perpherial blood smear demosntarted spherocytosis and polychromasia, indicative of increased RBC turn over due to extravascular haemolysis. \n\n\nThe patient was diagnosed as hemo- lytic disease of the newborn due to ABO incom- patibility (ABO-HDN). The infant’s TB peaked at 16.1 mg/dl on day three (Fig. 2), which prompted 2 sessions of phototherapy and the transfusion of 30 ml of red blood cells. \n\nExchange transfusion was not required. \n\nThe infant was discharged on day 8 with a TB of 3.9 mg/dl.A maternal high titer (> or =64) of anti-Di(b) is associated with a higher risk of severe hyperbilirubinemia for mismatched newborns.\n\nThe neonatal blood smear showed changes typical of hemolysis (Fig.1). Inherited causes, such as G6PD deficiency and sickle cell disease, were excluded. Congenital infection screen- ing tests were negative. No other causes of transient or severe hemolysis could be identified.\n\n ABO-HDN is a common condition occurring in about 15% of infants with A or B blood types born to blood type O mothers and, unlike non- HDN-ABO incompatibility, usually a problem of the neonate rather than of the fetus.\n\nHydrops fetalis in association with ABO incompatibility is extremely rare [4-8], mainly because anti-ABO antibodies are typically IgM and do not cross the placenta. \n\nAdditionally, when IgG anti-A,B, -A, or -B antibodies are produced, ABO antigens on fetal tissues act as a sink for circulating maternal anti- bodies.\n\nFinally, A and B antigens are only weakly expressed on neonatal RBCs.\n ABO-HDN is there- fore usually mild and characterized by a negative or weakly positive DAT. ABO-HDN rarely requires red cell exchange transfusion, in contrast to HDN due to anti-D or other antibodies.  "
 
 
 
