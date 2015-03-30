@@ -322,7 +322,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
                 //buttonB.backgroundColor = UIColor.greenColor();
                 
-                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                buttonB.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
                 
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
@@ -330,7 +330,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "C":
                 
-                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                buttonC.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
                 
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
@@ -338,7 +338,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "D":
                 
-                buttonA.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
+                buttonD.backgroundColor = UIColor(red: 70/255.0, green: 243/255.0, blue: 58/255.0, alpha: 0.75);
                 
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
