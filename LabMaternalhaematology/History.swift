@@ -11,7 +11,7 @@ import UIKit
 
 // Globals from Database to use thoughtput app
 
-// AMLS in pregancy case
+//// AMLS in pregancy case
 var caseNumber = "2";
 var caseSummary = "20week G1P0 with hepatospleenomegaly."
 
@@ -152,7 +152,9 @@ var summary = "AML M6 and M5 (erythoid and Monocytic) are PAS (periodic acid-Sch
 
 class History: UIViewController {
 
+    // Instances, case from peformSegue in tableview
     
+    var caseNumberSelected : String = "";
     
     //Views
     
@@ -192,6 +194,9 @@ class History: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //tabBar.
+        
+        println("History: case number passed from table is : \(caseNumberSelected)");
         
         history.text = historyText;
         labelAge.text = age;

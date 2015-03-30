@@ -11,8 +11,25 @@ import CoreData
 
 class CasesTableViewTableViewController: UITableViewController {
     
+    // views
+    
+    @IBOutlet weak var imageviewBlue: UIImageView!
+    
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        
+        println("Back Button Pressed");
+    
+    }
+    
     
     //Instacnces
+    
+    var caseNumberToPAsstoHistory : String = "";
+    
     var arrayOfCaseNumbers : [String] = [];
     
     var totalCases = 0;
@@ -23,10 +40,18 @@ class CasesTableViewTableViewController: UITableViewController {
     
     
 
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //get context objxt and create a user entry with it
+        
         
         var appDel : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate;
         
@@ -134,8 +159,7 @@ class CasesTableViewTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
-//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+     
         
         let caseCell : CasesTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as CasesTableViewCell;
         
@@ -145,20 +169,7 @@ class CasesTableViewTableViewController: UITableViewController {
         
         caseCell.labelTop.text = arrayOfCaseSummaries[indexPath.row];
         
-        
-        
-        
-        
-        
-        
-        
-//        let itemCell:MyProductsTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as MyProductsTableViewCell
-//        var id = itemIds[indexPath.row]
-//        var imageThumb = itemThumb["\(id)"]
-//        itemCell.itemTitle.text = itemNames["\(id)"]
-
-
-        // Configure the cell...
+    
 
         return caseCell
     }
@@ -169,6 +180,21 @@ class CasesTableViewTableViewController: UITableViewController {
         
     }
     
+     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+     
+        // sedn the case number selected to the History vc via tabbed view, first get the row/cell pressed
+        
+        let indexPath = tableView.indexPathForSelectedRow();
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as CasesTableViewCell;
+        
+        caseNumberToPAsstoHistory = currentCell.labelCaseNo.text!;
+        
+        self.performSegueWithIdentifier("ItemDetailsSegue", sender: self);
+        
+        
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -204,14 +230,44 @@ class CasesTableViewTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if(segue.identifier == "ItemDetailsSegue"){
+            
+//            var tabBarC : UITabBarController = segue.destinationViewController as UITabBarController
+//            var desView: CaseViewController = tabBarC.viewControllers?.first as CaseViewController
+//            
+//            var caseIndex = overviewTableView!.indexPathForSelectedRow()!.row
+//            var selectedCase = self.cases[caseIndex]
+//            
+//            desView.caseitem = selectedCase
+            
+            
+            var tabBarC : UITabBarController = segue.destinationViewController as UITabBarController;
+            
+            var destinationView : History = tabBarC.viewControllers?.first as History;
+            
+            destinationView.caseNumberSelected = caseNumberToPAsstoHistory;
+            
+            //initilise new vc and cas as history vc
+            
+            //var viewcontroller = segue.destinationViewController as History;
+            
+            // pass the caseNumber we got from didselectRow to Hostory proprty / instance
+            
+            println("Passing case Number to Hisory: \(caseNumberToPAsstoHistory)");
+            
+            //viewcontroller.caseNumberSelected = caseNumberToPAsstoHistory;
+        }
     }
-    */
+    
 
 }

@@ -99,9 +99,6 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="login" modalPresentationStyle="overFullScreen" id="fvN-AZ-Pxi"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Optional) Password" textAlignment="center" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="lHt-Ih-AGM">
                                 <rect key="frame" x="70" y="305" width="210" height="45"/>
@@ -184,6 +181,7 @@
                         <outlet property="button" destination="GYS-y0-5oO" id="7Qg-Fl-IsM"/>
                         <outlet property="loader" destination="Xpe-3H-Ll6" id="nXv-CM-ZHh"/>
                         <outlet property="userNameTextField" destination="SzE-wT-mGr" id="0Ow-a7-km4"/>
+                        <segue destination="Ehw-TU-z1X" kind="show" identifier="segueLogToTableview" id="RkE-P2-QnV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcf-Mk-2Xh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -593,9 +591,6 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KTa-6h-ZzO"/>
                                     <barButtonItem systemItem="organize" id="NMP-04-dDu">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="Ehw-TU-z1X" kind="presentation" id="RzR-B6-gcr"/>
-                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2533,7 +2528,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="7hO-uZ-AXe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="385" y="100"/>
+            <point key="canvasLocation" x="347" y="840"/>
         </scene>
         <!--Scroll View-->
         <scene sceneID="3kC-Te-z5s">
@@ -2644,12 +2639,22 @@
                                             <exclude reference="cs7-cJ-47j"/>
                                         </mask>
                                     </variation>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="Ehw-TU-z1X" eventType="touchUpInside" id="wz5-Eg-8gM"/>
+                                    </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cases" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-Sg-2vf">
+                                    <rect key="frame" x="119" y="18" width="90" height="34"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="LRp-ur-Ny9" firstAttribute="top" secondItem="Eox-wM-4hC" secondAttribute="top" constant="24" id="Nv2-ri-YDg"/>
                                 <constraint firstItem="LRp-ur-Ny9" firstAttribute="leading" secondItem="Eox-wM-4hC" secondAttribute="leading" constant="8" id="QWH-OC-YCw"/>
+                                <constraint firstItem="YRm-Sg-2vf" firstAttribute="top" secondItem="h83-JJ-ntb" secondAttribute="bottom" constant="-52" id="Whl-9A-bzL"/>
                                 <constraint firstItem="h83-JJ-ntb" firstAttribute="top" secondItem="Eox-wM-4hC" secondAttribute="top" id="Xrp-JQ-D3I"/>
                                 <constraint firstItem="LRp-ur-Ny9" firstAttribute="top" secondItem="Eox-wM-4hC" secondAttribute="top" constant="11" id="a9F-V5-9zu"/>
                                 <constraint firstAttribute="centerX" secondItem="h83-JJ-ntb" secondAttribute="centerX" id="dh9-rl-hpe"/>
@@ -2661,6 +2666,7 @@
                                 </constraint>
                                 <constraint firstAttribute="height" constant="70" id="ktd-yW-eK0"/>
                                 <constraint firstItem="LRp-ur-Ny9" firstAttribute="leading" secondItem="Eox-wM-4hC" secondAttribute="leading" constant="8" id="q3O-3E-WV1"/>
+                                <constraint firstItem="YRm-Sg-2vf" firstAttribute="leading" secondItem="h83-JJ-ntb" secondAttribute="trailing" constant="-209" id="zsA-6t-MWn"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
@@ -3065,12 +3071,14 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="orc-al-CWf" kind="show" identifier="ItemDetailsSegue" id="cuv-NY-SIk"/>
+                        <outlet property="backButton" destination="LRp-ur-Ny9" id="aca-po-6s2"/>
+                        <outlet property="imageviewBlue" destination="h83-JJ-ntb" id="l5j-Lm-u0q"/>
+                        <segue destination="y1A-ze-kSN" kind="show" identifier="ItemDetailsSegue" id="vac-mc-yA4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eI-tU-KGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="108"/>
+            <point key="canvasLocation" x="772" y="32"/>
         </scene>
         <!--History-->
         <scene sceneID="12R-7t-jUA">
@@ -9376,7 +9384,6 @@
         <image name="videohiveIcon" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cuv-NY-SIk"/>
         <segue reference="QSb-8c-0jN"/>
     </inferredMetricsTieBreakers>
 </document>
