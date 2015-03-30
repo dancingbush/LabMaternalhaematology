@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y1A-ze-kSN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ehw-TU-z1X">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -2585,10 +2585,10 @@
             </objects>
             <point key="canvasLocation" x="1586" y="1495"/>
         </scene>
-        <!--My Products Table View-->
+        <!--Cases Table View Table View Controller-->
         <scene sceneID="k1h-Vd-hl1">
             <objects>
-                <tableViewController id="Ehw-TU-z1X" customClass="MyProductsTableView" customModule="LabMaternalhaematology" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ehw-TU-z1X" customClass="CasesTableViewTableViewController" customModule="LabMaternalhaematology" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vbc-7V-ubD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2644,9 +2644,6 @@
                                             <exclude reference="cs7-cJ-47j"/>
                                         </mask>
                                     </variation>
-                                    <connections>
-                                        <action selector="backButtonPressed:" destination="Ehw-TU-z1X" eventType="touchUpInside" id="3gS-zW-Ybf"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2679,7 +2676,7 @@
                             </variation>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="60" id="C56-mY-fM1" customClass="MyProductsTableViewCell" customModule="LabMaternalhaematology" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="60" id="C56-mY-fM1" customClass="CasesTableViewCell" customModule="LabMaternalhaematology" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C56-mY-fM1" id="SZt-Qg-T90">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -2747,7 +2744,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sales:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puM-D6-0vM">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puM-D6-0vM">
                                             <rect key="frame" x="196" y="31" width="61" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="61" id="OqO-Ke-je4"/>
@@ -2789,7 +2786,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="9.999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-7P-nGo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="N/A" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-7P-nGo">
                                             <rect key="frame" x="244" y="31" width="68" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="1h7-7f-gMc"/>
@@ -2831,7 +2828,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$ 99,99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rku-EB-lzc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rku-EB-lzc">
                                             <rect key="frame" x="109" y="31" width="57" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="A1L-AX-B6C"/>
@@ -2873,7 +2870,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-g6-II6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Case:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-g6-II6">
                                             <rect key="frame" x="68" y="31" width="43" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="43" id="19n-um-pN9"/>
@@ -3053,12 +3050,10 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="itemPrice" destination="Rku-EB-lzc" id="Dr7-eH-4kN"/>
-                                    <outlet property="itemSales" destination="4UK-7P-nGo" id="vvV-99-qn3"/>
-                                    <outlet property="itemThumb" destination="7SA-Dq-pGl" id="qXA-If-m8h"/>
-                                    <outlet property="itemTitle" destination="am7-H1-4CG" id="s2k-qY-iZ5"/>
-                                    <outlet property="priceLabel" destination="MU8-g6-II6" id="GV5-zf-n88"/>
-                                    <outlet property="salesLabel" destination="puM-D6-0vM" id="68g-D5-FRR"/>
+                                    <outlet property="imageLeft" destination="7SA-Dq-pGl" id="iLc-Wz-Iy6"/>
+                                    <outlet property="labelCaseNo" destination="Rku-EB-lzc" id="4yp-Yc-B92"/>
+                                    <outlet property="labelScore" destination="4UK-7P-nGo" id="vVy-L4-xAw"/>
+                                    <outlet property="labelTop" destination="am7-H1-4CG" id="0lN-Md-VpM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -9381,7 +9376,7 @@
         <image name="videohiveIcon" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cuv-NY-SIk"/>
         <segue reference="QSb-8c-0jN"/>
-        <segue reference="u1D-Og-WsF"/>
     </inferredMetricsTieBreakers>
 </document>

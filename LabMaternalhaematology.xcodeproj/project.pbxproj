@@ -100,6 +100,8 @@
 		506319BD1AC1FC6F00A0F322 /* slam41.png in Resources */ = {isa = PBXBuildFile; fileRef = 506319B31AC1FC6F00A0F322 /* slam41.png */; };
 		506319BE1AC1FC6F00A0F322 /* slam42.png in Resources */ = {isa = PBXBuildFile; fileRef = 506319B41AC1FC6F00A0F322 /* slam42.png */; };
 		506319BF1AC1FC6F00A0F322 /* slam43.png in Resources */ = {isa = PBXBuildFile; fileRef = 506319B51AC1FC6F00A0F322 /* slam43.png */; };
+		5088E69F1AC9E172001C6333 /* CasesTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088E69E1AC9E172001C6333 /* CasesTableViewTableViewController.swift */; };
+		5088E6A11AC9E22D001C6333 /* CasesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088E6A01AC9E22D001C6333 /* CasesTableViewCell.swift */; };
 		5096D1E41ABF0ABA004980FE /* Labs1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E31ABF0ABA004980FE /* Labs1.swift */; };
 		5096D1E61ABF1EB3004980FE /* Question2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E51ABF1EB3004980FE /* Question2.swift */; };
 		5096D1E81ABF4FD0004980FE /* Question3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096D1E71ABF4FD0004980FE /* Question3.swift */; };
@@ -220,6 +222,8 @@
 		506319B31AC1FC6F00A0F322 /* slam41.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slam41.png; sourceTree = "<group>"; };
 		506319B41AC1FC6F00A0F322 /* slam42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slam42.png; sourceTree = "<group>"; };
 		506319B51AC1FC6F00A0F322 /* slam43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slam43.png; sourceTree = "<group>"; };
+		5088E69E1AC9E172001C6333 /* CasesTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesTableViewTableViewController.swift; sourceTree = "<group>"; };
+		5088E6A01AC9E22D001C6333 /* CasesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesTableViewCell.swift; sourceTree = "<group>"; };
 		5096D1E31ABF0ABA004980FE /* Labs1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labs1.swift; sourceTree = "<group>"; };
 		5096D1E51ABF1EB3004980FE /* Question2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question2.swift; sourceTree = "<group>"; };
 		5096D1E71ABF4FD0004980FE /* Question3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question3.swift; sourceTree = "<group>"; };
@@ -315,6 +319,8 @@
 				504529081AACBB7B001FB7C8 /* LaunchScreen.xib */,
 				504528FE1AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld */,
 				504528FA1AACBB7B001FB7C8 /* Supporting Files */,
+				5088E69E1AC9E172001C6333 /* CasesTableViewTableViewController.swift */,
+				5088E6A01AC9E22D001C6333 /* CasesTableViewCell.swift */,
 			);
 			path = LabMaternalhaematology;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 			files = (
 				50201D4E1AB5E03F00F555EF /* LayoutController2.swift in Sources */,
 				5096D1EA1ABF6947004980FE /* Summary.swift in Sources */,
+				5088E6A11AC9E22D001C6333 /* CasesTableViewCell.swift in Sources */,
 				504529351AACBC5E001FB7C8 /* header.m in Sources */,
 				50201D521AB5E0F800F555EF /* CollectionViewCell.swift in Sources */,
 				50B471771AB899D40084C45D /* History.swift in Sources */,
@@ -604,6 +611,7 @@
 				5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */,
 				5096D1E61ABF1EB3004980FE /* Question2.swift in Sources */,
 				504528FD1AACBB7B001FB7C8 /* AppDelegate.swift in Sources */,
+				5088E69F1AC9E172001C6333 /* CasesTableViewTableViewController.swift in Sources */,
 				50201D541AB5F09D00F555EF /* DetailViewController.swift in Sources */,
 				5096D1E81ABF4FD0004980FE /* Question3.swift in Sources */,
 				50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */,

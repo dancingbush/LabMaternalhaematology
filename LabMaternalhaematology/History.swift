@@ -19,7 +19,7 @@ var caseSummary = "20week G1P0 with hepatospleenomegaly."
 var historyText = "A 22yo G1P0 female presented to ER with amenorrhea, pyrexia, anaemia, and a rash over her limbs.\n\nExamination revealed pallor, peteciae,  hepto-spleenomegaly,  and a enlarged uterus corresponding to appox 20weeks of gestation (confirmed via ultra sound).\n\nPatient had a miscarriage at 12 weeks one year previously.\nNo significant family or personal history noted."
 var sex = "F";
 var APGAR = "NA";
-var temp = "37";
+var temp = "39";
 var age = "22yo";
 
 // Question 1 images
@@ -98,9 +98,9 @@ var summary = "AML M6 and M5 (erythoid and Monocytic) are PAS (periodic acid-Sch
 //var question1OptionC = "Neg FMH screen";
 //var question1OptionD = "Fragmentation";
 //var questoin1Image1 = "case1a.jpg";
-//var questoin1Image1Description = "Kleihauer-Bueke";
+//var questoin1Image1Description = "Kleihauer-Betke";
 //var question1Image2 = "case1b.jpg";
-//var questoin1Image2Description = "Romansky x40";
+//var questoin1Image2Description = "Romanasky x40";
 //var question1Image3 = "case1c.jpg";
 //var questoin1Image3Description = "Romansky x40";
 //var question1Image4 = "case1d.jpg"; //optional may not use 4
