@@ -29,6 +29,13 @@ class DetailViewController: UIViewController {
         
         
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

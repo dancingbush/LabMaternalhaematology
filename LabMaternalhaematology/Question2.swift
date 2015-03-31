@@ -14,12 +14,12 @@ class Question2: UIViewController {
 
     
     //Instances
-    var question = theQuestion2;
-    var option1 = question2OptionA;
-    var option2 = question2OptionB;
-    var option3 = question2OptionC;
-    var option4 = question2OptionD;
-    var theAnswer = question2_answer;
+    var question = "";
+    var option1 = "";
+    var option2 = "";
+    var option3 = "";
+    var option4 = "";
+    var theAnswer = "";
     var usersGuess = "";
     var isUserAnwserCorrect : Bool = false; //checked in diiplaDalog
     var firstButtonAnswerPressed =  false;
@@ -30,10 +30,10 @@ class Question2: UIViewController {
     
     
     // results t display when a button clicked
-    var resultsA = question2optionA_Selected;
-    var resultsB = question2optionB_Selected;
-    var resultsC = question2optionC_Selected;
-    var resultsD = question2optionD_Selected;
+    var resultsA = "";
+    var resultsB = "";
+    var resultsC = "";
+    var resultsD = "";
     
     
     
@@ -250,6 +250,21 @@ class Question2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        // set paramerts from db
+        question = theQuestion2;
+        option1 = question2OptionA;
+        option2 = question2OptionB;
+        option3 = question2OptionC;
+        option4 = question2OptionD;
+        theAnswer = question2_answer;
+        
+        // results t display when a button clicked
+        resultsA = question2optionA_Selected;
+        resultsB = question2optionB_Selected;
+        resultsC = question2optionC_Selected;
+        resultsD = question2optionD_Selected;
+
         // Set button texts to the options from DB after view has loaded
         
         labelQuestion.text = theQuestion2;
@@ -269,6 +284,12 @@ class Question2: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
 
     
     // MARK: - Navigation

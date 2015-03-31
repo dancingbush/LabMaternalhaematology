@@ -16,11 +16,11 @@ class Question3: UIViewController {
     
     //Instances
     var question = "";
-    var option1 = question3OptionA;
-    var option2 = question3OptionB;
-    var option3 = question3OptionC;
-    var option4 = question3OptionD;
-    var theAnswer = question3_answer;
+    var option1 = "";
+    var option2 = "";
+    var option3 = "";
+    var option4 = "";
+    var theAnswer = "";
     var usersGuess = "";
     var isUserAnwserCorrect : Bool = false; //checked in diiplaDalog
     
@@ -227,9 +227,24 @@ class Question3: UIViewController {
         
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //set parameters from globals from db query in History
+        option1 = question3OptionA;
+        option2 = question3OptionB;
+        option3 = question3OptionC;
+        option4 = question3OptionD;
+        theAnswer = question3_answer;
         
         // Set button texts to the options from DB after view has loaded
         

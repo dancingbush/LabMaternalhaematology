@@ -219,6 +219,14 @@ class DetailViewController2ViewController: UIViewController, UIScrollViewDelegat
         
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
+    
+    
     func dissAbleAllButtons() {
         
         // called from checkAnswer

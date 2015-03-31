@@ -21,7 +21,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     // feilds
     
-    var theAnswer = question1_answer;
+    var theAnswer = "";
     
     var usersGuess = ""; // this determineddeping on th buttin pressed ie A B C or D
     
@@ -34,12 +34,12 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     
     //array to hold umage name from databse
-    let arrayOfIUmages = [questoin1Image1, question1Image2, question1Image3, question1Image4 ];
+    var arrayOfIUmages : [String] = [];
     //let arrayOfIUmages = ["case1.jpg", "case1b.jpg", "case2a.jpg", "case2b.jpg", "case2c.jpg", "case3.jpg", "case3a.jpg"];
     
     
     // titles from databse attribut Imagfe descroption:String
-    let titles = [questoin1Image1Description,questoin1Image2Description,questoin1Image3Description,  questoin1Image4Description ];
+    var titles : [String] = [];
     //let titles = ["ALL x40","HDN x40","Oil","x20 Micrsopy","H&E", "H&E", "H&E", "H&E"];
     
     
@@ -128,6 +128,13 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
        super.viewDidLoad()
         
         //self.collectionView
+        
+        theAnswer = question1_answer
+        
+        
+        arrayOfIUmages = [questoin1Image1, question1Image2, question1Image3, question1Image4 ];
+        
+        titles = [questoin1Image1Description,questoin1Image2Description,questoin1Image3Description,  questoin1Image4Description ];
         
         scrollView.contentSize = self.view.frame.size;
         //scrollView.addSubview(imageView)
@@ -463,6 +470,14 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
+    
     
     func dissAbleAllButtons() {
         

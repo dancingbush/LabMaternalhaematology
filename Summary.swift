@@ -23,12 +23,12 @@ class Summary: UIViewController {
     // Instances
     var timer = NSTimer();
     
-    var theSummary = summary;
+    var theSummary = "";
     
-    var theCaseNumber = caseNumber; //get from global
+    var theCaseNumber = ""; //get from global
     var result = "";
     var frameNumber = 1; //animations
-    var noOfCorrectAnwsers = numberOfCorrectANswers;
+    var noOfCorrectAnwsers = "";
     
     
     
@@ -61,6 +61,13 @@ class Summary: UIViewController {
         super.viewDidLoad()
         
         // print users answers 
+        
+        theSummary = summary;
+        
+        theCaseNumber = caseNumber; //get from global
+        
+        noOfCorrectAnwsers = numberOfCorrectANswers;
+
         
         println("USERS ANSWERS : \(usersAnsersToAllQuestions)");
         
@@ -129,6 +136,12 @@ class Summary: UIViewController {
     
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
     
     func animate(){
         

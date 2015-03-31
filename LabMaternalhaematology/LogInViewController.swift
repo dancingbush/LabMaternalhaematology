@@ -13,38 +13,17 @@ import CoreData
 
 
 
-// Set Global Values that can be accesed from every Screen:
-//var userName = ""
-//var apiKey = ""
-//var balance = ""
-//var RealName = ""
-//var country = ""
-//var avatar = ""
-//var earnings = ""
-//var spent = ""
-//var sales = ""
-//var follower = ""
-//var themeforestPreValue = ""
-//var codecanyonPreValue = ""
-//var videohivePreValue = ""
-//var audiojungelPreValue = ""
-//var graphicriverPreValue = ""
-//var photodunePreValue = ""
-//var oceanPreValue = ""
-//var activedenPreValue = ""
-//var accountDetailsLoaded = false
-//var itemsByMarketLoaded = false
-//var publicDetailsLoaded = false
-
 class LogInViewController: UIViewController {
     
-//    let transitionManager = MenuTransitionManager()
-//    let accountTransitionManager = MainScreenTransitionManager()
+
     
     
-    @IBOutlet weak var button: UIButton!                // Outlet for the Submit Button
+    @IBOutlet weak var button: UIButton!
+    
     @IBOutlet weak var loader: UIActivityIndicatorView! // Activity Indicator that appears when submit button is pressed
+    
     @IBOutlet weak var userNameTextField: UITextField!  // Text Field for the Users Name
+    
     @IBOutlet weak var apiKeyTextField: UITextField!    // Text Field for the Users API Key
     
     
@@ -150,14 +129,14 @@ class LogInViewController: UIViewController {
         }
 
         
-        // Then load everything
-//        getCurrentAccountDetails()  // Load Private Account Details
-//        getItemsByMarket()          // Load Item Related Details
-//        getPublicDetails()          // Load Publically accessable Details
+
     }
+    
+    
     override func viewDidAppear(animated: Bool) {
         // When the Screen Shows Up or the App is Loaded, check id there is some User Data stored in the Apps Cache.
         // If so, load them.
+        
         self.loader.hidden = true;
            }
     
@@ -426,6 +405,14 @@ class LogInViewController: UIViewController {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
+    
     
     @IBAction func unwindToMainViewController (sender: UIStoryboardSegue) {
         self.dismissViewControllerAnimated(true, completion: nil)
