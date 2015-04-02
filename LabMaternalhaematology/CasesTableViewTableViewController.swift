@@ -11,6 +11,10 @@ import CoreData
 
 class CasesTableViewTableViewController: UITableViewController {
     
+    // Instances
+    var caseNumberForResultCheck = ""; // need for user deafults
+    
+    
     // views
     
     @IBOutlet weak var imageviewBlue: UIImageView!
@@ -99,6 +103,7 @@ class CasesTableViewTableViewController: UITableViewController {
                 if(result.valueForKey("caseNumber") != nil ){
                     
                     
+                    caseNumberForResultCheck = result.valueForKey("caseNumber") as String;
                     
                 
                 arrayOfCaseNumbers.append(result.valueForKey("caseNumber") as String);
@@ -160,6 +165,7 @@ class CasesTableViewTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
      
+        // Populate the custom cell
         
         let caseCell : CasesTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as CasesTableViewCell;
         
@@ -168,6 +174,127 @@ class CasesTableViewTableViewController: UITableViewController {
         caseCell.labelCaseNo.text = arrayOfCaseNumbers[indexPath.row] as String + "/\(totalCases)";
         
         caseCell.labelTop.text = arrayOfCaseSummaries[indexPath.row];
+        
+        
+        // Set label scroe according to how user scored the case, saved to NSUserdefaults in Summary.swift
+        
+        let defaults = NSUserDefaults.standardUserDefaults();
+        
+        
+        // if -let will only work if we reurn an optional value, wgere array[inde] is not optional it will/should always retin a value
+        
+       
+        
+        var caseNumberD = arrayOfCaseNumbers[indexPath.row] as String;
+        
+        if let scoreValueArray : [Dictionary<String, String>]  = defaults.objectForKey("userScoreForCase") as? Array{
+            
+            
+            println("Array Of Dictioanry \(scoreValueArray) and count is = \(scoreValueArray.count)");
+            
+            // element = the case number
+            //let elementCaseNumber = caseNumber;
+            
+            var dict = scoreValueArray[0];
+            var value = dict["CaseResult"];
+            var splitStringForCaseNumberArray : [String] = value!.componentsSeparatedByString("/");
+            var caseNumberString : String = splitStringForCaseNumberArray[0];
+            var theScore = splitStringForCaseNumberArray[1];
+            
+            
+            println("Array Dict Result \(dict) and \(value) and case number from DB \(caseNumberForResultCheck)");
+            
+
+            // Now check if element/case number is present in array, if so we knwo this case has been answered and result saved to userdefaults
+            
+            if(caseNumberD == caseNumberString){
+                
+                // the csse n this row has ben answered so ste the score label
+                
+                caseCell.labelScore.text = theScore;
+            
+            } else if (caseNumberD != caseNumberString){
+                
+                caseCell.labelScore.text = "...";
+            }
+            
+//            for wasCaseAnswered in scoreValueArray{
+//                
+//                println("Array of casesee ansered index = \(wasCaseAnswered)");
+//                
+//                var caseFromDictValue = wasCaseAnswered["CaseResult"];
+//                
+                //var caseFromDictStringSplit = caseFromDictValue.
+                
+                
+                
+//                if elementCaseNumber == wasCaseAnswered["CaseResult"]{
+                
+                    // answered, so we should have a value in array 
+                    
+                    
+                    //let scoreValue = scoreValueArray[element!];
+                    
+//                    println(scoreValue);
+//                    
+//                    switch scoreValue {
+//                        
+//                    case "Study up!":
+//                        
+//                        caseCell.labelScore.text = scoreValue;
+//                        
+//                    case "Average!":
+//                        
+//                        caseCell.labelScore.text = scoreValue;
+//                        
+//                    case "Excellant!":
+//                        caseCell.labelScore.text = scoreValue;
+//                        
+//                    default:
+//                        
+//                        caseCell.labelScore.text = "....";
+//                        
+//                    }// switch
+//
+                    
+                    
+                }// if element
+                
+//            } // for
+//            
+//        } if let array
+        
+//                if (element < scoreValueArray.count){
+//                    
+//                    let scoreValue = scoreValueArray[element!];
+//                
+//                println(scoreValue);
+//            
+//            switch scoreValue {
+//                
+//                case "Study up!":
+//                
+//                    caseCell.labelScore.text = scoreValue;
+//                
+//                case "Average!":
+//                
+//                    caseCell.labelScore.text = scoreValue;
+//                
+//                case "Excellant!":
+//                    caseCell.labelScore.text = scoreValue;
+//                
+//            default:
+//                
+//                caseCell.labelScore.text = "....";
+//                
+//            }// switch
+//            
+//            }// 2nd let
+//        }
+        
+        //defaults.setValue("Study up!", forKey: "caseResult");
+        
+        
         
     
 

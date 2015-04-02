@@ -29,6 +29,8 @@ class Summary: UIViewController {
     var result = "";
     var frameNumber = 1; //animations
     var noOfCorrectAnwsers = "";
+    //var deaultScoreResults : [String] = [];
+    var deaultScoreResults  = [Dictionary<String, String>](); // save NSSerdefaults in array fr each caseNumber as element to populate tablecell
     
     
     
@@ -245,8 +247,10 @@ class Summary: UIViewController {
     func setImageAndResult(){
         
         
-        // set image first
+        // set text label according to resylt and also save NSUSerDefault to populate the tableview cell of all cases
         
+        
+        let defaults = NSUserDefaults.standardUserDefaults();
         
         
         
@@ -261,6 +265,16 @@ class Summary: UIViewController {
             
             println("Image set to 1 Correct Answer");
             
+            // Insert result for element caseNumber for tablevoew cell, key:value = CaseResul : the Case Number/Result
+            
+            deaultScoreResults.append(["CaseResult":caseNumberString+"/Study Up!"])
+            
+            
+            
+           defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+            //defaults.setValue("Study up!", forKey: "caseResult");
+            
+            
         case "2":
             
             //imageView.image = UIImage(named: "pizza");
@@ -269,9 +283,31 @@ class Summary: UIViewController {
             
             println("Image set to 2 Correct Answer");
             
+            
+            //deaultScoreResults.append("Average!": )
+            //deaultScoreResults.insert("Average!", atIndex: caseNumberString.toInt()!);
+            
+           deaultScoreResults.append(["CaseResult":caseNumberString+"/Average!"])
+            
+            defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+
+            //defaults.setValue("Average!!", forKey: "caseResult");
+            
+            
         case "3":
             
             labelResult.text = "Excellant!";
+            
+            
+            
+            
+           deaultScoreResults.append(["CaseResult":caseNumberString+"/Excellant!"])
+            
+            
+            defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+
+            
+            //defaults.setValue("Excellant!!", forKey: "caseResult");
             
             
 
@@ -282,6 +318,20 @@ class Summary: UIViewController {
             labelResult.text = "OMG!- Study!";
             
             println("Image set to 3 Correct Answer");
+            
+            
+            
+           // deaultScoreResults.insert("Study Up!", atIndex: caseNumberString.toInt()!);
+            
+            
+            deaultScoreResults.append(["CaseResult":caseNumberString+"/Study Up!"])
+            
+            defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+
+            
+            
+            
+            //defaults.setValue("Study up!", forKey: "caseResult");
             
         }// swict
         

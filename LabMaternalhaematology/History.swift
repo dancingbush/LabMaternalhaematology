@@ -14,8 +14,9 @@ import CoreData
 // Globals from Database to use thoughtput app
 
 //// AMLS in pregancy case
-var caseNumber = "";
+var caseNumber = ""; // array of strings from label
 var caseSummary = ""
+var caseNumberString = ""; // for the global ref to case no used in summry
 
 // History
 var historyText = ""
@@ -222,6 +223,8 @@ class History: UIViewController {
         
         var theCase = casenoArray[0];
         
+        caseNumberString = theCase;
+        
         println("Case = \(theCase)");
         
         
@@ -257,6 +260,8 @@ class History: UIViewController {
                     
                     
                     // assign to globals 
+                    
+                    
                     
                     historyText = result.valueForKey("history") as String;
                         
