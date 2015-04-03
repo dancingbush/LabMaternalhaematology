@@ -21,6 +21,8 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     // feilds
     
+    var questionAnsered : Bool = false; // true from detail zoom view when navigating back to this view so question not asjed again
+    
     var theAnswer = "";
     
     var usersGuess = ""; // this determineddeping on th buttin pressed ie A B C or D
@@ -61,7 +63,17 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     @IBOutlet weak var buttonD: UIButton!
     
+    @IBAction func unwindToLayouController2(segue:UIStoryboardSegue) {
+        
+//    method signaire name{segue:UIStoryboardSugue will 
+//        allow any vc to naviagte/unwind to this vc when we drag a button to the 'Exit' on the vc
+        
+        // when we agcget back form zoom image we tell this that the questions has been asked! 
+        
+        self.questionAnsered = true;
+        
     
+    }
     @IBAction func buttonA(sender: AnyObject) {
         
         println("ANSWER A CHOSEN");
@@ -127,9 +139,14 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
        super.viewDidLoad()
         
+        
+        // If navogating from zoom view we should see our qusetionAnswered = true
+        println(self.questionAnsered);
+        
+        
         //self.collectionView
         
-        theAnswer = question1_answer
+        theAnswer = question1_answer;
         
         
         arrayOfIUmages = [questoin1Image1, question1Image2, question1Image3, question1Image4 ];

@@ -2548,27 +2548,26 @@
                                     <constraint firstAttribute="height" constant="88" id="YUv-OL-1Jm"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-mW-6Mw">
+                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSQ-fZ-VXx">
-                                <rect key="frame" x="-8" y="20" width="73" height="47"/>
+                                <rect key="frame" x="-18" y="20" width="73" height="47"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonBack:" destination="hPi-of-J8h" eventType="touchUpInside" id="F2h-i6-vWA"/>
-                                    <segue destination="WYc-HH-cno" kind="show" identifier="segueBackToImages" id="daW-yN-pkP"/>
+                                    <segue destination="Oih-dp-qZQ" kind="unwind" unwindAction="unwindToLayouController2:" id="SY0-Pw-QLV"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-mW-6Mw">
-                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KGJ-A4-1F8" firstAttribute="top" secondItem="dSQ-fZ-VXx" secondAttribute="bottom" constant="-67" id="3av-tO-w6X"/>
                             <constraint firstItem="KGJ-A4-1F8" firstAttribute="leading" secondItem="NY6-s6-QuZ" secondAttribute="leadingMargin" constant="-16" id="6ai-ta-nLE"/>
-                            <constraint firstItem="KGJ-A4-1F8" firstAttribute="top" secondItem="dSQ-fZ-VXx" secondAttribute="bottom" constant="-67" id="JLW-1I-RuV"/>
-                            <constraint firstItem="KGJ-A4-1F8" firstAttribute="leading" secondItem="dSQ-fZ-VXx" secondAttribute="trailing" constant="-65" id="Lzm-dt-haM"/>
                             <constraint firstItem="KGJ-A4-1F8" firstAttribute="top" secondItem="NY6-s6-QuZ" secondAttribute="topMargin" id="OTq-cX-B8j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KGJ-A4-1F8" secondAttribute="trailing" constant="-16" id="PKV-bx-cWm"/>
+                            <constraint firstItem="KGJ-A4-1F8" firstAttribute="leading" secondItem="dSQ-fZ-VXx" secondAttribute="trailing" constant="-55" id="tmW-7c-bay"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -2577,8 +2576,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZ6-5i-4sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Oih-dp-qZQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="1495"/>
+            <point key="canvasLocation" x="1433" y="1570"/>
         </scene>
         <!--Cases Table View Table View Controller-->
         <scene sceneID="k1h-Vd-hl1">
@@ -9383,7 +9383,4 @@
         <image name="themeforesIcon" width="33" height="33"/>
         <image name="videohiveIcon" width="33" height="33"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="QSb-8c-0jN"/>
-    </inferredMetricsTieBreakers>
 </document>

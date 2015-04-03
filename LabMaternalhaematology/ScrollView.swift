@@ -32,12 +32,12 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var buttonScrollView: UIScrollView!
     
     
-    @IBAction func buttonBack(sender: AnyObject) {
-        
-        //navugate back to previous view
-        self.performSegueWithIdentifier("segueBackToImages", sender: self);
-        
-    }
+//    @IBAction func buttonBack(sender: AnyObject) {
+//        
+//        //navugate back to previous view
+//        self.performSegueWithIdentifier("segueBackToImages2", sender: self);
+//        
+//    }
     
     @IBOutlet weak var imageScollView: UIScrollView!
     
@@ -121,14 +121,69 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        
+        // navigate back to tab voew controller child view LayoutController so we maintain the views tabs, also pass back the bool to indocate the questuon has already been answered and cannot be asked again
+        
+        if (segue.identifier == "segueBackToImages2"){
+            
+            var tabBarC : UITabBarController = segue.destinationViewController as UITabBarController;
+            
+         // var destionationView: () = tabBarC.selectedIndex = 3;
+            
+            println(tabBarC);
+            
+            // 3 = question , 1 = istory, 2 = cored data, 4 = what is diagnosis, 5, 6 , 0 = histor
+            var destionationView : LayoutController2 = tabBarC.viewControllers![1] as LayoutController2;
+            
+            println(tabBarC.viewControllers![1]);
+            println(tabBarC.viewControllers![0]);
+            
+            println("Destionationview : \(destionationView) and view at tabr index 2 \(tabBarC.viewControllers?[1])");
+           
+            
+            for views in tabBarC.viewControllers!{
+                
+                println("Tabbar voews: \(views) Total Views \(tabBarC.viewControllers?.count))");
+            }
+            
+            // this will occur invidLoad
+            //destionationView.questionAnsered = true;
+        
+        }
+//        if(segue.identifier == "ItemDetailsSegue"){
+//            
+//            //            var tabBarC : UITabBarController = segue.destinationViewController as UITabBarController
+//            //            var desView: CaseViewController = tabBarC.viewControllers?.first as CaseViewController
+//            //
+//            //            var caseIndex = overviewTableView!.indexPathForSelectedRow()!.row
+//            //            var selectedCase = self.cases[caseIndex]
+//            //
+//            //            desView.caseitem = selectedCase
+//            
+//            
+//            var tabBarC : UITabBarController = segue.destinationViewController as UITabBarController;
+//            
+//            var destinationView : History = tabBarC.viewControllers?.first as History;
+//            
+//            destinationView.caseNumberSelected = caseNumberToPAsstoHistory;
+//            
+//            //initilise new vc and cas as history vc
+//            
+//            //var viewcontroller = segue.destinationViewController as History;
+//            
+//            // pass the caseNumber we got from didselectRow to Hostory proprty / instance
+//            
+//            println("Passing case Number to Hisory: \(caseNumberToPAsstoHistory)");
+//            
+//
+//        
+//        
+//    }
+}
 
 }

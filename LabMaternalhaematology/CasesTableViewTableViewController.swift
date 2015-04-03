@@ -190,19 +190,25 @@ class CasesTableViewTableViewController: UITableViewController {
         if let scoreValueArray : [Dictionary<String, String>]  = defaults.objectForKey("userScoreForCase") as? Array{
             
             
+            for dict_Result in scoreValueArray{
+                
+                
+            
             println("Array Of Dictioanry \(scoreValueArray) and count is = \(scoreValueArray.count)");
             
             // element = the case number
             //let elementCaseNumber = caseNumber;
             
-            var dict = scoreValueArray[0];
-            var value = dict["CaseResult"];
+            //var dict = scoreValueArray[0];
+            
+                //var value = dict["CaseResult"];
+                var value = dict_Result["CaseResult"];
             var splitStringForCaseNumberArray : [String] = value!.componentsSeparatedByString("/");
             var caseNumberString : String = splitStringForCaseNumberArray[0];
             var theScore = splitStringForCaseNumberArray[1];
             
             
-            println("Array Dict Result \(dict) and \(value) and case number from DB \(caseNumberForResultCheck)");
+            println("Array Dict Result \(dict_Result) and \(value) and case number from DB \(caseNumberForResultCheck)");
             
 
             // Now check if element/case number is present in array, if so we knwo this case has been answered and result saved to userdefaults
@@ -217,6 +223,9 @@ class CasesTableViewTableViewController: UITableViewController {
                 
                 caseCell.labelScore.text = "...";
             }
+                
+                
+            } // For dict in array
             
 //            for wasCaseAnswered in scoreValueArray{
 //                
