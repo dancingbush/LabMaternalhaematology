@@ -110,6 +110,7 @@
 		5096D1EE1ABF86B8004980FE /* oldpeople2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5096D1ED1ABF86B8004980FE /* oldpeople2.png */; };
 		50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */; };
 		50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */; };
+		50A326061AD1BB2B009AC6A6 /* CustomFotterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A326051AD1BB2B009AC6A6 /* CustomFotterCell.swift */; };
 		50B471771AB899D40084C45D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B471761AB899D40084C45D /* History.swift */; };
 		50EF402B1AD1622000A259FA /* FeedController3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF402A1AD1622000A259FA /* FeedController3TableViewController.swift */; };
 		50EF402D1AD162A500A259FA /* FeedCell3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF402C1AD162A500A259FA /* FeedCell3TableViewCell.swift */; };
@@ -234,6 +235,7 @@
 		5096D1ED1ABF86B8004980FE /* oldpeople2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oldpeople2.png; sourceTree = "<group>"; };
 		50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloodfilm.jpg; sourceTree = "<group>"; };
+		50A326051AD1BB2B009AC6A6 /* CustomFotterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFotterCell.swift; sourceTree = "<group>"; };
 		50B471761AB899D40084C45D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		50EF402A1AD1622000A259FA /* FeedController3TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController3TableViewController.swift; sourceTree = "<group>"; };
 		50EF402C1AD162A500A259FA /* FeedCell3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell3TableViewCell.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			children = (
 				50EF402A1AD1622000A259FA /* FeedController3TableViewController.swift */,
 				50EF402C1AD162A500A259FA /* FeedCell3TableViewCell.swift */,
+				50A326051AD1BB2B009AC6A6 /* CustomFotterCell.swift */,
 			);
 			name = Comments;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				50EF402D1AD162A500A259FA /* FeedCell3TableViewCell.swift in Sources */,
 				5096D1EA1ABF6947004980FE /* Summary.swift in Sources */,
 				5088E6A11AC9E22D001C6333 /* CasesTableViewCell.swift in Sources */,
+				50A326061AD1BB2B009AC6A6 /* CustomFotterCell.swift in Sources */,
 				504529351AACBC5E001FB7C8 /* header.m in Sources */,
 				50201D521AB5E0F800F555EF /* CollectionViewCell.swift in Sources */,
 				50B471771AB899D40084C45D /* History.swift in Sources */,
