@@ -12,20 +12,30 @@ class FeedCell3TableViewCell: UITableViewCell {
 
     // Views
     
+    @IBOutlet weak var labelDate: UILabel!
 
+    @IBOutlet weak var labelUserName: UILabel!
+    @IBOutlet weak var labelComments: UILabel!
     
     @IBOutlet weak var imageUser: UIImageView!
-    
-    @IBOutlet weak var labelDate: UILabel!
-    
-    @IBOutlet weak var textViewComments: UITextView!
-    
-    @IBOutlet weak var labelUserName: UILabel!
+//    @IBOutlet weak var imageUser: UIImageView!
+//    
+//    @IBOutlet weak var labelDate: UILabel!
+//    
+//    //@IBOutlet weak var textViewComments: UITextView!
+//    
+//    @IBOutlet weak var labelComments: UILabel!
+//    @IBOutlet weak var labelCaseNumber: UILabel!
+//    @IBOutlet weak var labelUserName: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        imageUser?.layer.borderWidth = 0.4
+        imageUser?.layer.borderColor = UIColor(white: 0.92, alpha: 1.0).CGColor
+
         
         /*
 Obj c
