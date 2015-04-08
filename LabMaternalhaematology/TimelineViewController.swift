@@ -14,6 +14,26 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var tableView : UITableView!
     @IBOutlet var toolbar : UIToolbar!
     
+    
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    var userComments = ""; // add to parse
+    
+    var currentCase = caseNumber; // search for comment in pasre for this case
+    
+    var arrayOfComments : [String] = [];
+    
+    var arrayOfUserNames : [String] = [];
+    
+    var arrayOfTimeStamps : [String] = [];
+    
+    var arrayOfCaseImages : [String] = [];
+    
+    
+    
+    var finsihedLoadingFormParse = false;
+    
+
     // Footer veow for comments
     var commentView: UITextView?
     var footerView: UIView?
@@ -50,45 +70,244 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         toolbar.tintColor = UIColor.blackColor()
+        
+        var tome = printTimestamp();
+        
+        caseNumber = "2";
+        
+        println("Comments, tome stamp and case : \(userComments) : \(tome) : \(caseNumber)");
+        
+        //addComment();
+        
+        
+        self.loadDataFromParse();
+        // load the last row
+        let numberOfSections = self.tableView.numberOfSections()
+        let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
+        
+        if numberOfRows > 0 {
+            println(numberOfSections)
+            let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        }
+
     }
     
+    func loadDataFromParse(){
+        
+        var getCommentsFromParse = PFQuery(className: "Comments");
+        
+        println("Loading form parse....");
+        
+        /* Turn on activity indicator and turn off when done in aysn block */
+        
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        
+        
+        //var getFollowedUsersQuery = PFQuery(className: "followers")
+        //getFollowedUsersQuery.whereKey("follower", equalTo: PFUser.currentUser().username)
+        
+        println("Getting object form parse where case is = \(caseNumber) only");
+        
+        getCommentsFromParse.whereKey("caseNumber", equalTo: caseNumber);
+        
+        getCommentsFromParse .findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            
+            if error == nil {
+                
+                
+                self.activityIndicator.stopAnimating();
+                UIApplication.sharedApplication().endIgnoringInteractionEvents();
+                
+                //var followedUser = ""
+                
+                for object in objects {
+                    
+                    // Update - replaced as with as!
+                    
+                    //followedUser = object["following"] as! String
+                    println("Object retribed form parse!");
+                    
+                    println(object);
+                    
+                    // save tp arrays for table view
+                    self.arrayOfUserNames.append(object["user"] as String);
+                    self.arrayOfComments.append(object["comment"] as String);
+                    self.arrayOfTimeStamps.append(object["time"] as String);
+                    self.arrayOfCaseImages.append(object["imageTitle"] as String);
+                    
+                    
+                    //                                var query = PFQuery(className:"Post")
+                    //                                query.whereKey("username", equalTo:followedUser)
+                    //                                query.findObjectsInBackgroundWithBlock {
+                    //                                    (objects: [AnyObject]!, error: NSError!) -> Void in
+                    //                                    if error == nil {
+                    //                                        // The find succeeded.
+                    //                                        println("Successfully retrieved \(objects.count) scores.")
+                    //                                        // Do something with the found objects
+                    //                                        for object in objects {
+                    //
+                    //                                            // Update - replaced as with as!
+                    //
+                    //                                            self.titles.append(object["Title"] as! String)
+                    //
+                    //                                            // Update - replaced as with as!
+                    //
+                    //                                            self.usernames.append(object["username"] as! String)
+                    //
+                    //                                            // Update - replaced as with as!
+                    //
+                    //                                            self.imageFiles.append(object["imageFile"] as! PFFile)
+                    //
+                    //                                            self.tableView.reloadData()
+                    
+                    //
+                }// for
+                
+                //                // once arrays populated reload table data
+                //                self.tableView.reloadData();
+                //
+                //                self.configureTableView();
+                //
+                self.finsihedLoadingFormParse = true;
+                
+            } else {
+                // Log details of the failure
+                
+                self.activityIndicator.stopAnimating()
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                
+                println(error)
+            }
+            
+            //self.configureTableView();
+            
+            self.tableView.reloadData();
+            
+            // load the last row
+            let numberOfSections = self.tableView.numberOfSections()
+            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
+            
+            if numberOfRows > 0 {
+                println(numberOfSections)
+                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            }
+            
+            
+            
+            
+        }// background task
+        
+        
+        //        // once arrays populated reload table data
+        //        self.tableView.reloadData();
+        //        
+        //        self.configureTableView();
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
     
+    func displayAlert(title:String, error:String) {
+        
+        var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    func printTimestamp() -> String{
+        
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        
+        println(timestamp);
+        //println("Time of Post COmment : \(timestamp)";
+        
+        return timestamp;
+    }
+
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        
+        if(arrayOfComments.count > 0){
+            
+            return arrayOfComments.count
+            
+        } else{
+            
+            return 5;
+            
+        }
+
+        //return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        if (indexPath.row % 2 == 0) {
+        //if (indexPath.row % 2 == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineCell
-            
             cell.typeImageView.image = UIImage(named: "timeline-chat")
             cell.profileImageView.image = UIImage(named: "profile-pic-1")
-            cell.nameLabel.text = "John Hoylett"
             
-            if(userComemnts != ""){
-                cell.postLabel?.text = userComemnts;
-            }else{
-            cell.postLabel?.text = "Checking out of the hotel today. It was really fun to see everyone and catch up. We should have more conferences like this so we can share ideas."
+            if(arrayOfComments.count > 0){
+                
+
+                cell.nameLabel.text = arrayOfUserNames[indexPath.row];
+            
+            
+                cell.postLabel?.text = arrayOfComments[indexPath.row];
+                
+                let casedetails = "Case: \(caseNumber) - ";
+            cell.dateLabel.text = casedetails + arrayOfTimeStamps[indexPath.row];
+               
+                cell.profileImageView.image = UIImage(named: arrayOfCaseImages[indexPath.row]+".jpg" as String)
             }
-            
-            cell.dateLabel.text = "2 mins ago"
             return cell
 
-        }else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCellPhoto") as TimelineCell
-            
-            cell.typeImageView.image = UIImage(named: "timeline-photo")
-            cell.profileImageView.image = UIImage(named: "profile-pic-2")
-            cell.nameLabel.text = "Linda Hoylett"
-            cell.photoImageView?.image = UIImage(named: "dish")
-            cell.dateLabel.text = "2 mins ago"
-            return cell
-        }
+//        }else{
+//            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCellPhoto") as TimelineCell
+//            
+//            cell.typeImageView.image = UIImage(named: "timeline-chat")
+//            cell.profileImageView.image = UIImage(named: "profile-pic-1")
+//            
+//            if(arrayOfComments.count > 0){
+//                
+//                
+//                cell.nameLabel.text = arrayOfUserNames[indexPath.row];
+//                
+//                
+//                cell.postLabel?.text = arrayOfComments[indexPath.row];
+//                
+//                cell.dateLabel.text = arrayOfTimeStamps[indexPath.row];
+//                
+//                cell.profileImageView.image = UIImage(named: arrayOfCaseImages[indexPath.row]+".jpg" as String)
+//            }
+//            cell.typeImageView.image = UIImage(named: "timeline-photo")
+//            cell.profileImageView.image = UIImage(named: "profile-pic-2")
+//            cell.nameLabel.text = "Linda Hoylett"
+//            cell.photoImageView?.image = UIImage(named: "dish")
+//            cell.dateLabel.text = "2 mins ago"
+//            return cell
+//        }
     }
     
     @IBAction func dismiss(){
@@ -220,29 +439,241 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         
         // When Add button clicked in custom TabkeView Footer
         
+//        println("User added comment: \(commentView?.text)");
+//        
+//        //        yak?.addObject(commentView?.text, forKey: "comments")
+//        //        yak?.saveInBackground()
+//        //        if let tmpText = commentView?.text {
+//        //            comments?.append(tmpText)
+//        //        }
+//        //        commentView?.text = ""
+//       
+//        userComemnts = commentView!.text;
+//        
+//        println("Comments to add : \(userComemnts)");
+//        println(comments?.count)
+//        
+//        self.commentView?.resignFirstResponder()
+//        
+//         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+//        //tableView.reloadData();
+//        //userComments = commentView!.text;
+//        
+//        
+//        
+//        
+//        addComment();
         println("User added comment: \(commentView?.text)");
         
         //        yak?.addObject(commentView?.text, forKey: "comments")
         //        yak?.saveInBackground()
-        //        if let tmpText = commentView?.text {
-        //            comments?.append(tmpText)
-        //        }
-        //        commentView?.text = ""
-       
-        userComemnts = commentView!.text;
-        
+        if let Comments  = commentView?.text {
+            //comments?.append(tmpText)
+            
+            self.userComments = Comments;
+            println(userComments);
+            
+        }
+        commentView?.text = ""
         println(comments?.count)
         self.commentView?.resignFirstResponder()
-         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
-        //tableView.reloadData();
-        //userComments = commentView!.text;
-        
-        //addComment();
-        
+        //
+        //        println(commentView?.text)
+        //        yak?.addObject(commentView?.text, forKey: "comments")
+        //        commentView?.text = ""
+        //        self.commentView?.resignFirstResponder()
+        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+       
+        addComment();
         
         //self.tableView.reloadData()
         
         //self.configureTableView();
     }
+    
+    func addComment(){
+        
+        // add comment form user to parse object
+        var error = ""
+        
+        if (userComments == "") {
+            
+            error = "Please enter a comment!"
+            
+        }
+        
+        if (error != "") {
+            
+            displayAlert("Cannot Post Comment", error: error)
+            
+        } else {
+            
+            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            
+            var comment = PFObject(className: "Comments");
+            comment["comment"] = userComments;
+            comment["user"] = "testUserName";
+            //comment["user"] = PFUser.currentUser().username;
+            comment["caseNumber"] = caseNumber;
+            comment["imageTitle"] = "case1b";
+            
+            var timeOfPost = printTimestamp();
+            comment["time"] = timeOfPost;
+            
+            //            var post = PFObject(className: "Comments")
+            //            post["Title"] = userComments;
+            //            post["username"] = PFUser.currentUser().username
+            
+            
+            
+            comment.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
+                
+                
+                if success == false {
+                    
+                    // turn off user interaction dosabled and display timer
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                    self.displayAlert("Could Not Post Comment- Check internet connection!", error: "Please try again later")
+                    
+                } else {
+                    
+                    // swotch user interaction back on
+                    
+                    // turn off user interaction dosabled and display timer
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    // Print post objects to log
+                    
+                    var getCommentsFromParse = PFQuery(className: "Comments");
+                    
+                    println("Saved to parse....");
+                    
+                    //                    var getFollowedUsersQuery = PFQuery(className: "followers")
+                    //                    //getFollowedUsersQuery.whereKey("follower", equalTo: PFUser.currentUser().username)
+                    //                    getCommentsFromParse .findObjectsInBackgroundWithBlock {
+                    //                        (objects: [AnyObject]!, error: NSError!) -> Void in
+                    //
+                    //                        if error == nil {
+                    //
+                    //                            //var followedUser = ""
+                    //
+                    //                            for object in objects {
+                    //
+                    //                                // Update - replaced as with as!
+                    //
+                    //                                //followedUser = object["following"] as! String
+                    //                                println("Object retribed form parse!");
+                    //
+                    //                                println(object);
+                    //
+                    //                                // save tp arrays for table view
+                    //                                self.arrayOfUserNames.append(object["user"] as String);
+                    //                                self.arrayOfComments.append(object["comment"] as String);
+                    //                                self.arrayOfTimeStamps.append(object["time"] as String);
+                    //                                self.arrayOfCaseImages.append(object["imageTitle"] as String);
+                    //
+                    //
+                    //                                //                                var query = PFQuery(className:"Post")
+                    //                                //                                query.whereKey("username", equalTo:followedUser)
+                    //                                //                                query.findObjectsInBackgroundWithBlock {
+                    //                                //                                    (objects: [AnyObject]!, error: NSError!) -> Void in
+                    //                                //                                    if error == nil {
+                    //                                //                                        // The find succeeded.
+                    //                                //                                        println("Successfully retrieved \(objects.count) scores.")
+                    //                                //                                        // Do something with the found objects
+                    //                                //                                        for object in objects {
+                    //                                //
+                    //                                //                                            // Update - replaced as with as!
+                    //                                //
+                    //                                //                                            self.titles.append(object["Title"] as! String)
+                    //                                //
+                    //                                //                                            // Update - replaced as with as!
+                    //                                //
+                    //                                //                                            self.usernames.append(object["username"] as! String)
+                    //                                //
+                    //                                //                                            // Update - replaced as with as!
+                    //                                //
+                    //                                //                                            self.imageFiles.append(object["imageFile"] as! PFFile)
+                    //                                //
+                    //                                //                                            self.tableView.reloadData()
+                    //
+                    //                                //
+                    //                            }// for
+                    //
+                    //                            // once arrays populated reload table data
+                    //                            self.tableView.reloadData();
+                    //
+                    //                            self.finsihedLoadingFormParse = true;
+                    //
+                    //                        } else {
+                    //                            // Log details of the failure
+                    //                            println(error)
+                    //                        }
+                    //}
+                }
+                
+                // turn off user interaction dosabled and display timer
+                
+                //                // Print arrays form parse only if finished as its run asynchrounly
+                //                if(self.finsihedLoadingFormParse){
+                //                println("\nUserbame Array : \(self.arrayOfUserNames)");
+                //                println("\nUserbame Array : \(self.arrayOfComments)");
+                //                println("\nUserbame Array : \( self.arrayOfTimeStamps)");
+                //                println("\nUserbame Array : \(self.arrayOfTimeStamps)");
+                //                }
+                
+                
+                // reload table but get data form parse first
+                self.loadDataFromParse();
+                
+            }// add comments func
+            
+            // }
+            
+            
+            
+            // aving image to app
+            
+            //                    let imageData = UIImagePNGRepresentation(self.imageToPost.image)
+            //
+            //                    let imageFile = PFFile(name: "image.png", data: imageData)
+            //
+            //                    post["imageFile"] = imageFile
+            //
+            //                    post.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
+            //
+            //                        self.activityIndicator.stopAnimating()
+            //                        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            //
+            //                        if success == false {
+            //
+            //                            self.displayAlert("Could Not Post Image", error: "Please try again later")
+            //
+            //                        } else {
+            //
+            //                            self.displayAlert("Image Posted!", error: "Your image has been posted successfully")
+            //                            
+            //                            // Update - replaced 0 with false
+            //                            
+            //                            self.photoSelected = false
+            //                            
+            //                            self.imageToPost.image = UIImage(named: "315px-Blank_woman_placeholder.svg")
+            //                            
+            //                            self.shareText.text = ""
+            //                            
+            //                            println("posted successfully")
+            
+        }
+        
+    }
+
 
 }
