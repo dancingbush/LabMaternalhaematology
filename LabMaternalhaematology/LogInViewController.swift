@@ -12,6 +12,9 @@ import UIKit
 import CoreData
 
 
+// Globas
+
+var currentUserName = "";
 
 class LogInViewController: UIViewController {
     
@@ -58,6 +61,7 @@ class LogInViewController: UIViewController {
         
         if (userNameTextField.text != ""){
             
+            currentUserName = userNameTextField.text;
             
             var user = PFUser()
             user.username = userNameTextField.text;
@@ -79,7 +83,7 @@ class LogInViewController: UIViewController {
                     self.loader.stopAnimating();
                     self.loader.hidden = true;
                     
-                   // self.performSegueWithIdentifier("segueLogInToTableView", sender: self);
+                   self.performSegueWithIdentifier("segueToLMainMenu", sender: self);
                     
                 } else {
                     
@@ -105,6 +109,8 @@ class LogInViewController: UIViewController {
                             
                             self.loader.stopAnimating();
                             self.loader.hidden = true;
+                            
+                            self.performSegueWithIdentifier("segueToLMainMenu", sender: self);
                             
                             
                         } else {
@@ -138,6 +144,13 @@ class LogInViewController: UIViewController {
         // If so, load them.
         
         self.loader.hidden = true;
+        
+        if(PFUser.currentUser() != nil){
+            
+            currentUserName = PFUser.currentUser().username;
+            
+            self.performSegueWithIdentifier("segueToLMainMenu", sender: self);
+        }
            }
     
     

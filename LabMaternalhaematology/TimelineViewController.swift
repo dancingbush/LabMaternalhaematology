@@ -81,6 +81,7 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         
         
         self.loadDataFromParse();
+        
         // load the last row
         let numberOfSections = self.tableView.numberOfSections()
         let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
@@ -89,7 +90,13 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
             println(numberOfSections)
             let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
             self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            
+            // check what last cell is
+            let cell : TimelineCell = self.tableView.cellForRowAtIndexPath(indexPath)? as TimelineCell;
+            println("Last row comments: \(cell.postLabel?.text)");
+
         }
+        
 
     }
     
@@ -197,8 +204,17 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
             
             if numberOfRows > 0 {
                 println(numberOfSections)
+                println("Scrolling to row number \(numberOfRows)");
                 let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
                 self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+               
+                // check what last cell is 
+                if let cell : TimelineCell = self.tableView.cellForRowAtIndexPath(indexPath)? as? TimelineCell{
+                    
+                
+               println("Last row comments: \(cell.postLabel?.text)");
+                }
+                //UITableViewCell cell = self.tableView.cellForRowAtIndexPath(indexPath)
             }
             
             
@@ -206,11 +222,6 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
             
         }// background task
         
-        
-        //        // once arrays populated reload table data
-        //        self.tableView.reloadData();
-        //        
-        //        self.configureTableView();
     }
 
     override func viewDidAppear(animated: Bool) {

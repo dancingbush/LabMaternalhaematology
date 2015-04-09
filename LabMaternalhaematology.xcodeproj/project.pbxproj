@@ -44,7 +44,6 @@
 		504529371AACBC96001FB7C8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 504529361AACBC96001FB7C8 /* libz.dylib */; };
 		504529391AACBCA2001FB7C8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 504529381AACBCA2001FB7C8 /* libsqlite3.dylib */; };
 		5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5045293A1AACBDAF001FB7C8 /* Main.storyboard */; };
-		5045293D1AACBDBF001FB7C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5045293C1AACBDBF001FB7C8 /* Images.xcassets */; };
 		5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */; };
 		5058A52A1ABA1FB5001B63CD /* categories-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5251ABA1FB5001B63CD /* categories-screen.png */; };
 		5058A52B1ABA1FB5001B63CD /* icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5261ABA1FB5001B63CD /* icon-2.png */; };
@@ -115,28 +114,12 @@
 		50C891281AD5BE1B00F18F86 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C891271AD5BE1B00F18F86 /* TimelineViewController.swift */; };
 		50C8912A1AD5BE2900F18F86 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C891291AD5BE2900F18F86 /* TimelineCell.swift */; };
 		50C8912C1AD5BEF600F18F86 /* TuneUpTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8912B1AD5BEF600F18F86 /* TuneUpTheme.swift */; };
-		50C891401AD5C03500F18F86 /* add.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8912D1AD5C03500F18F86 /* add.imageset */; };
-		50C891411AD5C03500F18F86 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8912E1AD5C03500F18F86 /* AppIcon.appiconset */; };
-		50C891421AD5C03500F18F86 /* back.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8912F1AD5C03500F18F86 /* back.imageset */; };
-		50C891431AD5C03500F18F86 /* border-button.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891301AD5C03500F18F86 /* border-button.imageset */; };
-		50C891441AD5C03500F18F86 /* cart.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891311AD5C03500F18F86 /* cart.imageset */; };
-		50C891451AD5C03500F18F86 /* category-1.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891321AD5C03500F18F86 /* category-1.imageset */; };
-		50C891461AD5C03500F18F86 /* category-2.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891331AD5C03500F18F86 /* category-2.imageset */; };
-		50C891471AD5C03500F18F86 /* category-3.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891341AD5C03500F18F86 /* category-3.imageset */; };
-		50C891481AD5C03500F18F86 /* category-4.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891351AD5C03500F18F86 /* category-4.imageset */; };
-		50C891491AD5C03500F18F86 /* clock.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891361AD5C03500F18F86 /* clock.imageset */; };
-		50C8914A1AD5C03500F18F86 /* club.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891371AD5C03500F18F86 /* club.imageset */; };
-		50C8914B1AD5C03500F18F86 /* cover-album-1.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891381AD5C03500F18F86 /* cover-album-1.imageset */; };
-		50C8914C1AD5C03500F18F86 /* cover-album-2.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C891391AD5C03500F18F86 /* cover-album-2.imageset */; };
-		50C8914D1AD5C03500F18F86 /* cover-album-3.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8913A1AD5C03500F18F86 /* cover-album-3.imageset */; };
-		50C8914E1AD5C03500F18F86 /* cover-album-4.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8913B1AD5C03500F18F86 /* cover-album-4.imageset */; };
-		50C8914F1AD5C03500F18F86 /* cover-album-5.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8913C1AD5C03500F18F86 /* cover-album-5.imageset */; };
-		50C891501AD5C03500F18F86 /* cover-album-6.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8913D1AD5C03500F18F86 /* cover-album-6.imageset */; };
-		50C891511AD5C03500F18F86 /* dish-2.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8913E1AD5C03500F18F86 /* dish-2.imageset */; };
-		50C891521AD5C03500F18F86 /* dish.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 50C8913F1AD5C03500F18F86 /* dish.imageset */; };
 		50C891541AD5C2F000F18F86 /* nav-bg-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C891531AD5C2F000F18F86 /* nav-bg-2.jpg */; };
 		50EF402B1AD1622000A259FA /* FeedController3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF402A1AD1622000A259FA /* FeedController3TableViewController.swift */; };
 		50EF402D1AD162A500A259FA /* FeedCell3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF402C1AD162A500A259FA /* FeedCell3TableViewCell.swift */; };
+		50FCA0DF1AD67A2900E02D3D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FCA0DE1AD67A2900E02D3D /* MainMenuViewController.swift */; };
+		50FCA0E11AD67BFA00E02D3D /* Images 09-40-58-314.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50FCA0E01AD67BFA00E02D3D /* Images 09-40-58-314.xcassets */; };
+		50FCA0E31AD689C900E02D3D /* About_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FCA0E21AD689C900E02D3D /* About_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,7 +175,6 @@
 		504529361AACBC96001FB7C8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		504529381AACBCA2001FB7C8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5045293A1AACBDAF001FB7C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		5045293C1AACBDBF001FB7C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5058A5251ABA1FB5001B63CD /* categories-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categories-screen.png"; sourceTree = "<group>"; };
 		5058A5261ABA1FB5001B63CD /* icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-2.png"; sourceTree = "<group>"; };
@@ -263,28 +245,12 @@
 		50C891271AD5BE1B00F18F86 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		50C891291AD5BE2900F18F86 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		50C8912B1AD5BEF600F18F86 /* TuneUpTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuneUpTheme.swift; sourceTree = "<group>"; };
-		50C8912D1AD5C03500F18F86 /* add.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = add.imageset; sourceTree = "<group>"; };
-		50C8912E1AD5C03500F18F86 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
-		50C8912F1AD5C03500F18F86 /* back.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = back.imageset; sourceTree = "<group>"; };
-		50C891301AD5C03500F18F86 /* border-button.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "border-button.imageset"; sourceTree = "<group>"; };
-		50C891311AD5C03500F18F86 /* cart.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cart.imageset; sourceTree = "<group>"; };
-		50C891321AD5C03500F18F86 /* category-1.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "category-1.imageset"; sourceTree = "<group>"; };
-		50C891331AD5C03500F18F86 /* category-2.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "category-2.imageset"; sourceTree = "<group>"; };
-		50C891341AD5C03500F18F86 /* category-3.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "category-3.imageset"; sourceTree = "<group>"; };
-		50C891351AD5C03500F18F86 /* category-4.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "category-4.imageset"; sourceTree = "<group>"; };
-		50C891361AD5C03500F18F86 /* clock.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = clock.imageset; sourceTree = "<group>"; };
-		50C891371AD5C03500F18F86 /* club.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = club.imageset; sourceTree = "<group>"; };
-		50C891381AD5C03500F18F86 /* cover-album-1.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cover-album-1.imageset"; sourceTree = "<group>"; };
-		50C891391AD5C03500F18F86 /* cover-album-2.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cover-album-2.imageset"; sourceTree = "<group>"; };
-		50C8913A1AD5C03500F18F86 /* cover-album-3.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cover-album-3.imageset"; sourceTree = "<group>"; };
-		50C8913B1AD5C03500F18F86 /* cover-album-4.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cover-album-4.imageset"; sourceTree = "<group>"; };
-		50C8913C1AD5C03500F18F86 /* cover-album-5.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cover-album-5.imageset"; sourceTree = "<group>"; };
-		50C8913D1AD5C03500F18F86 /* cover-album-6.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cover-album-6.imageset"; sourceTree = "<group>"; };
-		50C8913E1AD5C03500F18F86 /* dish-2.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "dish-2.imageset"; sourceTree = "<group>"; };
-		50C8913F1AD5C03500F18F86 /* dish.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dish.imageset; sourceTree = "<group>"; };
 		50C891531AD5C2F000F18F86 /* nav-bg-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nav-bg-2.jpg"; sourceTree = "<group>"; };
 		50EF402A1AD1622000A259FA /* FeedController3TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController3TableViewController.swift; sourceTree = "<group>"; };
 		50EF402C1AD162A500A259FA /* FeedCell3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell3TableViewCell.swift; sourceTree = "<group>"; };
+		50FCA0DE1AD67A2900E02D3D /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		50FCA0E01AD67BFA00E02D3D /* Images 09-40-58-314.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images 09-40-58-314.xcassets"; sourceTree = "<group>"; };
+		50FCA0E21AD689C900E02D3D /* About_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +316,8 @@
 		504528F91AACBB7B001FB7C8 /* LabMaternalhaematology */ = {
 			isa = PBXGroup;
 			children = (
+				50FCA0E01AD67BFA00E02D3D /* Images 09-40-58-314.xcassets */,
+				50FCA0E21AD689C900E02D3D /* About_ViewController.swift */,
 				50EF40291AD161E200A259FA /* Comments */,
 				5063195B1AC1FB5100A0F322 /* Images */,
 				50201D511AB5E0F800F555EF /* CollectionViewCell.swift */,
@@ -357,28 +325,9 @@
 				50201D531AB5F09D00F555EF /* DetailViewController.swift */,
 				50201D4F1AB5E04800F555EF /* DetailViewController2ViewController.swift */,
 				50201D4D1AB5E03F00F555EF /* LayoutController2.swift */,
-				50C8912E1AD5C03500F18F86 /* AppIcon.appiconset */,
-				50C8912F1AD5C03500F18F86 /* back.imageset */,
-				50C891301AD5C03500F18F86 /* border-button.imageset */,
-				50C891311AD5C03500F18F86 /* cart.imageset */,
-				50C891321AD5C03500F18F86 /* category-1.imageset */,
-				50C891331AD5C03500F18F86 /* category-2.imageset */,
-				50C891341AD5C03500F18F86 /* category-3.imageset */,
-				50C891351AD5C03500F18F86 /* category-4.imageset */,
-				50C891361AD5C03500F18F86 /* clock.imageset */,
-				50C891371AD5C03500F18F86 /* club.imageset */,
-				50C891381AD5C03500F18F86 /* cover-album-1.imageset */,
-				50C891391AD5C03500F18F86 /* cover-album-2.imageset */,
-				50C8913A1AD5C03500F18F86 /* cover-album-3.imageset */,
-				50C8913B1AD5C03500F18F86 /* cover-album-4.imageset */,
-				50C8913C1AD5C03500F18F86 /* cover-album-5.imageset */,
-				50C8913D1AD5C03500F18F86 /* cover-album-6.imageset */,
-				50C8913E1AD5C03500F18F86 /* dish-2.imageset */,
-				50C8913F1AD5C03500F18F86 /* dish.imageset */,
-				5045293C1AACBDBF001FB7C8 /* Images.xcassets */,
-				50C8912D1AD5C03500F18F86 /* add.imageset */,
 				5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */,
 				5045293A1AACBDAF001FB7C8 /* Main.storyboard */,
+				50FCA0DE1AD67A2900E02D3D /* MainMenuViewController.swift */,
 				5096D1E71ABF4FD0004980FE /* Question3.swift */,
 				5096D1E51ABF1EB3004980FE /* Question2.swift */,
 				50B471761AB899D40084C45D /* History.swift */,
@@ -600,26 +549,20 @@
 				5063199B1AC1FC6200A0F322 /* slam17.png in Resources */,
 				50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */,
 				506319691AC1FC4900A0F322 /* book6.png in Resources */,
-				50C891481AD5C03500F18F86 /* category-4.imageset in Resources */,
 				506319681AC1FC4900A0F322 /* book5.png in Resources */,
 				50201D461AB5E03200F555EF /* case1@2x.jpg in Resources */,
 				506319A21AC1FC6200A0F322 /* slam24.png in Resources */,
-				50C8914B1AD5C03500F18F86 /* cover-album-1.imageset in Resources */,
-				50C891511AD5C03500F18F86 /* dish-2.imageset in Resources */,
 				506319901AC1FC6200A0F322 /* slam5.png in Resources */,
 				506319B91AC1FC6F00A0F322 /* slam37.png in Resources */,
-				50C8914C1AD5C03500F18F86 /* cover-album-2.imageset in Resources */,
 				5063199D1AC1FC6200A0F322 /* slam19.png in Resources */,
-				50C891471AD5C03500F18F86 /* category-3.imageset in Resources */,
 				50201D381AB5E00B00F555EF /* iOS_ALL L2.jpg in Resources */,
-				50C891421AD5C03500F18F86 /* back.imageset in Resources */,
 				50201D3C1AB5E00B00F555EF /* ios_tam1.JPG in Resources */,
 				5063199F1AC1FC6200A0F322 /* slam21.png in Resources */,
 				506319BF1AC1FC6F00A0F322 /* slam43.png in Resources */,
 				5063199E1AC1FC6200A0F322 /* slam20.png in Resources */,
 				506319AA1AC1FC6200A0F322 /* slam32.png in Resources */,
+				50FCA0E11AD67BFA00E02D3D /* Images 09-40-58-314.xcassets in Resources */,
 				506319A01AC1FC6200A0F322 /* slam22.png in Resources */,
-				5045293D1AACBDBF001FB7C8 /* Images.xcassets in Resources */,
 				50201D3A1AB5E00B00F555EF /* case1d.jpg in Resources */,
 				50201D471AB5E03200F555EF /* case1b@2x.jpg in Resources */,
 				5063198F1AC1FC6200A0F322 /* slam4.png in Resources */,
@@ -628,13 +571,10 @@
 				5063199C1AC1FC6200A0F322 /* slam18.png in Resources */,
 				5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */,
 				506319BD1AC1FC6F00A0F322 /* slam41.png in Resources */,
-				50C891411AD5C03500F18F86 /* AppIcon.appiconset in Resources */,
 				5058A52B1ABA1FB5001B63CD /* icon-2.png in Resources */,
 				506319AB1AC1FC6200A0F322 /* slam33.png in Resources */,
-				50C8914E1AD5C03500F18F86 /* cover-album-4.imageset in Resources */,
 				50201D491AB5E03200F555EF /* case2b@2x.JPG in Resources */,
 				506319651AC1FC4900A0F322 /* book2.png in Resources */,
-				50C891441AD5C03500F18F86 /* cart.imageset in Resources */,
 				506319A51AC1FC6200A0F322 /* slam27.png in Resources */,
 				506319A81AC1FC6200A0F322 /* slam30.png in Resources */,
 				5063196B1AC1FC4900A0F322 /* book8.png in Resources */,
@@ -644,14 +584,11 @@
 				506319A41AC1FC6200A0F322 /* slam26.png in Resources */,
 				506319951AC1FC6200A0F322 /* slam10.png in Resources */,
 				5045290A1AACBB7B001FB7C8 /* LaunchScreen.xib in Resources */,
-				50C8914D1AD5C03500F18F86 /* cover-album-3.imageset in Resources */,
 				506319661AC1FC4900A0F322 /* book3.png in Resources */,
 				50201D4C1AB5E03200F555EF /* case3a@2x.jpg in Resources */,
 				5058A52C1ABA1FB5001B63CD /* main_screen.png in Resources */,
 				506319A71AC1FC6200A0F322 /* slam29.png in Resources */,
-				50C891521AD5C03500F18F86 /* dish.imageset in Resources */,
 				50201D4A1AB5E03200F555EF /* case1c@2x.JPG in Resources */,
-				50C8914A1AD5C03500F18F86 /* club.imageset in Resources */,
 				506319671AC1FC4900A0F322 /* book4.png in Resources */,
 				50201D3B1AB5E00B00F555EF /* case2a.jpg in Resources */,
 				50201D391AB5E00B00F555EF /* case3d@2x.jpg in Resources */,
@@ -661,30 +598,23 @@
 				506319641AC1FC4900A0F322 /* book1.png in Resources */,
 				5063199A1AC1FC6200A0F322 /* slam16.png in Resources */,
 				5063198E1AC1FC6200A0F322 /* slam3.png in Resources */,
-				50C891461AD5C03500F18F86 /* category-2.imageset in Resources */,
 				506319911AC1FC6200A0F322 /* slam6.png in Resources */,
 				506319BB1AC1FC6F00A0F322 /* slam39.png in Resources */,
-				50C8914F1AD5C03500F18F86 /* cover-album-5.imageset in Resources */,
 				506319BC1AC1FC6F00A0F322 /* slam40.png in Resources */,
-				50C891431AD5C03500F18F86 /* border-button.imageset in Resources */,
 				506319A31AC1FC6200A0F322 /* slam25.png in Resources */,
 				5058A52E1ABA1FB5001B63CD /* splash.png in Resources */,
 				506319BA1AC1FC6F00A0F322 /* slam38.png in Resources */,
-				50C891401AD5C03500F18F86 /* add.imageset in Resources */,
 				506319B81AC1FC6F00A0F322 /* slam36.png in Resources */,
 				506319921AC1FC6200A0F322 /* slam7.png in Resources */,
 				506319B61AC1FC6F00A0F322 /* slam34.png in Resources */,
 				506319941AC1FC6200A0F322 /* slam9.png in Resources */,
 				50201D3E1AB5E00B00F555EF /* methemoblobinemaia.gif in Resources */,
 				50201D481AB5E03200F555EF /* case1a@2x.jpg in Resources */,
-				50C891501AD5C03500F18F86 /* cover-album-6.imageset in Resources */,
-				50C891491AD5C03500F18F86 /* clock.imageset in Resources */,
 				5096D1EC1ABF86B2004980FE /* oldpeople1.png in Resources */,
 				506319981AC1FC6200A0F322 /* slam14.png in Resources */,
 				5063196A1AC1FC4900A0F322 /* book7.png in Resources */,
 				50201D3D1AB5E00B00F555EF /* ios_tam2.JPG in Resources */,
 				50C891541AD5C2F000F18F86 /* nav-bg-2.jpg in Resources */,
-				50C891451AD5C03500F18F86 /* category-1.imageset in Resources */,
 				5063198D1AC1FC6200A0F322 /* slam2.png in Resources */,
 				506319991AC1FC6200A0F322 /* slam15.png in Resources */,
 				506319931AC1FC6200A0F322 /* slam8.png in Resources */,
@@ -705,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FCA0DF1AD67A2900E02D3D /* MainMenuViewController.swift in Sources */,
 				50201D4E1AB5E03F00F555EF /* LayoutController2.swift in Sources */,
 				50EF402D1AD162A500A259FA /* FeedCell3TableViewCell.swift in Sources */,
 				5096D1EA1ABF6947004980FE /* Summary.swift in Sources */,
@@ -716,6 +647,7 @@
 				50C8912C1AD5BEF600F18F86 /* TuneUpTheme.swift in Sources */,
 				504529021AACBB7B001FB7C8 /* ViewController.swift in Sources */,
 				5096D1E41ABF0ABA004980FE /* Labs1.swift in Sources */,
+				50FCA0E31AD689C900E02D3D /* About_ViewController.swift in Sources */,
 				504529001AACBB7B001FB7C8 /* LabMaternalhaematology.xcdatamodeld in Sources */,
 				50C891281AD5BE1B00F18F86 /* TimelineViewController.swift in Sources */,
 				5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */,
