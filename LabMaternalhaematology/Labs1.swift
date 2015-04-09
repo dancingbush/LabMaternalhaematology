@@ -23,21 +23,25 @@ class Labs1: UIViewController {
     // Views
     
     
-    @IBAction func buttonBack(sender: AnyObject) {
-    }
+//    @IBAction func buttonBack(sender: AnyObject) {
+//    }
     
     
+    @IBOutlet weak var tv_Others: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var labelWCC: UILabel!
     
-    @IBOutlet weak var labelOthers: UILabel!
+   // @IBOutlet weak var labelOthers: UILabel!
     @IBOutlet weak var labelMCHC: UILabel!
     @IBOutlet weak var labelMCH: UILabel!
     @IBOutlet weak var labelMCV: UILabel!
     @IBOutlet weak var labelPLTS: UILabel!
     @IBOutlet weak var labelHGB: UILabel!
-       override func viewDidLoad() {
+    
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // populate labels
@@ -47,9 +51,10 @@ class Labs1: UIViewController {
         labelMCH.text = mch;
         labelMCV.text = mcv;
         labelMCHC.text = mchc;
-        labelOthers.text = others;
+        //labelOthers.text = others;
+        tv_Others.text = others;
         
-        
+        println(others);
         
         
         

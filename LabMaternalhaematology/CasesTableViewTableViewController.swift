@@ -26,6 +26,9 @@ class CasesTableViewTableViewController: UITableViewController {
     @IBAction func backButtonPressed(sender: AnyObject) {
         
         println("Back Button Pressed");
+        
+        
+        self.performSegueWithIdentifier("segueBackToMainMenu", sender: self);
     
     }
     
@@ -405,5 +408,10 @@ class CasesTableViewTableViewController: UITableViewController {
         }
     }
     
+    
+    @IBAction func unwindToCasesTableView (sender: UIStoryboardSegue) {
+        // self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
-}
+
+}// class

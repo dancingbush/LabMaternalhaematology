@@ -345,6 +345,9 @@ class History: UIViewController {
         
     }
     
+    @IBAction func unwindToHistory (sender: UIStoryboardSegue) {
+        // self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func prefersStatusBarHidden() -> Bool {
         

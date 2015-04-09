@@ -16,6 +16,8 @@ import CoreData
 
 var currentUserName = "";
 
+var isARegsiteredUser : Bool = false;
+
 class LogInViewController: UIViewController {
     
 
@@ -89,7 +91,7 @@ class LogInViewController: UIViewController {
                     
                     // Log them in if their username aready exost
                     
-                    
+                    isARegsiteredUser = true;
                     
                     let errorString = error.userInfo!["error"] as NSString
                     
@@ -147,7 +149,11 @@ class LogInViewController: UIViewController {
         
         if(PFUser.currentUser() != nil){
             
+            isARegsiteredUser = true;
+            
             currentUserName = PFUser.currentUser().username;
+            
+            
             
             self.performSegueWithIdentifier("segueToLMainMenu", sender: self);
         }
@@ -427,7 +433,8 @@ class LogInViewController: UIViewController {
     }
     
     
-    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func unwindToLogINViewController (sender: UIStoryboardSegue) {
+        //self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }

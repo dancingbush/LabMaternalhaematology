@@ -47,7 +47,22 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set toolbar bg
         
+        let toolBarbg = UIImage(named: "Background")
+        
+        toolbar.setBackgroundImage(toolBarbg, forToolbarPosition: .Bottom, barMetrics: .Default);
+        
+//        let toolbarBackgroundImage = UIImage(named: "toolbar_background")
+//        toolbar.setBackgroundImage(toolbarBackgroundImage, forToolbarPosition: .Bottom, barMetrics: .Default)
+//        
+//        let toolbarButtonItems = [
+//            customImageBarButtonItem,
+//            flexibleSpaceBarButtonItem,
+//            customBarButtonItem
+//        ]
+//        toolbar.setItems(toolbarButtonItems, animated: true)
+
 //        /* Setup the keyboard notifications  so does not block textview for adding comments */
        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -73,7 +88,7 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         
         var tome = printTimestamp();
         
-        caseNumber = "2";
+        caseNumber = caseNumberString;
         
         println("Comments, tome stamp and case : \(userComments) : \(tome) : \(caseNumber)");
         
@@ -82,20 +97,6 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         
         self.loadDataFromParse();
         
-        // load the last row
-        let numberOfSections = self.tableView.numberOfSections()
-        let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
-        
-        if numberOfRows > 0 {
-            println(numberOfSections)
-            let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
-            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-            
-            // check what last cell is
-            let cell : TimelineCell = self.tableView.cellForRowAtIndexPath(indexPath)? as TimelineCell;
-            println("Last row comments: \(cell.postLabel?.text)");
-
-        }
         
 
     }
@@ -275,9 +276,21 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         //if (indexPath.row % 2 == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineCell
+         let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineCell
+        
+        if(indexPath.row % 2 == 0){
+            
             cell.typeImageView.image = UIImage(named: "timeline-chat")
-            cell.profileImageView.image = UIImage(named: "profile-pic-1")
+             cell.profileImageView.image = UIImage(named: "placeholder1")
+            
+        }else{
+            
+            cell.typeImageView.image = UIImage(named: "timeline-photo")
+             cell.profileImageView.image = UIImage(named: "placeholder2")
+        }
+        
+           // cell.typeImageView.image = UIImage(named: "timeline-chat")
+            //cell.profileImageView.image = UIImage(named: "placeholder1")
             
             if(arrayOfComments.count > 0){
                 
@@ -529,10 +542,10 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
             
             var comment = PFObject(className: "Comments");
             comment["comment"] = userComments;
-            comment["user"] = "testUserName";
+            comment["user"] = PFUser.currentUser().username;
             //comment["user"] = PFUser.currentUser().username;
             comment["caseNumber"] = caseNumber;
-            comment["imageTitle"] = "case1b";
+            comment["imageTitle"] = "case\(caseNumberString)a";
             
             var timeOfPost = printTimestamp();
             comment["time"] = timeOfPost;

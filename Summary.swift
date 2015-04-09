@@ -21,7 +21,11 @@ class Summary: UIViewController {
     
     
     // Instances
+    
+    let defaults = NSUserDefaults.standardUserDefaults();
+    
     var timer = NSTimer();
+    
     
     var theSummary = "";
     
@@ -36,6 +40,8 @@ class Summary: UIViewController {
     
     //Views
     
+    
+    @IBOutlet weak var toolBar: UIToolbar!
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -57,16 +63,28 @@ class Summary: UIViewController {
     @IBOutlet weak var textFieldSummary: UITextView!
     
     
+    @IBOutlet weak var buttonComments: UIBarButtonItem!
+    
+    
+    @IBAction func buttonCommentsAction(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("segueToComments", sender: self);
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set tool ar image
+        let toolBarbg = UIImage(named: "Background")
+        
+        toolBar.setBackgroundImage(toolBarbg, forToolbarPosition: .Bottom, barMetrics: .Default);
+        
         // print users answers 
         
         theSummary = summary;
         
-        theCaseNumber = caseNumber; //get from global
+        theCaseNumber = caseNumberString; //get from global
         
         noOfCorrectAnwsers = numberOfCorrectANswers;
 
@@ -103,7 +121,7 @@ class Summary: UIViewController {
         
         textFieldSummary.attributedText = attrString;
         
-               labelCaseNumber.text = caseNumber;
+               labelCaseNumber.text = caseNumberString;
         
         labelCorrectAnswers.text = numberOfCorrectANswers;
         
@@ -127,6 +145,8 @@ class Summary: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         // after views have been downloaded slowlu move image view to center pf screen
+        
+        //defaults = NSUserDefaults.standardUserDefaults();
         
         UIView.animateWithDuration(3, animations: { () -> Void in
             
@@ -250,7 +270,7 @@ class Summary: UIViewController {
         // set text label according to resylt and also save NSUSerDefault to populate the tableview cell of all cases
         
         
-        let defaults = NSUserDefaults.standardUserDefaults();
+        
         
         
         

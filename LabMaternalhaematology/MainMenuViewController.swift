@@ -37,11 +37,16 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         PFUser.logOut();
         
+        
         self.performSegueWithIdentifier("segueToLogInScreen", sender: self);
         
     }
     
     @IBAction func buttonAbout(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("segueToAbout", sender: self);
+        
+        
     }
     
     
@@ -80,9 +85,17 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
 
         // set up emailclient and label welcome
         
-        labelWelcomeUser.text = "Welcome \(currentUserName)!";
-            }
-   
+        if(isARegsiteredUser){
+            
+        
+        labelWelcomeUser.text = "Welcome Back \(currentUserName)!";
+            
+    } else {
+    
+    labelWelcomeUser.text = "Welcome \(currentUserName)!";
+    
+    
+    }
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         
@@ -90,20 +103,50 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             
         case MFMailComposeResultCancelled.value:
             println("Mail Cancelled")
+            
+            displayAlert("Email Error", message: "Possible internet connection issue, please try later..");
+            
         case MFMailComposeResultSaved.value:
             println("Mail Saved")
         case MFMailComposeResultSent.value:
             println("Mail Sent")
+            
+            displayAlert("Email", message: "SENT!");
         case MFMailComposeResultFailed.value:
             println("Mail Failed")
+            
+            displayAlert("Email Error", message: "Possible internet connection issue, please try later..");
         default:
             break
             
         }
         self.dismissViewControllerAnimated(false, completion: nil)
         
+        
+    }
     }
 
+    func displayAlert(title : String, message : String){
+        
+        //self.loader.stopAnimating();
+        
+        var alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        // hode the staus bar of phone
+        
+        return true
+    }
+    
+    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue) {
+       // self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
