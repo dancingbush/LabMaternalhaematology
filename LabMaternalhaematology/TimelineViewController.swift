@@ -11,6 +11,9 @@ import UIKit
 
 class TimelineViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     
+    /* Manage transistions bewteen vc's*/
+    var transitionManager = TransistionManager();
+    
     @IBOutlet var tableView : UITableView!
     @IBOutlet var toolbar : UIToolbar!
     
@@ -200,23 +203,33 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
             self.tableView.reloadData();
             
             // load the last row
-            let numberOfSections = self.tableView.numberOfSections()
-            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
             
-            if numberOfRows > 0 {
-                println(numberOfSections)
-                println("Scrolling to row number \(numberOfRows)");
-                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
-                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-               
-                // check what last cell is 
-                if let cell : TimelineCell = self.tableView.cellForRowAtIndexPath(indexPath)? as? TimelineCell{
-                    
-                
-               println("Last row comments: \(cell.postLabel?.text)");
-                }
-                //UITableViewCell cell = self.tableView.cellForRowAtIndexPath(indexPath)
-            }
+           // let offset = CGPoint(x: 0, y: self.FOOTERHEIGHT);
+            let offset = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height + self.FOOTERHEIGHT);
+            
+            self.tableView.contentOffset = offset;
+            
+//            let numberOfSections = self.tableView.numberOfSections()
+//            let numberOfRows = self.tableView.numberOfRowsInSection(numberOfSections-1)
+//            
+//            if numberOfRows > 0 {
+//                println(numberOfSections)
+//                println("Scrolling to row number \(numberOfRows)");
+//                
+//                //let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+//                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
+//                
+//                //self.tableView.scrollToRowAtIndexPath(<#indexPath: NSIndexPath#>, atScrollPosition: <#UITableViewScrollPosition#>, animated: <#Bool#>)
+//                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+//               
+//                // check what last cell is 
+//                if let cell : TimelineCell = self.tableView.cellForRowAtIndexPath(indexPath)? as? TimelineCell{
+//                    
+//                
+//               println("Last row comments: \(cell.postLabel?.text)");
+//                }
+//                //UITableViewCell cell = self.tableView.cellForRowAtIndexPath(indexPath)
+//            }
             
             
             
@@ -344,17 +357,11 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
     
    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        
-        //let  footerCell = tableView.dequeueReusableCellWithIdentifier("FooterCell") as CustomFotterCell;
-        
-        //footerCell.backgroundColor = UIColor.cyanColor()
-        
-        
-        //let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
-        // footerView.backgroundColor = UIColor.blackColor()
+    
         
         footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: FOOTERHEIGHT))
         footerView?.backgroundColor = UIColor(red: 243.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
+    
         commentView = UITextView(frame: CGRect(x: 10, y: 5, width: tableView.bounds.width - 80 , height: 40))
         commentView?.backgroundColor = UIColor.whiteColor()
         commentView?.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
@@ -363,8 +370,11 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         
         footerView?.addSubview(commentView!)
         let button = UIButton(frame: CGRect(x: tableView.bounds.width - 65, y: 10, width: 60 , height: 30))
-        button.setTitle("Reply", forState: UIControlState.Normal)
-        button.backgroundColor = UIColor(red: 155.0/255, green: 189.0/255, blue: 113.0/255, alpha: 1)
+    
+    button.setBackgroundImage(UIImage(named: "Background"), forState: .Normal);
+        
+     button.setTitle("Add", forState: UIControlState.Normal)
+        //button.backgroundColor = UIColor(red: 155.0/255, green: 189.0/255, blue: 113.0/255, alpha: 1)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: "reply", forControlEvents: UIControlEvents.TouchUpInside)
         footerView?.addSubview(button)
@@ -700,4 +710,17 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
     }
 
 
-}
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // this gets a reference to the screen that we're about to transition to
+        
+        let toViewController = segue.destinationViewController as UIViewController
+        
+        // instead of using the default transition animation, we'll ask
+        // the segue to use our custom TransitionManager object to manage the transition animation
+        
+        toViewController.transitioningDelegate = self.transitionManager
+
+    }
+} // class
+

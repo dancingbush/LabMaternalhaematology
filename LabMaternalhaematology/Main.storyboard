@@ -4015,10 +4015,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="314"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="case3.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Dcw-4C-KVe">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="microscope.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Dcw-4C-KVe">
                                                             <rect key="frame" x="0.0" y="-13" width="176" height="260"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWp-KS-mNa">
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWp-KS-mNa">
                                                             <rect key="frame" x="0.0" y="255" width="176" height="59"/>
                                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
@@ -10442,20 +10442,20 @@
                                                         <constraint firstAttribute="width" constant="36" id="aeE-Cs-J7u"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KxH-nC-Vbu">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Folder60x60" translatesAutoresizingMaskIntoConstraints="NO" id="KxH-nC-Vbu">
                                                     <rect key="frame" x="52" y="14" width="54" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="54" id="AXF-f7-l4D"/>
                                                         <constraint firstAttribute="height" constant="54" id="Ik1-3l-CUz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q42-16-k7k">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Comments Added" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q42-16-k7k">
                                                     <rect key="frame" x="114" y="29" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-53-dhm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="......" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-53-dhm">
                                                     <rect key="frame" x="114" y="54" width="472" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -10468,7 +10468,7 @@
                                                         <constraint firstAttribute="width" constant="14" id="muG-Gx-dsz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-Nb-Mfm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="......." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-Nb-Mfm">
                                                     <rect key="frame" x="136" y="77" width="42" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -10821,13 +10821,13 @@
         <image name="3doceanIcon" width="33" height="33"/>
         <image name="Background" width="325" height="578"/>
         <image name="Email50x50" width="50" height="50"/>
+        <image name="Folder60x60" width="60" height="60"/>
         <image name="LogInApiKey_BG" width="500" height="88"/>
         <image name="LogInSubmitButton_BG" width="500" height="88"/>
         <image name="Lohin_Account_BG" width="640" height="113"/>
         <image name="activedenIcon" width="33" height="33"/>
         <image name="audiojungleIcon" width="33" height="33"/>
         <image name="backButton" width="18" height="47"/>
-        <image name="case3.JPG" width="118" height="118"/>
         <image name="categories-screen.png" width="940" height="1136"/>
         <image name="codecanyonIcon" width="33" height="33"/>
         <image name="datalabs2.jpg" width="399" height="268"/>
@@ -10842,6 +10842,7 @@
         <image name="history2.jpg" width="1035" height="1195"/>
         <image name="iEnvato" width="1024" height="1024"/>
         <image name="line" width="25" height="25"/>
+        <image name="microscope.jpg" width="555" height="240"/>
         <image name="oldpeople1.png" width="152" height="173"/>
         <image name="photoduneIcone" width="33" height="33"/>
         <image name="pizza" width="474" height="474"/>

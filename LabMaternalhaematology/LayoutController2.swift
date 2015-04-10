@@ -224,13 +224,23 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         var titleName = titles[indexPath.row];
         
         println("Image Name : \(imageName) \n Title Name : \(titleName)Cell image : ");
-        //cell.title.text = self.titles[indexPath.row % 5]
+        
+        /* If we return null for an image or titke must place placeholder omages by lazy intialisation*/
+        
         cell.title2.text? = self.titles[indexPath.row];
         
-        //let curr = indexPath.row % 5  + 1
-        //let imgName = "pin\(curr).jpg"
+        if let imageToAdd = UIImage(named: self.arrayOfIUmages[indexPath.row]){
+            
+             cell.pinImage2.image = UIImage(named: self.arrayOfIUmages[indexPath.row]);
+            
+        } else{
+            
+            cell.pinImage2.image = UIImage(named: "microscope.jpg");
+            
+            cell.title2?.text = "No Image."
+        }
         
-        cell.pinImage2.image = UIImage(named: self.arrayOfIUmages[indexPath.row]);
+        //cell.pinImage2.image = UIImage(named: self.arrayOfIUmages[indexPath.row]);
         
         //cell.pinImage.image = UIImage(named: imgName)
         

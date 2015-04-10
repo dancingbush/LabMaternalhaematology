@@ -21,7 +21,8 @@ var isARegsiteredUser : Bool = false;
 class LogInViewController: UIViewController {
     
 
-    
+    /*Manage ransistions*/
+    let transitionManager = TransistionManager();
     
     @IBOutlet weak var button: UIButton!
     
@@ -435,6 +436,18 @@ class LogInViewController: UIViewController {
     
     @IBAction func unwindToLogINViewController (sender: UIStoryboardSegue) {
         //self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // this gets a reference to the screen that we're about to transition to
+        
+        let toViewController = segue.destinationViewController as UIViewController
+        
+        // instead of using the default transition animation, we'll ask
+        // the segue to use our custom TransitionManager object to manage the transition animation
+        
+        toViewController.transitioningDelegate = self.transitionManager
     }
     
 }

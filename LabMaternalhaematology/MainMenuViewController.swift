@@ -15,6 +15,9 @@ import MessageUI
 
 class MainMenuViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
+    /*Manage ransistions*/
+    let transitionManager = TransistionManager();
+    
     
     // Views
     
@@ -153,14 +156,24 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+       
+            
+            // this gets a reference to the screen that we're about to transition to
+            
+            let toViewController = segue.destinationViewController as UIViewController
+            
+            // instead of using the default transition animation, we'll ask
+            // the segue to use our custom TransitionManager object to manage the transition animation
+            
+            toViewController.transitioningDelegate = self.transitionManager
+
+        
     }
-    */
+
 
 }
