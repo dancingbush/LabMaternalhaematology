@@ -190,6 +190,8 @@ class CasesTableViewTableViewController: UITableViewController {
         
         var caseNumberD = arrayOfCaseNumbers[indexPath.row] as String;
         
+        var hasResult : Bool = false;
+        
         if let scoreValueArray : [Dictionary<String, String>]  = defaults.objectForKey("userScoreForCase") as? Array{
             
             
@@ -221,11 +223,17 @@ class CasesTableViewTableViewController: UITableViewController {
                 // the csse n this row has ben answered so ste the score label
                 
                 caseCell.labelScore.text = theScore;
-            
-            } else if (caseNumberD != caseNumberString){
                 
-                caseCell.labelScore.text = "...";
-            }
+                hasResult = true;
+                }
+            
+//            } else if (caseNumberD != caseNumberString && !hasResult
+//                ){
+//                
+//                    //only do this if we dont get a result from caseNo = caseNumString
+//                    
+//                caseCell.labelScore.text = "...";
+//            }
                 
                 
             } // For dict in array

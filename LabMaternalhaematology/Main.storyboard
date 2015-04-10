@@ -370,7 +370,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="timeline-chat" translatesAutoresizingMaskIntoConstraints="NO" id="vFr-qD-nQz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Email50x50" translatesAutoresizingMaskIntoConstraints="NO" id="vFr-qD-nQz">
                                 <rect key="frame" x="122" y="442" width="70" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="Fjd-e5-9AR"/>
@@ -3472,7 +3472,7 @@
                                     <segue destination="qSS-ZW-yNh" kind="unwind" unwindAction="unwindToCasesTableView:" id="lP3-aN-Ynp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-Fc-oJ1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="history2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-Fc-oJ1">
                                 <rect key="frame" x="0.0" y="70" width="320" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="191" id="4cw-Bw-sqo"/>
@@ -7751,7 +7751,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="MMk-Uf-TY9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="datalabs2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MMk-Uf-TY9">
                                 <rect key="frame" x="0.0" y="70" width="320" height="193"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MMk-Uf-TY9" secondAttribute="height" multiplier="320:193" id="4rB-xd-JgF"/>
@@ -7902,7 +7902,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRd-qJ-yRc">
                                 <rect key="frame" x="11" y="452" width="301" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -8893,7 +8893,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bs6-CJ-Mx9">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bs6-CJ-Mx9">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="done" id="EGj-eo-xoD">
@@ -10820,6 +10820,7 @@
         <image name="15" width="1024" height="768"/>
         <image name="3doceanIcon" width="33" height="33"/>
         <image name="Background" width="325" height="578"/>
+        <image name="Email50x50" width="50" height="50"/>
         <image name="LogInApiKey_BG" width="500" height="88"/>
         <image name="LogInSubmitButton_BG" width="500" height="88"/>
         <image name="Lohin_Account_BG" width="640" height="113"/>
@@ -10829,6 +10830,7 @@
         <image name="case3.JPG" width="118" height="118"/>
         <image name="categories-screen.png" width="940" height="1136"/>
         <image name="codecanyonIcon" width="33" height="33"/>
+        <image name="datalabs2.jpg" width="399" height="268"/>
         <image name="default-placeholder" width="500" height="313"/>
         <image name="dividerLine" width="325" height="7"/>
         <image name="earningsIcon" width="25" height="25"/>
@@ -10837,6 +10839,7 @@
         <image name="graphicriverIcon" width="33" height="33"/>
         <image name="help-128" width="128" height="128"/>
         <image name="history" width="626" height="626"/>
+        <image name="history2.jpg" width="1035" height="1195"/>
         <image name="iEnvato" width="1024" height="1024"/>
         <image name="line" width="25" height="25"/>
         <image name="oldpeople1.png" width="152" height="173"/>
@@ -10847,10 +10850,9 @@
         <image name="spentIcon" width="25" height="25"/>
         <image name="swipeDown" width="242" height="217"/>
         <image name="themeforesIcon" width="33" height="33"/>
-        <image name="timeline-chat" width="36" height="36"/>
         <image name="videohiveIcon" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7fU-F6-RyD"/>
+        <segue reference="Itk-SQ-CGb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -34,7 +34,7 @@ class Summary: UIViewController {
     var frameNumber = 1; //animations
     var noOfCorrectAnwsers = "";
     //var deaultScoreResults : [String] = [];
-    var deaultScoreResults  = [Dictionary<String, String>](); // save NSSerdefaults in array fr each caseNumber as element to populate tablecell
+    //var deaultScoreResults  = [Dictionary<String, String>](); // save NSSerdefaults in array fr each caseNumber as element to populate tablecell
     
     
     
@@ -264,6 +264,8 @@ class Summary: UIViewController {
     }
     
     
+    
+    
     func setImageAndResult(){
         
         
@@ -271,6 +273,91 @@ class Summary: UIViewController {
         
         
         
+        // Caete the array for deaults lazily so it will not be overrodden, cant use let here as contants are immutable so will not allow to append 
+        
+        if var deaultScoreResults : [Dictionary<String, String>]  = defaults.objectForKey("userScoreForCase") as? Array{
+            
+            // we no array already created so we dont recreate and overwrite the current array
+            println("Array OF Case Answeres size : \(deaultScoreResults.count)");
+            
+            switch noOfCorrectAnwsers {
+                
+            case "1":
+                
+                //imageView.image = UIImage(named: "splash");
+                
+                labelResult.text = "Study Up!";
+                
+                println("Image set to 1 Correct Answer");
+                
+                // Insert result for element caseNumber for tablevoew cell, key:value = CaseResul : the Case Number/Result
+                
+                deaultScoreResults.append(["CaseResult":caseNumberString+"/Study Up!"])
+                
+                
+                
+                defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+                //defaults.setValue("Study up!", forKey: "caseResult");
+                
+                
+            case "2":
+                
+                //imageView.image = UIImage(named: "pizza");
+                
+                labelResult.text = "Good!";
+                
+                println("Image set to 2 Correct Answer");
+                
+                
+                //deaultScoreResults.append("Average!": )
+                //deaultScoreResults.insert("Average!", atIndex: caseNumberString.toInt()!);
+                
+                deaultScoreResults.append(["CaseResult":caseNumberString+"/Average!"])
+                
+                defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+                
+                //defaults.setValue("Average!!", forKey: "caseResult");
+                
+                
+            case "3":
+                
+                labelResult.text = "Excellant!";
+                
+                
+                
+                
+                deaultScoreResults.append(["CaseResult":caseNumberString+"/Excellant!"])
+                
+                
+                defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+                
+                
+                //defaults.setValue("Excellant!!", forKey: "caseResult");
+                
+                
+                
+            default:
+                
+                //imageView.image = UIImage(named: "default-placeholder");
+                
+                labelResult.text = "OMG!- Study!";
+                
+                println("Image set to 3 Correct Answer");
+                
+                
+                
+                // deaultScoreResults.insert("Study Up!", atIndex: caseNumberString.toInt()!);
+                
+                
+                deaultScoreResults.append(["CaseResult":caseNumberString+"/Study Up!"])
+                
+                defaults.setObject(deaultScoreResults, forKey: "userScoreForCase");
+            }
+            
+        }else {
+            
+            // we must craete the array
+            var deaultScoreResults  = [Dictionary<String, String>]()
         
         
         
@@ -355,8 +442,12 @@ class Summary: UIViewController {
             
         }// swict
         
+        }// else
+        
         
                }// setIMage
+
+    
 
     /*
     // MARK: - Navigation

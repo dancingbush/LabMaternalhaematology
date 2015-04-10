@@ -110,6 +110,14 @@
 		50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */; };
 		50A10B511AAE3BE200B7B0F3 /* bloodfilm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */; };
 		50A326061AD1BB2B009AC6A6 /* CustomFotterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A326051AD1BB2B009AC6A6 /* CustomFotterCell.swift */; };
+		50B05E9B1AD7DF1C0029104E /* microscope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05E9A1AD7DF1C0029104E /* microscope.jpg */; };
+		50B05E9D1AD7DF7B0029104E /* datalabs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05E9C1AD7DF7B0029104E /* datalabs.jpg */; };
+		50B05E9F1AD7E0560029104E /* datalabs2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05E9E1AD7E0560029104E /* datalabs2.jpg */; };
+		50B05EA11AD7E0660029104E /* summary1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05EA01AD7E0660029104E /* summary1.jpg */; };
+		50B05EA31AD7E2960029104E /* summary2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05EA21AD7E2960029104E /* summary2.jpg */; };
+		50B05EA71AD7E30F0029104E /* history1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05EA41AD7E30F0029104E /* history1.jpg */; };
+		50B05EA81AD7E30F0029104E /* history2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50B05EA51AD7E30F0029104E /* history2.gif */; };
+		50B05EA91AD7E30F0029104E /* history2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50B05EA61AD7E30F0029104E /* history2.jpg */; };
 		50B471771AB899D40084C45D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B471761AB899D40084C45D /* History.swift */; };
 		50C891281AD5BE1B00F18F86 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C891271AD5BE1B00F18F86 /* TimelineViewController.swift */; };
 		50C8912A1AD5BE2900F18F86 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C891291AD5BE2900F18F86 /* TimelineCell.swift */; };
@@ -241,6 +249,14 @@
 		50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		50A10B501AAE3BE200B7B0F3 /* bloodfilm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bloodfilm.jpg; sourceTree = "<group>"; };
 		50A326051AD1BB2B009AC6A6 /* CustomFotterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFotterCell.swift; sourceTree = "<group>"; };
+		50B05E9A1AD7DF1C0029104E /* microscope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = microscope.jpg; sourceTree = "<group>"; };
+		50B05E9C1AD7DF7B0029104E /* datalabs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = datalabs.jpg; sourceTree = "<group>"; };
+		50B05E9E1AD7E0560029104E /* datalabs2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = datalabs2.jpg; sourceTree = "<group>"; };
+		50B05EA01AD7E0660029104E /* summary1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = summary1.jpg; sourceTree = "<group>"; };
+		50B05EA21AD7E2960029104E /* summary2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = summary2.jpg; sourceTree = "<group>"; };
+		50B05EA41AD7E30F0029104E /* history1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history1.jpg; sourceTree = "<group>"; };
+		50B05EA51AD7E30F0029104E /* history2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = history2.gif; sourceTree = "<group>"; };
+		50B05EA61AD7E30F0029104E /* history2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history2.jpg; sourceTree = "<group>"; };
 		50B471761AB899D40084C45D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		50C891271AD5BE1B00F18F86 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		50C891291AD5BE2900F18F86 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
@@ -374,6 +390,13 @@
 		5063195B1AC1FB5100A0F322 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50B05EA01AD7E0660029104E /* summary1.jpg */,
+				50B05EA21AD7E2960029104E /* summary2.jpg */,
+				50B05E9E1AD7E0560029104E /* datalabs2.jpg */,
+				50B05EA41AD7E30F0029104E /* history1.jpg */,
+				50B05EA51AD7E30F0029104E /* history2.gif */,
+				50B05EA61AD7E30F0029104E /* history2.jpg */,
+				50B05E9A1AD7DF1C0029104E /* microscope.jpg */,
 				50C891531AD5C2F000F18F86 /* nav-bg-2.jpg */,
 				50201D341AB5E00B00F555EF /* case2a.jpg */,
 				50201D401AB5E03200F555EF /* case1b@2x.jpg */,
@@ -453,6 +476,7 @@
 		50EF40291AD161E200A259FA /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				50B05E9C1AD7DF7B0029104E /* datalabs.jpg */,
 				50C8912B1AD5BEF600F18F86 /* TuneUpTheme.swift */,
 				50C891291AD5BE2900F18F86 /* TimelineCell.swift */,
 				50C891271AD5BE1B00F18F86 /* TimelineViewController.swift */,
@@ -555,7 +579,9 @@
 				506319901AC1FC6200A0F322 /* slam5.png in Resources */,
 				506319B91AC1FC6F00A0F322 /* slam37.png in Resources */,
 				5063199D1AC1FC6200A0F322 /* slam19.png in Resources */,
+				50B05EA11AD7E0660029104E /* summary1.jpg in Resources */,
 				50201D381AB5E00B00F555EF /* iOS_ALL L2.jpg in Resources */,
+				50B05EA81AD7E30F0029104E /* history2.gif in Resources */,
 				50201D3C1AB5E00B00F555EF /* ios_tam1.JPG in Resources */,
 				5063199F1AC1FC6200A0F322 /* slam21.png in Resources */,
 				506319BF1AC1FC6F00A0F322 /* slam43.png in Resources */,
@@ -576,6 +602,7 @@
 				50201D491AB5E03200F555EF /* case2b@2x.JPG in Resources */,
 				506319651AC1FC4900A0F322 /* book2.png in Resources */,
 				506319A51AC1FC6200A0F322 /* slam27.png in Resources */,
+				50B05E9B1AD7DF1C0029104E /* microscope.jpg in Resources */,
 				506319A81AC1FC6200A0F322 /* slam30.png in Resources */,
 				5063196B1AC1FC4900A0F322 /* book8.png in Resources */,
 				506319A11AC1FC6200A0F322 /* slam23.png in Resources */,
@@ -584,6 +611,7 @@
 				506319A41AC1FC6200A0F322 /* slam26.png in Resources */,
 				506319951AC1FC6200A0F322 /* slam10.png in Resources */,
 				5045290A1AACBB7B001FB7C8 /* LaunchScreen.xib in Resources */,
+				50B05EA31AD7E2960029104E /* summary2.jpg in Resources */,
 				506319661AC1FC4900A0F322 /* book3.png in Resources */,
 				50201D4C1AB5E03200F555EF /* case3a@2x.jpg in Resources */,
 				5058A52C1ABA1FB5001B63CD /* main_screen.png in Resources */,
@@ -594,6 +622,7 @@
 				50201D391AB5E00B00F555EF /* case3d@2x.jpg in Resources */,
 				5096D1EE1ABF86B8004980FE /* oldpeople2.png in Resources */,
 				506319971AC1FC6200A0F322 /* slam13.png in Resources */,
+				50B05E9F1AD7E0560029104E /* datalabs2.jpg in Resources */,
 				5058A52A1ABA1FB5001B63CD /* categories-screen.png in Resources */,
 				506319641AC1FC4900A0F322 /* book1.png in Resources */,
 				5063199A1AC1FC6200A0F322 /* slam16.png in Resources */,
@@ -601,12 +630,14 @@
 				506319911AC1FC6200A0F322 /* slam6.png in Resources */,
 				506319BB1AC1FC6F00A0F322 /* slam39.png in Resources */,
 				506319BC1AC1FC6F00A0F322 /* slam40.png in Resources */,
+				50B05E9D1AD7DF7B0029104E /* datalabs.jpg in Resources */,
 				506319A31AC1FC6200A0F322 /* slam25.png in Resources */,
 				5058A52E1ABA1FB5001B63CD /* splash.png in Resources */,
 				506319BA1AC1FC6F00A0F322 /* slam38.png in Resources */,
 				506319B81AC1FC6F00A0F322 /* slam36.png in Resources */,
 				506319921AC1FC6200A0F322 /* slam7.png in Resources */,
 				506319B61AC1FC6F00A0F322 /* slam34.png in Resources */,
+				50B05EA71AD7E30F0029104E /* history1.jpg in Resources */,
 				506319941AC1FC6200A0F322 /* slam9.png in Resources */,
 				50201D3E1AB5E00B00F555EF /* methemoblobinemaia.gif in Resources */,
 				50201D481AB5E03200F555EF /* case1a@2x.jpg in Resources */,
@@ -617,6 +648,7 @@
 				50C891541AD5C2F000F18F86 /* nav-bg-2.jpg in Resources */,
 				5063198D1AC1FC6200A0F322 /* slam2.png in Resources */,
 				506319991AC1FC6200A0F322 /* slam15.png in Resources */,
+				50B05EA91AD7E30F0029104E /* history2.jpg in Resources */,
 				506319931AC1FC6200A0F322 /* slam8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
