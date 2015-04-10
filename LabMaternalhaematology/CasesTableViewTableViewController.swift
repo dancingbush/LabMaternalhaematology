@@ -222,7 +222,26 @@ class CasesTableViewTableViewController: UITableViewController {
                 
                 // the csse n this row has ben answered so ste the score label
                 
-                caseCell.labelScore.text = theScore;
+                //caseCell.labelScore.text = theScore;
+                switch theScore{
+                
+                case "Study Up!":
+                    
+                    caseCell.imageTrophy.image = UIImage(named: "trophy1.jpg");
+                    
+                case "Average!" :
+                    caseCell.imageTrophy.image = UIImage(named: "trophy2a1.jpg");
+                    
+                    case "Excellant!":
+                        
+                    caseCell.imageTrophy.image = UIImage(named: "trophy3.jpg");
+                    
+                default:
+                    
+                    println();
+                     caseCell.imageTrophy.image = UIImage(named: "trophy3.jpg");
+                
+                }
                 
                 hasResult = true;
                 }

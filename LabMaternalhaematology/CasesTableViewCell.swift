@@ -15,7 +15,8 @@ class CasesTableViewCell: UITableViewCell {
     @IBOutlet weak var imageLeft: UIImageView!
     
     
-    @IBOutlet weak var labelScore: UILabel!
+    @IBOutlet weak var imageTrophy: UIImageView!
+    //@IBOutlet weak var labelScore: UILabel!
     //@IBOutlet weak var labelCaseNumber: UIView!
     
     @IBOutlet weak var labelCaseNo: UILabel!
