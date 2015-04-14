@@ -402,6 +402,7 @@
 		5063195B1AC1FB5100A0F322 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50B05E9C1AD7DF7B0029104E /* datalabs.jpg */,
 				50B05EA01AD7E0660029104E /* summary1.jpg */,
 				50B05EA21AD7E2960029104E /* summary2.jpg */,
 				50B05E9E1AD7E0560029104E /* datalabs2.jpg */,
@@ -491,7 +492,6 @@
 		50EF40291AD161E200A259FA /* Comments */ = {
 			isa = PBXGroup;
 			children = (
-				50B05E9C1AD7DF7B0029104E /* datalabs.jpg */,
 				50C8912B1AD5BEF600F18F86 /* TuneUpTheme.swift */,
 				50C891291AD5BE2900F18F86 /* TimelineCell.swift */,
 				50C891271AD5BE1B00F18F86 /* TimelineViewController.swift */,
