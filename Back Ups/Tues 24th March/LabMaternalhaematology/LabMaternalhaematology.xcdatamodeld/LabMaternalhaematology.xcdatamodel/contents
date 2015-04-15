@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Cases" syncable="YES">
+        <attribute name="answer1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer1option1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer1option2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer1option3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2option1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2option2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2option3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="case" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="question1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="results" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Cases"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="Cases" positionX="-63" positionY="-18" width="128" height="329"/>
+    </elements>
+</model>

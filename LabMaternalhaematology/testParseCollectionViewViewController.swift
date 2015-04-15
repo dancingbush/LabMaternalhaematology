@@ -72,6 +72,7 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
     
   
     
+    @IBOutlet weak var testImagevIew: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -196,7 +197,11 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
     
     func loadImageFromPath(path : String) -> UIImage{
         
-        let image = UIImage(contentsOfFile: path);
+        let image = UIImage(contentsOfFile: path); // returns an image from specofoed file (string)
+        
+        
+        println("Image returned from File : \(image?.description)");
+       
         
         if image == nil{
             
@@ -258,7 +263,7 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
         
         println("\n\nResults from DB \(results?.count) and teh results object \(results)\n\n");
         
-        if results?.count > 0{
+        if results?.count > 1{
             
             
             
@@ -269,6 +274,15 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                 println("Database object form parse: \(result.count) and contents : \(result.description)");
                 
                 
+//                // delet object and save for debugging
+//                context.deleteObject(result as NSManagedObject);
+//                
+//                
+//               
+//                
+//                context.save(&error);
+//                
+//                println("DELETED CORE DATA OBJECT : \(result)");
                 // Save to arrays only of a value exists ie not == nil
                 if let tehCaseNumber : String = result.valueForKey("casenumber") as? String{
                     
@@ -284,7 +298,7 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                     var quest2 = result.valueForKey("q2") as? String
 
                     println("\n\nCOre data URL Array number = \(arrayOfCoredataImage.count) and contents \(arrayOfCoredataImage)\n\n");
-                }
+                //}
 //                if let caseNum : String = result.valueForKey("caseNumber") as? String{
 //                    
 //                    if (caseNum == theCase){
@@ -295,11 +309,17 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
 //                        println(result);
 //                    }
                 
-                }
-        }else{
+                //}
+        } else {
             
             println("No Data, no of entries = \(results?.count)");
+ 
+            
+            } // else
+            } // for
+            
         }
+        
 
         
         
@@ -333,9 +353,11 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                     var error : NSError? = nil;
                     
                      // save to DB and handle error if present
-                    context.save(&error);
+                   // context.save(&error);
                     
                     println("COMMIT STRIGS TO DATABASE");
+                    
+                    var fileExtenion = "";
                     
                     let caseImageFile1 = theCase["image1File"] as PFFile
                     caseImageFile1.getDataInBackgroundWithBlock {
@@ -346,21 +368,45 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             self.ArrayOfParseImages.append(image!);
                             
-                            var desc = image?.description;
-                            println("Image description form Parse: \(desc)");
-                            
-                            println("Images Array from Parse Count: \(self.ArrayOfParseImages.count) ")
+                                                        println("Images Array from Parse Count: \(self.ArrayOfParseImages.count) ")
                             
                             self.collectionView.reloadData();
                             
                             
+                            // Get url of image from data from parse so we can check if t os a png or jpeg extensiom
+                            
+                            let imageURLFromParse = caseImageFile1.url;
+                            
+                            //let imageURLFromParse = NSURL(string : caseImageFile1.url);
+                            
+                            if(imageURLFromParse.pathExtension.lowercaseString == ".jpg" || imageURLFromParse.pathExtension.lowercaseString == ".jpeg"){
+                                
+                                println("Parse image ext is a jpg: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".jpg";
+                                
+                            }else if (imageURLFromParse.pathExtension.lowercaseString == ".png"){
+                                
+                                println("Parse image is a png: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".png";
+                                
+                            }
+                            
+                            else{
+                                fileExtenion = ".png";
+
+                                println("DEFAULTING TO file tyoe, Parse image is a png: \(imageURLFromParse.pathExtension.lowercaseString)");
+                            }
+                            
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)a");
+                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)a\(fileExtenion)");
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
-                            self.saveImageToDirectory(image!, path: filePath, imageType: "png");
+                            self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
                             // save to core data object
                             newEntry3.setValue(filePath, forKey: "image1");
@@ -372,9 +418,13 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             var error : NSError? = nil;
                             
-//                            context.save(&error);
-//                            
-//                            println("COMMIT IMAGE1 URL TO DATABASE");
+                            context.save(&error);
+                            
+                            
+                            //load the image 
+                            //self.testImagevIew.image = coredDataImage;
+                            
+                            println("COMMIT IMAGE1 URL TO DATABASE");
                             
                             
                         }
@@ -391,13 +441,32 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                            self.collectionView.reloadData();
                             
+                            
+//                            You have to use NSURL(string: "yoururl")!.pathExtension the parse url property actually returns a string so you need to convert it to NSURL if the url points to a local resource you need to use NSURL(fileURLWithPath)
+                            let imageURLFromParse = caseImageFile2.url;
+                            
+                            if(imageURLFromParse.pathExtension.lowercaseString == ".jpg" || imageURLFromParse.pathExtension.lowercaseString == ".jpeg"){
+                                
+                                println("Parse image ext is a jpg: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".jpg";
+                                
+                            }else {
+                                
+                                println("Parse image is a png: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".png";
+                                
+                            }
+
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)b");
+                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)b\(fileExtenion)");
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
-                            self.saveImageToDirectory(image!, path: filePath, imageType: "png");
+                            self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
                             // save to core data object
                             newEntry3.setValue(filePath, forKey: "image2");
@@ -409,9 +478,13 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             var error : NSError? = nil;
                             
-//                            context.save(&error);
-//                            
-//                            println("COMMIT IMAGE2 URL TO DATABASE");
+                            context.save(&error);
+                            
+                            
+                            //load the image
+                            //self.testImagevIew.image = coredDataImage;
+                            
+                            println("COMMIT IMAGE2 URL TO DATABASE");
 
                             
                         }
@@ -428,13 +501,31 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             self.collectionView.reloadData();
                             
+                            
+                            let imageURLFromParse = caseImageFile3.url;
+                            
+                            if(imageURLFromParse.pathExtension.lowercaseString == ".jpg" || imageURLFromParse.pathExtension.lowercaseString == ".jpeg"){
+                                
+                                println("Parse image ext is a jpg: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".jpg";
+                                
+                            }else {
+                                
+                                println("Parse image is a png: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".png";
+                                
+                            }
+
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)c");
+                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)c\(fileExtenion)");
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
-                            self.saveImageToDirectory(image!, path: filePath, imageType: "png");
+                            self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
                             // save to core data object
                             newEntry3.setValue(filePath, forKey: "image3");
@@ -446,9 +537,12 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             var error : NSError? = nil;
                             
-//                            context.save(&error);
-//                            
-//                            println("COMMIT IMAGE3 URL TO DATABASE");
+                            context.save(&error);
+                            
+                            //load the image
+                            //self.testImagevIew.image = coredDataImage;
+                            
+                            println("COMMIT IMAGE3 URL TO DATABASE");
 
                             
                         }
@@ -465,13 +559,31 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             self.collectionView.reloadData();
                             
+                            
+                            let imageURLFromParse = caseImageFile4.url;
+                            
+                            if(imageURLFromParse.pathExtension.lowercaseString == ".jpg" || imageURLFromParse.pathExtension.lowercaseString == ".jpeg"){
+                                
+                                println("Parse image ext is a jpg: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".jpg";
+                                
+                            }else {
+                                
+                                println("Parse image is a png: \(imageURLFromParse.pathExtension.lowercaseString)");
+                                
+                                fileExtenion = ".png";
+                                
+                            }
+
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)d");
+                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)d\(fileExtenion)");
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
-                            self.saveImageToDirectory(image!, path: filePath, imageType: "png");
+                            self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
                             // save to core data object
                             newEntry3.setValue(filePath, forKey: "image4");
@@ -483,9 +595,12 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             
                             var error : NSError? = nil;
                             
-//                           context.save(&error);
-//                            
-//                            println("COMMIT IMAGE4 URL TO DATABASE");
+                           context.save(&error);
+                            
+                            //load the image
+                            //self.testImagevIew.image = coredDataImage;
+                            
+                            println("COMMIT IMAGE4 URL TO DATABASE");
 
                             
                         }
@@ -601,9 +716,24 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
         // check any omage sin array form parse first if not load elsewhere
         
         
-        if(ArrayOfParseImages.count > 1){
+//        if(ArrayOfParseImages.count > 1){
+//            
+//            cell.pinImage2.image = ArrayOfParseImages[indexPath.row];
+        
+        // get from url stored in core data
+        
+        if(arrayOfCoredataImage.count > 1){
             
-            cell.pinImage2.image = ArrayOfParseImages[indexPath.row];
+            var filePath = arrayOfCoredataImage[indexPath.row];
+            
+            println("\n\n\nCollection View Image URL from cor dta filePath: \(filePath)\n");
+            
+            var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+            
+            println("The image retruend from URL : \(coredDataImage.description)");
+            
+            cell.pinImage2.image = coredDataImage;
+            
             
         } else{
             

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Case" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apgar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="caseNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="caseSummary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hgb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mchc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mcv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="others" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plts" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q1Answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q1ImageTitleA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q1ImageTitleB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q1ImageTitleC" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q1ImageTitleD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionADialog" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionBDialog" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionC" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionCDialog" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2OptionDDialog" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question_image1OptionA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question_image1OptionB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question_image1OptionC" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question_image1OptionD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question1Image1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question1Image2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question1Image3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question1Image4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question2Answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question3Answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question3OptionA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question3OptionB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question3OptionC" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question3OptionD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theQuestion2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theQuestion3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wcc" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Cases" syncable="YES">
+        <attribute name="answer1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer1option1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer1option2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer1option3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2option1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2option2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer2option3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="case" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="question1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="results" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Cases"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="Case" positionX="-63" positionY="126" width="128" height="705"/>
+        <element name="Cases" positionX="-63" positionY="-18" width="128" height="329"/>
+    </elements>
+</model>
