@@ -8,8 +8,17 @@
 
 /*Test VC with collection voew for dowcloading image files from parse and also save to code data as url*/
 
+/*DO NOT SAVE A FULL DIR PATH TO CORE DATA, SAVE THE FILE/IMAGE NAME APPENDD TO THE DOCS DIRECTORRY, LOAD BACK THE SAM WYA, GET THE DOCS DIRECTPRY OF DEVICE IBDEPTENLTY ( SEE CODE ) THEN APPEND FILENAME FORM CORE DATA (STRING)*/
+
 import UIKit
 import CoreData
+
+
+// DEBUGGING: New Device must clear core data base and enter new URLS for images on that device so, STE saveToDB TO FALSE WHEN RNNING ON A NEW DEVICE AS NEED THE TO DSAVE THE IMAGE DATA TO DOCS DIR - AND DELTE OBJECTS TO TRUE, THEW QUIT APP AND SET saveToDB = TRUE, delteObj = FALSE, THIS WILLS ET EVRTYHTING UP, QUIT AND NOW SET BOTH TO FALSE RUN AGAIN
+
+
+var saveToDataBase = false; // false while delting DB contents
+var deleteObjectsFromDB = false; // delte db contents = true
 
 // Global methonds for getting directories to save images
 func documentsDirectory() -> String {
@@ -19,6 +28,13 @@ func documentsDirectory() -> String {
     
     let documentsFolderPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as String;
     return documentsFolderPath
+    
+    
+//    // Get path to the Documents Dir.
+//    let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+//    let documentsDir: NSString = paths.objectAtIndex(0) as NSString
+    
+
     
 }
 
@@ -176,6 +192,9 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
             
             let result = pngImageData.writeToFile(path, atomically: true);
             
+            
+            //pngFullData.writeToFile(pathFull, atomically: true)
+            
             return result;
             
         } else{
@@ -200,7 +219,7 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
         let image = UIImage(contentsOfFile: path); // returns an image from specofoed file (string)
         
         
-        println("Image returned from File : \(image?.description)");
+        println("\n\nImage returned from File : \(image?.description)\n\n");
        
         
         if image == nil{
@@ -209,29 +228,13 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
             
         }
         
-        println("Image is stored in this location - can find in Finder: \(path)");
+        println("\n\nImage is stored in this location - can find in Finder: \(path)");
         
         return image!;
         
     }
     
-    
-//    func loadImageFromPath(path: String) -> UIImage? {
-//        
-//        let image = UIImage(contentsOfFile: path)
-//        
-//        if image == nil {
-//            
-//            println("missing image at: (path)")
-//        }
-//        println("(path)") // this is just for you to see the path in case you want to go to the directory, using Finder.
-//        return image
-//        
-//    }
 
-    
-    // Define the specific path, image name
-    //let imagePath = fileInDocumentsDirectory(myImageName)
     
     
    
@@ -275,14 +278,21 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                 
                 
 //                // delet object and save for debugging
-//                context.deleteObject(result as NSManagedObject);
-//                
-//                
-//               
-//                
-//                context.save(&error);
-//                
-//                println("DELETED CORE DATA OBJECT : \(result)");
+                
+                if(deleteObjectsFromDB){
+                    
+                    context.deleteObject(result as NSManagedObject);
+                    
+                    
+                    
+                    
+                    context.save(&error);
+                    
+                    println("DELETED CORE DATA OBJECT : \(result)");
+                    
+                }else if(!deleteObjectsFromDB){
+                  
+                
                 // Save to arrays only of a value exists ie not == nil
                 if let tehCaseNumber : String = result.valueForKey("casenumber") as? String{
                     
@@ -316,11 +326,14 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
  
             
             } // else
+                
+                 }//!deleteFRomDA
+            
             } // for
             
         }
         
-
+   
         
         
 
@@ -344,18 +357,23 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                     
                     let caseNumber = theCase["CaseNumber"] as String;
                     
+                    
+                     if(saveToDataBase){
+                    
                     // Save from parse to core data Entty TestParse
                     newEntry3.setValue(history, forKey: "history");
                     newEntry3.setValue(q1, forKey: "q1");
                     newEntry3.setValue(q2, forKey: "q2");
                     newEntry3.setValue(caseNumber , forKey: "casenumber");
+                        println("COMMIT STRIGS TO DATABASE");
                     
-                    var error : NSError? = nil;
+                    }
+                    //var error : NSError? = nil;
                     
                      // save to DB and handle error if present
                    // context.save(&error);
                     
-                    println("COMMIT STRIGS TO DATABASE");
+                    
                     
                     var fileExtenion = "";
                     
@@ -400,31 +418,52 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             }
                             
                             
+                            // Imahe url/name
+                            var imgaeURLName = "Case\(caseNumber)a\(fileExtenion)";
+                            
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)a\(fileExtenion)");
+                            
+                            var filePath = fileInDocumentsDirectory(imgaeURLName);
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
                             self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
-                            // save to core data object
-                            newEntry3.setValue(filePath, forKey: "image1");
+                            
+                            
+                            
+                            // save to core data object : Only Save the image name and not full path as will not reload properly after quiting and starting app!! When we reload image we just get the path from functions and appedn the imagename form core data
+                            
+                           // newEntry3.setValue(filePath, forKey: "image1");
+                            
+                           
                             
                             // Afterpopulating array of URLS for core data for a given case, Load image back form url, this will be in populating voews in collection voew
-                            var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            //var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            var coredDataImage : UIImage =  self.loadImageFromPath(fileInDocumentsDirectory(imgaeURLName));
                             
                             println("The image retruend from URL : \(coredDataImage.description)");
                             
                             var error : NSError? = nil;
                             
-                            context.save(&error);
+                            if(saveToDataBase){
+                                
                             
+                             newEntry3.setValue(imgaeURLName, forKey: "image1");
+                                
+                           context.save(&error);
+                                
+                                println("\n\nCOMMIT IMAGE1 URL TO DATABASE\n\n");
+                            }
                             
                             //load the image 
                             //self.testImagevIew.image = coredDataImage;
                             
-                            println("COMMIT IMAGE1 URL TO DATABASE");
+                            
                             
                             
                         }
@@ -460,31 +499,46 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             }
 
                             
+                            // Imahe url/name
+                            var imgaeURLName = "Case\(caseNumber)b\(fileExtenion)";
+                            
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)b\(fileExtenion)");
+                            
+                            var filePath = fileInDocumentsDirectory(imgaeURLName);
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
                             self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
-                            // save to core data object
-                            newEntry3.setValue(filePath, forKey: "image2");
+                            
+                            
+                            
+                            // save to core data object : Only Save the image name and not full path as will not reload properly after quiting and starting app!! When we reload image we just get the path from functions and appedn the imagename form core data
+                            
+                            // newEntry3.setValue(filePath, forKey: "image1");
+                            
                             
                             // Afterpopulating array of URLS for core data for a given case, Load image back form url, this will be in populating voews in collection voew
-                            var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            //var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            var coredDataImage : UIImage =  self.loadImageFromPath(fileInDocumentsDirectory(imgaeURLName));
                             
                             println("The image retruend from URL : \(coredDataImage.description)");
                             
                             var error : NSError? = nil;
                             
-                            context.save(&error);
-                            
-                            
-                            //load the image
-                            //self.testImagevIew.image = coredDataImage;
-                            
-                            println("COMMIT IMAGE2 URL TO DATABASE");
+                            if(saveToDataBase){
+                                
+                                
+                                newEntry3.setValue(imgaeURLName, forKey: "image2");
+
+                                context.save(&error);
+                                
+                                println("\n\\nCOMMIT IMAGE2 URL TO DATABASE");
+                            }
 
                             
                         }
@@ -519,31 +573,46 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             }
 
                             
+                            // Imahe url/name
+                            var imgaeURLName = "Case\(caseNumber)c\(fileExtenion)";
+                            
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)c\(fileExtenion)");
+                            
+                            var filePath = fileInDocumentsDirectory(imgaeURLName);
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
                             self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
-                            // save to core data object
-                            newEntry3.setValue(filePath, forKey: "image3");
+                            
+                            
+                            
+                            // save to core data object : Only Save the image name and not full path as will not reload properly after quiting and starting app!! When we reload image we just get the path from functions and appedn the imagename form core data
+                            
+                            // newEntry3.setValue(filePath, forKey: "image1");
+                            
                             
                             // Afterpopulating array of URLS for core data for a given case, Load image back form url, this will be in populating voews in collection voew
-                            var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            //var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            var coredDataImage : UIImage =  self.loadImageFromPath(fileInDocumentsDirectory(imgaeURLName));
                             
                             println("The image retruend from URL : \(coredDataImage.description)");
                             
                             var error : NSError? = nil;
                             
-                            context.save(&error);
-                            
-                            //load the image
-                            //self.testImagevIew.image = coredDataImage;
-                            
-                            println("COMMIT IMAGE3 URL TO DATABASE");
+                            if(saveToDataBase){
+                                
+                                newEntry3.setValue(imgaeURLName, forKey: "image3");
 
+                                
+                                context.save(&error);
+                                
+                                println("\n\nCOMMIT IMAGE3 URL TO DATABASE\n");
+                            }
                             
                         }
                     }// caseimage
@@ -577,31 +646,47 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
                             }
 
                             
+                            // Imahe url/name
+                            var imgaeURLName = "Case\(caseNumber)d\(fileExtenion)";
+                            
+                            
                             // Save as URL ro phone and then to core data as URL string
                             
-                            var filePath = fileInDocumentsDirectory("Case\(caseNumber)d\(fileExtenion)");
+                            
+                            var filePath = fileInDocumentsDirectory(imgaeURLName);
                             
                             println("\n\nSAVING image to directory : \(filePath)");
                             
                             self.saveImageToDirectory(image!, path: filePath, imageType: fileExtenion);
                             
-                            // save to core data object
-                            newEntry3.setValue(filePath, forKey: "image4");
+                            
+                            
+                            
+                            // save to core data object : Only Save the image name and not full path as will not reload properly after quiting and starting app!! When we reload image we just get the path from functions and appedn the imagename form core data
+                            
+                            // newEntry3.setValue(filePath, forKey: "image1");
+                            
                             
                             // Afterpopulating array of URLS for core data for a given case, Load image back form url, this will be in populating voews in collection voew
-                            var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            //var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
+                            
+                            var coredDataImage : UIImage =  self.loadImageFromPath(fileInDocumentsDirectory(imgaeURLName));
                             
                             println("The image retruend from URL : \(coredDataImage.description)");
                             
                             var error : NSError? = nil;
                             
-                           context.save(&error);
-                            
-                            //load the image
-                            //self.testImagevIew.image = coredDataImage;
-                            
-                            println("COMMIT IMAGE4 URL TO DATABASE");
+                            if(saveToDataBase){
+                                
+                                newEntry3.setValue(imgaeURLName, forKey: "image4");
 
+                                
+                                
+                                context.save(&error);
+                                
+                                println("\n\nCOMMIT IMAGE4 URL TO DATABASE\n\n");
+                            }
                             
                         }
                     }// caseimage
@@ -722,11 +807,14 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
         
         // get from url stored in core data
         
-        if(arrayOfCoredataImage.count > 1){
+        if(arrayOfCoredataImage.count > 1) {
             
-            var filePath = arrayOfCoredataImage[indexPath.row];
+            var imageURL = arrayOfCoredataImage[indexPath.row]
             
-            println("\n\n\nCollection View Image URL from cor dta filePath: \(filePath)\n");
+            println("\n\n\nCollection View Image URL from cor dta filePath: \(imageURL)\n");
+            
+            
+            var filePath = fileInDocumentsDirectory(imageURL);
             
             var coredDataImage : UIImage =  self.loadImageFromPath(filePath);
             
@@ -735,7 +823,7 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
             cell.pinImage2.image = coredDataImage;
             
             
-        } else{
+        } else {
             
             var imageName = arrayOfIUmages[indexPath.row];
             
