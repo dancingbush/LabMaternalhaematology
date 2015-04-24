@@ -21,6 +21,7 @@ var saveToDataBase = false; // false while delting DB contents
 var deleteObjectsFromDB = false; // delte db contents = true
 
 // Global methonds for getting directories to save images
+/*
 func documentsDirectory() -> String {
     
     // Get the documents Directory for image url
@@ -36,10 +37,10 @@ func documentsDirectory() -> String {
     
 
     
-}
+}*/
 
 
-
+/*
 func fileInDocumentsDirectory(filename: String) -> String {
     
     // Get path for a file in the directory
@@ -48,7 +49,7 @@ func fileInDocumentsDirectory(filename: String) -> String {
     
     
 }
-
+*/ 
 
 class testParseCollectionViewViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -214,6 +215,7 @@ class testParseCollectionViewViewController: UIViewController, UICollectionViewD
     }
     
     
+    // GET IMAGE FROM CORE DATA
     func loadImageFromPath(path : String) -> UIImage{
         
         let image = UIImage(contentsOfFile: path); // returns an image from specofoed file (string)

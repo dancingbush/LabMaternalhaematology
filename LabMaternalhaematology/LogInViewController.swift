@@ -123,8 +123,13 @@ class LogInViewController: UIViewController {
                             
                             println("Log in Failed: \(theError)");
                             
+                            
+                            
                             self.loader.stopAnimating();
                             self.loader.hidden = true;
+                            
+                            
+                            self.displayAlert("Log In Error", message: "Opps! \(theError)");
                         }
                     }
                 }
