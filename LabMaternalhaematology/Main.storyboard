@@ -10704,6 +10704,7 @@
                         <outlet property="buttonCases" destination="gqk-1I-Cmm" id="sW6-VL-zqh"/>
                         <outlet property="buttonLogout" destination="4dZ-8Q-FFI" id="sYA-Ch-A9c"/>
                         <outlet property="labelWelcomeUser" destination="lY5-vb-hF3" id="ebG-cI-c1z"/>
+                        <outlet property="loader" destination="qDr-p6-zRi" id="OU7-FB-7jH"/>
                         <segue destination="eqS-fY-ez9" kind="show" identifier="segueToAbout" id="XIo-aw-3at"/>
                         <segue destination="q8w-1t-6Go" kind="show" identifier="segueToLogInScreen" id="bWA-O2-c8v"/>
                     </connections>

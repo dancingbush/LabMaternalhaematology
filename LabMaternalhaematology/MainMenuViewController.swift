@@ -62,6 +62,10 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     var arrayParseCases : [String] = [];
     
+    var noOfImagesDownloaded = 1; //track the asyn downloading of images
+    
+    
+    
     
     
     
@@ -69,6 +73,10 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     // Views
     
     @IBOutlet weak var labelWelcomeUser: UILabel!
+    
+    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    //@IBOutlet weak var loader: UIActivityIndicatorView!
     
     @IBOutlet weak var buttonLogout: UIButton!
     @IBOutlet weak var buttonCases: UIButton!
@@ -130,6 +138,14 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
 
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        // before view renders hide loader
+        
+        loader.hidden = true;
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -150,14 +166,29 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     }
         
+        /* Tested:
+        - Core Data Empty = ok
+        - Pasre Data Empty
+        - Core data and Parse data have same highest number case = ok
+        - core data has less cases than Parse and downloads the enxt case = ok
+        - Parse has two more cases higher than the last Core data Case
+
+        */
         
         arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
         
+        
         /*add a case to test corde dtabase here*/
 
-        //writeToPracticeCoreData();
+       // writeToPracticeCoreData();
         
-        arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
+        // Debugging see if new case added correctly
+        //checkCoreDataForNewCase();
+        
+        //deleteALlObjectsFromCoredAta();
+        
+        // check for new arse case
+       arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
         
         
         
@@ -183,6 +214,9 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     func downloadCaseNumbersFromParse() -> Array<String>{
         
         // query parse case stidies class and get the case number query
+        
+        self.loader.hidden = false
+        self.loader.startAnimating()
         
         var loadParseToCore = false;
         
@@ -210,11 +244,32 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 
 
             }//if nil
+            else{
+                
+                println("\nCant download case from parse error = : \(error)");
+            }
+            
+            
+            
+            // Sort our array of strings represtning each case number with a sort closure
+            self.arrayParseCases = sorted(self.arrayParseCases, {
+                (str1: String , str2 : String) -> Bool in
+                
+                return str1.toInt() < str2.toInt();
+            })
+            
+            println("\n\nSorted Addray Of Pasre Cases in order of ccase no: \(self.arrayParseCases)");
+            
             
             
             /*Do this here instead of viewDidLoad as tasks run aysnchorouny*/
             
-            var lastCaseNuberFromParse : Int = self.arrayParseCases.last!.toInt()!;
+            if(!self.arrayParseCases.isEmpty){
+                
+                
+                
+                var lastCaseNuberFromParse : Int = self.arrayParseCases.last!.toInt()!;
+            
             
             
             if var lastCaseNuberFromCore : Int = self.arrayOfCoreDataCaseNumbers.last!.toInt(){
@@ -225,11 +280,14 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                     
                     // write case from parse to core data after gd task executes
                     
-                    //self.loadCaseFromParseTo_CoreData();
+                    self.loadCaseFromParseTo_CoreData();
                     
-                    loadParseToCore = true;
+                    //loadParseToCore = true;
                     
                     
+                }else{
+                    
+                    println("NOT ADDING A CASE TO CORE DATA FROM PARSE AS BOTH DB'S ARE SYNCHED..core last case = \(lastCaseNuberFromCore) and Parse DB last case : \(lastCaseNuberFromParse)");
                 }
 
                 
@@ -237,19 +295,29 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             }// if let
             else{
                 
-                println("Core Data Base empty");
+                println("Core Data Base empty, cant add  aparse case unless CD base has at least one entry with a cse number\n");
+                
+                self.loader.stopAnimating();
+                self.loader.hidden = true;
             }
             
             
-            
+            }// if let arayParse last int
+            else{
+                
+                println("PAsre Data Base empty, cant add  aparse case unless CD base has at least one entry with a cse number\n");
+                
+                self.loader.stopAnimating();
+                self.loader.hidden = true;
+            }
             
             println("\n\nTHREAD - CASE FROM PARSE FINISH \n\n");
             
-            if(loadParseToCore){
-                
-                self.loadCaseFromParseTo_CoreData();
-                
-            }
+//            if(loadParseToCore){
+//                
+//                self.loadCaseFromParseTo_CoreData();
+//                
+//            }
         }// bgrd task
         
         
@@ -325,6 +393,9 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                         
                         println("No Data, no of entries = \(results?.count)");
                         
+                        self.loader.stopAnimating();
+                        self.loader.hidden = true;
+                        
                         
                     } // else
                     
@@ -335,6 +406,18 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
 
         
         
+        
+        // Sort the array strings numbers into soted array of incraesing string integers
+        
+        arrayCoreCases = sorted(arrayCoreCases, {(
+            str1: String, str2: String) -> Bool in
+            
+            return str1.toInt() < str2.toInt();
+            
+        })
+       
+        
+        println("\n\nSorted Addray Of Core Data Cases in order of ccase no: \(arrayCoreCases)");
         return arrayCoreCases;
     }
     
@@ -346,7 +429,10 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         // query Parse Object and load to core data
         
-        println("Loading case from parse.....array Parse \(arrayOfParseCaseNumbers.count)");
+        self.loader.hidden = false
+        self.loader.startAnimating()
+        
+        println("Animating and Loading case from parse.....array Parse \(arrayParseCases.count)");
         
         for caseNoInParseArray in arrayParseCases{
             
@@ -354,7 +440,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             
             var lastCaseInCoreData = self.arrayOfCoreDataCaseNumbers.last?.toInt();
             
-            println("Checking if case in Parse is greater than last case in Core, if so then download to core data..Last case in parse = \(caseInteger) Last case in core \(lastCaseInCoreData)");
+            println("\n\nChecking if case in Parse is greater than last case in Core, if so then download to core data..current case of array in parse = \(caseInteger) Last case in core \(lastCaseInCoreData)\n\n");
             
             
             if(caseInteger > lastCaseInCoreData){
@@ -380,7 +466,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 
                 newCase.findObjectsInBackgroundWithBlock { (objects : [AnyObject]!, error: NSError!) -> Void in
                     
-                    println("\n\nTHREAD - CASE FROM PARSE TO CORE DATA START\n\n");
+                    println("\n\nTHREAD - CASE FROM PARSE TO CORE DATA START, NO OF CASES = \(objects.count)\n\n");
                     if error == nil{
                         
                         for theCase in objects{
@@ -484,13 +570,33 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     context.save(&error);
                                     
                                     
+                                    
+                                    
                                     /*Make sure image is retrivable form directory of phone*/
                                     var coredDataImage : UIImage =  self.loadImageFromPath(fileInDocumentsDirectory(imgaeURLName));
                                     
                                     println("\n\nThe image retruend from URL : \(coredDataImage.description)");
                                     
                                     
-                                    println("\n\nTHREAD - FINISHED SAVING IMAGE1 FROM PARSE TO CORE\n");
+                                    println("\n\nTHREAD - FINISHED SAVING IMAGE1 FROM PARSE TO CORE, NO OF IMAGES DOWNLOADED = \(self.noOfImagesDownloaded)\n");
+                                    
+                                    
+                                    //if all images downloaded then stop animation
+                                    
+                                    self.noOfImagesDownloaded++;
+                                    
+                                    if(self.noOfImagesDownloaded == 5){
+                                        
+                                        self.loader.stopAnimating();
+                                        self.loader.hidden = true;
+                                        
+                                        //reset
+                                        self.noOfImagesDownloaded = 1;
+
+
+                                        
+                                        
+                                    }
                                     
                                 
                                 }
@@ -541,7 +647,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image1");
+                                    newEntry3.setValue(imgaeURLName, forKey: "image2");
                                     
                                     context.save(&error);
                                     
@@ -549,7 +655,23 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     println("\n\nThe image retruend from URL : \(coredDataImage.description)");
                                     
-                                    println("\n\nTHREAD - FINISHED SAVING IMAGE2 FROM PARSE TO CORE\n");
+                                    println("\n\nTHREAD - FINISHED SAVING IMAGE2 FROM PARSE TO CORE, NO OF IMAGES DOWNLOADED = \(self.noOfImagesDownloaded)\n");
+                                    
+                                    
+                                    //if all images downloaded then stop animation
+                                    
+                                    self.noOfImagesDownloaded++;
+                                    
+                                    if(self.noOfImagesDownloaded == 5){
+                                        
+                                        self.loader.stopAnimating();
+                                        self.loader.hidden = true;
+                                        
+                                        //reset
+                                        self.noOfImagesDownloaded = 1;
+                                        
+                                    }
+
                            
                                     
                                     
@@ -609,7 +731,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image1");
+                                    newEntry3.setValue(imgaeURLName, forKey: "image3");
                                     
                                     context.save(&error);
                                     
@@ -617,7 +739,26 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     println("\n\nThe image retruend from URL : \(coredDataImage.description)");
                                     
-                                    println("\n\nTHREAD - FINISHED SAVING IMAGE3 FROM PARSE TO CORE\n");
+                                    println("\n\nTHREAD - FINISHED SAVING IMAGE3 FROM PARSE TO CORE, NO OF IMAGES DOWNLOADED = \(self.noOfImagesDownloaded)\n");
+                                    
+                                    
+                                    //if all images downloaded then stop animation
+                                    
+                                    self.noOfImagesDownloaded++;
+                                    
+                                    if(self.noOfImagesDownloaded == 5){
+                                        
+                                        self.loader.stopAnimating();
+                                        self.loader.hidden = true;
+                                        
+                                        
+                                        // reset
+                                        self.noOfImagesDownloaded = 1;
+                                        
+                                        
+                                        
+                                    }
+
                                     
                                     
                                     
@@ -680,7 +821,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image1");
+                                    newEntry3.setValue(imgaeURLName, forKey: "image4");
                                     
                                     context.save(&error);
                                     
@@ -688,7 +829,27 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     println("\n\nThe image retruend from URL : \(coredDataImage.description)");
                                     
-                                    println("\n\nTHREAD - FINISHED SAVING IMAGE FROM PARSE TO CORE\n");
+                                    println("\n\nTHREAD - FINISHED SAVING IMAGE4 FROM PARSE TO CORE, NO OF IMAGES DOWNLOADED = \(self.noOfImagesDownloaded)\n");
+                                    
+                                    
+                                    //if all images downloaded then stop animation
+                                    
+                                    self.noOfImagesDownloaded++;
+                                    
+                                    if(self.noOfImagesDownloaded == 5){
+                                        
+                                        self.loader.stopAnimating();
+                                        self.loader.hidden = true;
+                                        
+                                        
+                                        // reset
+                                        self.noOfImagesDownloaded = 1;
+                                        
+                                        
+                                        
+                                    }
+                                    
+
                                 }
                             
                             }
@@ -708,6 +869,10 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                         println("Error retriving data form Parse : \(error)");
                         
                         self.displayAlert("Opps", message: "Soemthing went worig retriving new case study, please try later : \(error)");
+                        
+                        self.loader.hidden = true;
+                        self.loader.stopAnimating();
+                        
                     }
                 
                     println("\n\nTHREAD - CASE FROM PARSE TO CORE DATA FINISH - NOW CHECK CORED DATA FUNC CALL\n\n");
@@ -723,7 +888,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             
             /* update array of core data cases so include any new ones we have addaed from parse*/
             
-            arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
+            self.arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
             
             
         }// for arraOfParse
@@ -854,7 +1019,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         var results  = context.executeFetchRequest(request, error: nil);
         
-        println("\n\nResults from DB \(results?.count) and teh results object \(results)\n\n");
+        println("\n\nChecking if new case added to database: Results from DB \(results?.count) and teh results object \(results)\n\n");
         
         if results?.count > 1{
             
@@ -926,10 +1091,10 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         var error : NSError? = nil;
         
         // Save from parse to core data Entty TestParse
-        newEntry3.setValue("Test History 1", forKey: "history");
+        newEntry3.setValue("Test Non Parse History case 4", forKey: "history");
         newEntry3.setValue("Test Question 1", forKey: "q1");
         newEntry3.setValue("Test Question 1", forKey: "q2");
-        newEntry3.setValue("1" , forKey: "casenumber");
+        newEntry3.setValue("4" , forKey: "casenumber");
         newEntry3.setValue(false, forKey: "is_a_parsecase");
         
         println("\n\nADDING CASE  TO PRACTICE DARABASE \n\n");
@@ -940,6 +1105,65 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
     }
    
+    
+    
+   func  deleteALlObjectsFromCoredAta(){
+    
+    //debugging
+    
+    println("\nDeleting all objects form core data.....\n");
+    
+    var appDel : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate;
+    
+    var context : NSManagedObjectContext = appDel.managedObjectContext!;
+    
+    var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("TestParse", inManagedObjectContext: context) as NSManagedObject;
+    
+    var error : NSError? = nil;
+    
+    
+    var request = NSFetchRequest(entityName: "TestParse");
+    
+    // for beta 4 xcode only
+    request.returnsObjectsAsFaults = false;
+    
+    var results  = context.executeFetchRequest(request, error: nil);
+    
+    println("\n\nChecking if new case added to database: Results from DB \(results?.count) and teh results object \(results)\n\n");
+    
+    if results?.count > 1{
+        
+        
+        
+        
+        for result : AnyObject in results! {
+            
+            
+            println("Database object form parse: \(result.count) and contents : \(result.description)");
+            
+            
+            
+            
+            context.deleteObject(result as NSManagedObject);
+            
+            
+            
+            
+            context.save(&error);
+            
+            println("DELETED CORE DATA OBJECT : \(result)");
+        }//for
+        
+    } else {
+        
+        println("No Data or reached end of data , no of entries = \(results?.count)");
+        
+        
+    } // else
+
+     println("\nall objects deleted form core data.....DB count = \(results?.count)");
+    
+    }
     // MARK: - Navigation
 
    

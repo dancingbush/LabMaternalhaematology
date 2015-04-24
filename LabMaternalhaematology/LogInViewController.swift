@@ -128,8 +128,8 @@ class LogInViewController: UIViewController {
                             self.loader.stopAnimating();
                             self.loader.hidden = true;
                             
-                            
-                            self.displayAlert("Log In Error", message: "Opps! \(theError)");
+                            // this will only happen if a user who is already in parse is logging on to a new devicw
+                            self.displayAlert("Log In Error", message: "Opps! Username already In use. Try again.");
                         }
                     }
                 }
@@ -443,9 +443,16 @@ class LogInViewController: UIViewController {
         //self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        // this gets a reference to the screen that we're about to transition to
+        // this gets a reference to the screen that we're about to transition to, only do if os =>8.0
+        
+        if(iOSVersion.SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")){
+            
+  
         
         let toViewController = segue.destinationViewController as UIViewController
         
@@ -453,6 +460,8 @@ class LogInViewController: UIViewController {
         // the segue to use our custom TransitionManager object to manage the transition animation
         
         toViewController.transitioningDelegate = self.transitionManager
+            
+        }
     }
     
 }

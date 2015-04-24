@@ -46,6 +46,7 @@
 		504529391AACBCA2001FB7C8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 504529381AACBCA2001FB7C8 /* libsqlite3.dylib */; };
 		5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5045293A1AACBDAF001FB7C8 /* Main.storyboard */; };
 		5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */; };
+		5050AD251AEAA4E700E5192E /* iOSVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050AD241AEAA4E700E5192E /* iOSVersion.swift */; };
 		5058A52A1ABA1FB5001B63CD /* categories-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5251ABA1FB5001B63CD /* categories-screen.png */; };
 		5058A52B1ABA1FB5001B63CD /* icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5261ABA1FB5001B63CD /* icon-2.png */; };
 		5058A52C1ABA1FB5001B63CD /* main_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5271ABA1FB5001B63CD /* main_screen.png */; };
@@ -190,6 +191,7 @@
 		504529381AACBCA2001FB7C8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5045293A1AACBDAF001FB7C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		5050AD241AEAA4E700E5192E /* iOSVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSVersion.swift; sourceTree = "<group>"; };
 		5058A5251ABA1FB5001B63CD /* categories-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categories-screen.png"; sourceTree = "<group>"; };
 		5058A5261ABA1FB5001B63CD /* icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-2.png"; sourceTree = "<group>"; };
 		5058A5271ABA1FB5001B63CD /* main_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_screen.png; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		504528F91AACBB7B001FB7C8 /* LabMaternalhaematology */ = {
 			isa = PBXGroup;
 			children = (
+				5050AD231AEAA49800E5192E /* Utilities */,
 				50FCA0E01AD67BFA00E02D3D /* Images 09-40-58-314.xcassets */,
 				50FCA0E21AD689C900E02D3D /* About_ViewController.swift */,
 				50EF40291AD161E200A259FA /* Comments */,
@@ -358,9 +361,9 @@
 				5096D1E71ABF4FD0004980FE /* Question3.swift */,
 				5096D1E51ABF1EB3004980FE /* Question2.swift */,
 				50B471761AB899D40084C45D /* History.swift */,
-				50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */,
 				504529211AACBBDA001FB7C8 /* Parse.framework */,
 				504528FC1AACBB7B001FB7C8 /* AppDelegate.swift */,
+				50A10B4E1AAE37C300B7B0F3 /* ScrollView.swift */,
 				504529011AACBB7B001FB7C8 /* ViewController.swift */,
 				5096D1E31ABF0ABA004980FE /* Labs1.swift */,
 				5045291F1AACBBCB001FB7C8 /* Bolts.framework */,
@@ -369,7 +372,6 @@
 				504528FA1AACBB7B001FB7C8 /* Supporting Files */,
 				5088E69E1AC9E172001C6333 /* CasesTableViewTableViewController.swift */,
 				5088E6A01AC9E22D001C6333 /* CasesTableViewCell.swift */,
-				50B05EAA1AD7FE7A0029104E /* TransistionManager.swift */,
 			);
 			path = LabMaternalhaematology;
 			sourceTree = "<group>";
@@ -397,6 +399,15 @@
 				504529141AACBB7B001FB7C8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5050AD231AEAA49800E5192E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				50B05EAA1AD7FE7A0029104E /* TransistionManager.swift */,
+				5050AD241AEAA4E700E5192E /* iOSVersion.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		5063195B1AC1FB5100A0F322 /* Images */ = {
@@ -709,6 +720,7 @@
 				50C8912A1AD5BE2900F18F86 /* TimelineCell.swift in Sources */,
 				50201D541AB5F09D00F555EF /* DetailViewController.swift in Sources */,
 				5096D1E81ABF4FD0004980FE /* Question3.swift in Sources */,
+				5050AD251AEAA4E700E5192E /* iOSVersion.swift in Sources */,
 				50EF402B1AD1622000A259FA /* FeedController3TableViewController.swift in Sources */,
 				50A10B4F1AAE37C300B7B0F3 /* ScrollView.swift in Sources */,
 				50201D501AB5E04800F555EF /* DetailViewController2ViewController.swift in Sources */,
