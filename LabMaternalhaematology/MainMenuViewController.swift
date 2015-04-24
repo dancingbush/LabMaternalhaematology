@@ -14,6 +14,10 @@ import CoreData
 
 
 // Globals Functions so we can access in inscance varibles
+
+var datdaBaseHasBeenCheckedOnceDuringThisAppLaunch : Bool = false;
+
+
 func documentsDirectory() -> String {
     
     // Get the documents Directory for image url
@@ -63,6 +67,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     var arrayParseCases : [String] = [];
     
     var noOfImagesDownloaded = 1; //track the asyn downloading of images
+    
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     
     
@@ -168,14 +174,16 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         /* Tested:
         - Core Data Empty = ok
-        - Pasre Data Empty
+        - Pasre Data Empty = ok
         - Core data and Parse data have same highest number case = ok
         - core data has less cases than Parse and downloads the enxt case = ok
-        - Parse has two more cases higher than the last Core data Case
+        - Parse has two more cases higher than the last Core data Case = ok
 
         */
         
-        arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
+        
+        
+        
         
         
         /*add a case to test corde dtabase here*/
@@ -187,9 +195,23 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         //deleteALlObjectsFromCoredAta();
         
-        // check for new arse case
-       arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
+        // check for new arse case, if this has been done once during this app launch and we have moved bacvk to main menbu then dont do again
         
+        if(!datdaBaseHasBeenCheckedOnceDuringThisAppLaunch){
+            
+            // create the loader, called in sepreate func
+            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+
+            
+            arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
+            
+       arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
+            
+            
+        }
+        datdaBaseHasBeenCheckedOnceDuringThisAppLaunch=true;
         
         
 //        var lastCaseNuberFromParse : Int = arrayOfParseCaseNumbers.last!.toInt()!;
@@ -215,8 +237,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         // query parse case stidies class and get the case number query
         
-        self.loader.hidden = false
-        self.loader.startAnimating()
+        startLoader(true);
         
         var loadParseToCore = false;
         
@@ -242,7 +263,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                     
                 }//for
                 
-
+                self.startLoader(false);
+                
             }//if nil
             else{
                 
@@ -429,8 +451,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         // query Parse Object and load to core data
         
-        self.loader.hidden = false
-        self.loader.startAnimating()
+       
         
         println("Animating and Loading case from parse.....array Parse \(arrayParseCases.count)");
         
@@ -447,7 +468,12 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 
                 /* write case from parse tro core data
                 
+                
                 get context objxt and create a user entry with it*/
+                
+                
+                 startLoader(true);
+                
                 
                 var appDel : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate;
                 
@@ -592,6 +618,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                         
                                         //reset
                                         self.noOfImagesDownloaded = 1;
+                                        
+                                        self.startLoader(false);
 
 
                                         
@@ -669,6 +697,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                         
                                         //reset
                                         self.noOfImagesDownloaded = 1;
+                                        
+                                        self.startLoader(false);
                                         
                                     }
 
@@ -756,7 +786,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                         self.noOfImagesDownloaded = 1;
                                         
                                         
-                                        
+                                        self.startLoader(false);
                                     }
 
                                     
@@ -845,7 +875,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                         // reset
                                         self.noOfImagesDownloaded = 1;
                                         
-                                        
+                                        self.startLoader(false);
                                         
                                     }
                                     
@@ -1164,20 +1194,50 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
      println("\nall objects deleted form core data.....DB count = \(results?.count)");
     
     }
+    
+    
+    
+    
+    func startLoader(yesorno : Bool){
+        
+        if(yesorno){
+            
+            //animate and disable user interaction
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            
+        }else if(!yesorno){
+            
+            // tun off lodare and enable user interaction with view
+            self.activityIndicator.stopAnimating()
+            UIApplication.sharedApplication().endIgnoringInteractionEvents();
+            
+        }
+        
+        
+    }
     // MARK: - Navigation
 
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        
         
-            // this gets a reference to the screen that we're about to transition to
+        // this gets a reference to the screen that we're about to transition to, only do if os =>8.0
         
+        if(iOSVersion.SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")){
+            
+            
+            
             let toViewController = segue.destinationViewController as UIViewController
             
             // instead of using the default transition animation, we'll ask
             // the segue to use our custom TransitionManager object to manage the transition animation
             
             toViewController.transitioningDelegate = self.transitionManager
+            
+        }
 
         
     }
