@@ -32,6 +32,7 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var apiKeyTextField: UITextField!    // Text Field for the Users API Key
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBAction func submitButton(sender: AnyObject) {    // Action for the Submit Button
         
@@ -42,8 +43,7 @@ class LogInViewController: UIViewController {
         // Once the submit button is pressed, disable it so user can´t tap several times
         // Then show the activity indicator and make it spin while loading the data from envato
         //self.button.enabled = false
-        self.loader.hidden = false
-        self.loader.startAnimating()
+        startLoader(true);
         
         
         // chekc if paswod is input
@@ -83,8 +83,7 @@ class LogInViewController: UIViewController {
                     
                     println("signed up new user! : \(self.userNameTextField.text)");
                     
-                    self.loader.stopAnimating();
-                    self.loader.hidden = true;
+                    self.startLoader(false);
                     
                    self.performSegueWithIdentifier("segueToLMainMenu", sender: self);
                     
@@ -110,8 +109,7 @@ class LogInViewController: UIViewController {
                             
                             //self.performSegueWithIdentifier("segueLogInToTableView", sender: self);
                             
-                            self.loader.stopAnimating();
-                            self.loader.hidden = true;
+                            self.startLoader(false);
                             
                             self.performSegueWithIdentifier("segueToLMainMenu", sender: self);
                             
@@ -125,8 +123,7 @@ class LogInViewController: UIViewController {
                             
                             
                             
-                            self.loader.stopAnimating();
-                            self.loader.hidden = true;
+                            self.startLoader(false);
                             
                             // this will only happen if a user who is already in parse is logging on to a new devicw
                             self.displayAlert("Log In Error", message: "Opps! Username already In use. Try again.");
@@ -151,7 +148,6 @@ class LogInViewController: UIViewController {
         // When the Screen Shows Up or the App is Loaded, check id there is some User Data stored in the Apps Cache.
         // If so, load them.
         
-        self.loader.hidden = true;
         
         if(PFUser.currentUser() != nil){
             
@@ -181,7 +177,10 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         // When the Screen Shows Up or the App is Loaded, check id there is some User Data stored in the Apps Cache.
         
-        
+        // create the loader, called in sepreate func
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
         
         
         // set up database
@@ -328,53 +327,53 @@ class LogInViewController: UIViewController {
         
         
         // GET DATA FTOM DB
-        var request = NSFetchRequest(entityName: "Case");
-        //var request = NSFetchRequest(entityName: "Cases"); // enoty = table name
-        
-        
-        // for beta 4 xcode only
-        request.returnsObjectsAsFaults = false;
-        
-        
-        // do a search, thos will return a results array with search results only!
-        //request.predicate = NSPredicate(format: <#String#>, <#args: CVarArgType#>...)
-        //request.predicate = NSPredicate(format: "username = %@", "Susan"); //%@ is placeholede r for string we want to search for
-        
-        
-        
-        // get array of results
-        
-        var results = context.executeFetchRequest(request, error: nil);
-        println("Results from DB \(results)");
-        
+//        var request = NSFetchRequest(entityName: "Case");
+//        //var request = NSFetchRequest(entityName: "Cases"); // enoty = table name
+//        
+//        
+//        // for beta 4 xcode only
+//        request.returnsObjectsAsFaults = false;
+//        
+//        
+//        // do a search, thos will return a results array with search results only!
+//        //request.predicate = NSPredicate(format: <#String#>, <#args: CVarArgType#>...)
+//        //request.predicate = NSPredicate(format: "username = %@", "Susan"); //%@ is placeholede r for string we want to search for
+//        
+//        
+//        
+//        // get array of results
+//        
+//        var results = context.executeFetchRequest(request, error: nil);
+//        println("Results from DB \(results)");
+//        
         
         //loop through results array and fist check result not null
        
         
-        if results?.count > 0{
-            
-            println("\n\nTotal DB Numbers: \(results?.count)");
-            
-            
-            for result : AnyObject in results! {
-                
-                //var casenum : String = result.valueForKey?("caseNumber") as String;
-                
-                
-                //println("\n\nPrinting The DataBSE Result: \(result)\n\nPrinting the result case number \(casenum)");
-                
-                if(result.valueForKey("caseNumber") == nil){
-                    
-                    println("Deletong object of nil from DB");
-                    
-                    context.deleteObject(result as NSManagedObject);
-                    
-                    
-                    // save changes
-                    context.save(nil);
-                    
-                }
-                
+//        if results?.count > 0{
+//            
+//            println("\n\nTotal DB Numbers: \(results?.count)");
+//            
+//            
+//            for result : AnyObject in results! {
+//                
+//                //var casenum : String = result.valueForKey?("caseNumber") as String;
+//                
+//                
+//                //println("\n\nPrinting The DataBSE Result: \(result)\n\nPrinting the result case number \(casenum)");
+//                
+//                if(result.valueForKey("caseNumber") == nil){
+//                    
+//                    println("Deletong object of nil from DB");
+//                    
+//                    context.deleteObject(result as NSManagedObject);
+//                    
+//                    
+//                    // save changes
+//                    context.save(nil);
+//                    
+//                }
+        
                 //context.delete(result);
                 
                 // Handle result : anyobject optional type by using a if - let staement
@@ -406,13 +405,13 @@ class LogInViewController: UIViewController {
                 
                 // Search database for result
                 
-                
-                
-            }
-        } else{
-            
-            println("No Data, no of entries = \(results?.count)");
-        }
+//                
+//                
+//            }
+//        } else{
+//            
+//            println("No Data, no of entries = \(results?.count)");
+//        }
         
 
             }
@@ -464,4 +463,23 @@ class LogInViewController: UIViewController {
         }
     }
     
-}
+    func startLoader(yesorno : Bool){
+        
+        if(yesorno){
+            
+            //animate and disable user interaction
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            
+        }else if(!yesorno){
+            
+            // tun off lodare and enable user interaction with view
+            self.activityIndicator.stopAnimating()
+            UIApplication.sharedApplication().endIgnoringInteractionEvents();
+            
+        }
+
+    }
+}// class

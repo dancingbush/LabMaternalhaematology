@@ -47,6 +47,7 @@
 		5045293B1AACBDAF001FB7C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5045293A1AACBDAF001FB7C8 /* Main.storyboard */; };
 		5045293F1AACBDC7001FB7C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */; };
 		5050AD251AEAA4E700E5192E /* iOSVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050AD241AEAA4E700E5192E /* iOSVersion.swift */; };
+		5050AD271AEB188900E5192E /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050AD261AEB188900E5192E /* ProgressHUD.swift */; };
 		5058A52A1ABA1FB5001B63CD /* categories-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5251ABA1FB5001B63CD /* categories-screen.png */; };
 		5058A52B1ABA1FB5001B63CD /* icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5261ABA1FB5001B63CD /* icon-2.png */; };
 		5058A52C1ABA1FB5001B63CD /* main_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5058A5271ABA1FB5001B63CD /* main_screen.png */; };
@@ -192,6 +193,7 @@
 		5045293A1AACBDAF001FB7C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5045293E1AACBDC7001FB7C8 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5050AD241AEAA4E700E5192E /* iOSVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSVersion.swift; sourceTree = "<group>"; };
+		5050AD261AEB188900E5192E /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		5058A5251ABA1FB5001B63CD /* categories-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categories-screen.png"; sourceTree = "<group>"; };
 		5058A5261ABA1FB5001B63CD /* icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-2.png"; sourceTree = "<group>"; };
 		5058A5271ABA1FB5001B63CD /* main_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_screen.png; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			children = (
 				50B05EAA1AD7FE7A0029104E /* TransistionManager.swift */,
 				5050AD241AEAA4E700E5192E /* iOSVersion.swift */,
+				5050AD261AEB188900E5192E /* ProgressHUD.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 			files = (
 				50FCA0DF1AD67A2900E02D3D /* MainMenuViewController.swift in Sources */,
 				50201D4E1AB5E03F00F555EF /* LayoutController2.swift in Sources */,
+				5050AD271AEB188900E5192E /* ProgressHUD.swift in Sources */,
 				50EF402D1AD162A500A259FA /* FeedCell3TableViewCell.swift in Sources */,
 				5096D1EA1ABF6947004980FE /* Summary.swift in Sources */,
 				5011644F1ADAF60B0037E341 /* testParseCollectionViewViewController.swift in Sources */,

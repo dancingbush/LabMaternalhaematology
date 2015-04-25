@@ -11,6 +11,7 @@
         <attribute name="mchc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mcv" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="others" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parsecase" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="plts" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="q1Answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="q1ImageTitleA" optional="YES" attributeType="String" syncable="YES"/>
@@ -80,7 +81,7 @@
         <attribute name="q2" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Case" positionX="-63" positionY="126" width="128" height="705"/>
+        <element name="Case" positionX="-63" positionY="126" width="128" height="718"/>
         <element name="Cases" positionX="-63" positionY="-18" width="128" height="329"/>
         <element name="TestParse" positionX="-63" positionY="135" width="128" height="180"/>
     </elements>

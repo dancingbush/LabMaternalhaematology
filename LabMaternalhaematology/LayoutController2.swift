@@ -16,10 +16,39 @@ For second type of collection view with delage data source collection subview ro
 import UIKit
 import Foundation
 
+
+
+//func documentsDirectory() -> String {
+//    
+//    // Get the documents Directory for image url
+//    
+//    
+//    let documentsFolderPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as String;
+//    return documentsFolderPath
+//    
+//    
+//    
+//    
+//}
+//
+//
+//func fileInDocumentsDirectory(filename: String) -> String {
+//    
+//    // Get path for a file in the directory
+//    
+//    return documentsDirectory().stringByAppendingPathComponent(filename);
+//    
+//    
+//}
+
+
+
 class LayoutController2 : UIViewController , UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
 
     
     // feilds
+    
+     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var questionAnsered : Bool = false; // true from detail zoom view when navigating back to this view so question not asjed again
     
@@ -37,7 +66,8 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     
     //array to hold umage name from databse
     var arrayOfIUmages : [String] = [];
-    //let arrayOfIUmages = ["case1.jpg", "case1b.jpg", "case2a.jpg", "case2b.jpg", "case2c.jpg", "case3.jpg", "case3a.jpg"];
+    
+    var arrayOfParseImages : [UIImage] = [];
     
     
     // titles from databse attribut Imagfe descroption:String
@@ -139,6 +169,19 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
        super.viewDidLoad()
         
+        // create the loader, called in sepreate func
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        
+        
+        
+        
+        /* If images from Pasre intilay then they are store din the docs dir, so must retive them*/
+        if(ParseCase){
+            
+            loadImagesFromCoreDataAndDocsDirc();
+        }
         
         // If navogating from zoom view we should see our qusetionAnswered = true
         println(self.questionAnsered);
@@ -191,6 +234,43 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         buttonD.layer.borderColor = UIColor.blackColor().CGColor
     }
     
+    
+    
+    func loadImagesFromCoreDataAndDocsDirc(){
+        
+        /*  get images from docs dir origninally form parse using the string name form cpre data */
+        
+        startLoader(true);
+        
+        if(!arrayOfIUmages.isEmpty){
+            
+        
+        for imgaeURLName in arrayOfIUmages{
+            
+            println("ImageName form core data ... \(imgaeURLName)");
+            
+            
+            var coredDataImage : UIImage =  self.loadImageFromPath(fileInDocumentsDirectory(imgaeURLName));
+            
+            println("\n\nThe image returned from URL on device : \(coredDataImage.description)");
+            
+            arrayOfParseImages.append(coredDataImage);
+            
+        }
+            
+        }// is Empty
+        
+        println("\n\nArray images loaded form fodcs diretory: \(arrayOfParseImages)");
+        
+        startLoader(false);
+        
+        
+        // Once array populated reload the images into the cell
+        collectionView.reloadData();
+        
+        
+        
+    }
     override func didReceiveMemoryWarning() {
        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -217,17 +297,45 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CollectionViewCell;
         
-        println("The Cell \(cell)");
+        
         
         var imageName = arrayOfIUmages[indexPath.row];
         
+        
         var titleName = titles[indexPath.row];
         
+        
         println("Image Name : \(imageName) \n Title Name : \(titleName)Cell image : ");
+        
         
         /* If we return null for an image or titke must place placeholder omages by lazy intialisation*/
         
         cell.title2.text? = self.titles[indexPath.row];
+        
+        
+        
+        
+        /* Check if the image has been downlaoded form parse, if so we need to retrive the name fro core data and the image then from docs directory*/
+        
+        if(ParseCase){
+            
+            //image form parse so its in docs dir
+            if let imageToAdd  = arrayOfParseImages[indexPath.row] as UIImage?{
+                
+                cell.pinImage2.image = imageToAdd;
+            
+            
+            }else{
+                
+                cell.pinImage2.image = UIImage(named: "microscope.jpg");
+                
+                cell.title2?.text = "No Image."
+            }
+
+            
+        }else if (!ParseCase){
+            
+       
         
         if let imageToAdd = UIImage(named: self.arrayOfIUmages[indexPath.row]){
             
@@ -240,9 +348,9 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             cell.title2?.text = "No Image."
         }
         
-        //cell.pinImage2.image = UIImage(named: self.arrayOfIUmages[indexPath.row]);
+             }// image not from parse
         
-        //cell.pinImage.image = UIImage(named: imgName)
+        
         
         return cell
     }
@@ -518,4 +626,50 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
 
 //
 
-}
+    
+    func startLoader(yesorno : Bool){
+        
+        if(yesorno){
+            
+            //animate and disable user interaction
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            
+        }else if(!yesorno){
+            
+            // tun off lodare and enable user interaction with view
+            self.activityIndicator.stopAnimating()
+            UIApplication.sharedApplication().endIgnoringInteractionEvents();
+            
+        }
+        
+        
+    }
+    
+    
+    func loadImageFromPath(path : String) -> UIImage{
+        
+        
+        // GET IMAGE FROM CORE DATA DEBUGGING ONLY
+        
+        let image = UIImage(contentsOfFile: path); // returns an image from specofoed file (string)
+        
+        
+        println("\n\nImage returned from File : \(image?.description)\n\n");
+        
+        
+        if image == nil{
+            
+            println("No image loading form path : \(path)");
+            
+        }
+        
+        println("\n\nImage is stored in this location - can find in Finder: \(path)");
+        
+        return image!;
+        
+    }
+
+} // Class

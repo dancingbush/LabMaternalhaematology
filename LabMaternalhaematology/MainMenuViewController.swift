@@ -146,17 +146,20 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     
     override func viewWillAppear(animated: Bool) {
-        // before view renders hide loader
+        // gets called evrytime the view is loaded
         
-        loader.hidden = true;
+        println("VIEWWILLAPEEAR: MAIN MENU");
+        
+        //loader.hidden = true;
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println("VIEW DID LOAD: MAIN MENU");
         
-        
+        /* viewDidLoad gets called only once the view is contructed, and not when call the view firm a stack. THe view will not appear UNTIL the viewDidlOad has finsihed....viewWillAppear gets called every time the view appears. You should do things that you only have to do once in viewDidLoad*/
 
         // set up emailclient and label welcome
         
@@ -186,32 +189,32 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         
         
-        /*add a case to test corde dtabase here*/
-
-       // writeToPracticeCoreData();
-        
-        // Debugging see if new case added correctly
-        //checkCoreDataForNewCase();
-        
-        //deleteALlObjectsFromCoredAta();
-        
-        // check for new arse case, if this has been done once during this app launch and we have moved bacvk to main menbu then dont do again
-        
-        if(!datdaBaseHasBeenCheckedOnceDuringThisAppLaunch){
-            
-            // create the loader, called in sepreate func
-            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-
-            
-            arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
-            
-       arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
-            
-            
-        }
-        datdaBaseHasBeenCheckedOnceDuringThisAppLaunch=true;
+//        /*add a case to test corde dtabase here*/
+//
+//       // writeToPracticeCoreData();
+//        
+//        // Debugging see if new case added correctly
+//        //checkCoreDataForNewCase();
+//        
+//        //deleteALlObjectsFromCoredAta();
+//        
+//        // check for new arse case, if this has been done once during this app launch and we have moved bacvk to main menbu then dont do again
+//        
+//        if(!datdaBaseHasBeenCheckedOnceDuringThisAppLaunch){
+//            
+//            // create the loader, called in sepreate func
+//            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+//            activityIndicator.center = self.view.center
+//            activityIndicator.hidesWhenStopped = true
+//
+//            
+//            arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
+//            
+//       arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
+//            
+//            
+//        }
+//        datdaBaseHasBeenCheckedOnceDuringThisAppLaunch=true;
         
         
 //        var lastCaseNuberFromParse : Int = arrayOfParseCaseNumbers.last!.toInt()!;
@@ -229,8 +232,44 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
 //        }
         
         
+        checkParseForNewCase();
         
     }// view did load
+    
+    
+    func checkParseForNewCase(){
+        
+        /*Do here and not in voew did load so GUI is not latent
+          add a case to test corde dtabase here*/
+        
+        // writeToPracticeCoreData();
+        
+        // Debugging see if new case added correctly
+        //checkCoreDataForNewCase();
+        
+        //deleteALlObjectsFromCoredAta();
+        
+        // check for new arse case, if this has been done once during this app launch and we have moved bacvk to main menbu then dont do again
+        
+        if(!datdaBaseHasBeenCheckedOnceDuringThisAppLaunch){
+            
+            // create the loader, called in sepreate func
+            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            
+            
+            arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
+            
+            arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
+            
+            
+        }
+        datdaBaseHasBeenCheckedOnceDuringThisAppLaunch=true;
+        
+
+    }
+    
     
     
     func downloadCaseNumbersFromParse() -> Array<String>{
@@ -243,7 +282,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         //arrayParseCases : [String] = [""];
         
-        var newCase = PFQuery(className:"TestCase");
+       // var newCase = PFQuery(className:"TestCase");
+        var newCase = PFQuery(className:"NewCase");
         
         newCase.findObjectsInBackgroundWithBlock { (objects : [AnyObject]!, error: NSError!) -> Void in
             
@@ -364,12 +404,14 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         var context : NSManagedObjectContext = appDel.managedObjectContext!;
         
-        var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("TestParse", inManagedObjectContext: context) as NSManagedObject;
+        //var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("TestParse", inManagedObjectContext: context) as NSManagedObject;
+        
+        var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("Case", inManagedObjectContext: context) as NSManagedObject;
         
         var error : NSError? = nil;
         
         
-        var request = NSFetchRequest(entityName: "TestParse");
+        var request = NSFetchRequest(entityName: "Case");
         
         // for beta 4 xcode only
         request.returnsObjectsAsFaults = false;
@@ -403,9 +445,9 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                     
                     
                     // Save to arrays only of a value exists ie not == nil
-                    if let tehCaseNumber : String = result.valueForKey("casenumber") as? String{
+                    if let tehCaseNumber : String = result.valueForKey("caseNumber") as? String{
                         
-                        arrayCoreCases.append(result.valueForKey("casenumber") as String);
+                        arrayCoreCases.append(result.valueForKey("caseNumber") as String);
                         
                         
                         
@@ -479,14 +521,16 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 
                 var context : NSManagedObjectContext = appDel.managedObjectContext!;
                 
-                var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("TestParse", inManagedObjectContext: context) as NSManagedObject;
+                var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("Case", inManagedObjectContext: context) as NSManagedObject;
                 
                 var error : NSError? = nil;
                 
                 
                 // Get pasre case
                 
-                var newCase = PFQuery(className:"TestCase");
+                //var newCase = PFQuery(className:"TestCase");
+                var newCase = PFQuery(className:"NewCase");
+
                 
                 newCase.whereKey("CaseNumber", equalTo: caseNoInParseArray)
                 
@@ -499,23 +543,134 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                             
                             println("Case succesfully from Parse: \(theCase)");
                             
-                            let imageName = theCase["image1"] as String;
-                            let history = theCase["History"] as String;
-                            let q1 = theCase["Question1"] as String;
-                            let q2 = theCase["Question2"] as String;
-                            let isCaseFromParse = theCase["IsParseCase"] as Bool;
+//                            let imageName = theCase["image1"] as String;
+//                            let history = theCase["History"] as String;
+//                            let q1 = theCase["Question1"] as String;
+//                            let q2 = theCase["Question2"] as String;
+//                            let isCaseFromParse = theCase["IsParseCase"] as Bool;
+//                            
+//                            let caseNumber = theCase["CaseNumber"] as String;
+                            // n = 45 attributes
                             
-                            let caseNumber = theCase["CaseNumber"] as String;
+                            let age  = theCase["age"] as String;
+                             let apgar  = theCase["apgar"] as String;
+                             let caseNumber  = theCase["caseNumber"] as String;
+                             let caseSummary  = theCase["caseSummary"] as String;
+                             let hgb  = theCase["hgb"] as String;
+                             let history  = theCase["history"] as String;
+                             let mch  = theCase["mch"] as String;
+                             let mchc  = theCase["mchc"] as String;
+                             let mcv  = theCase["mcv"] as String;
+                             let others  = theCase["others"] as String;
+                             let parsecase  = theCase["parsecase"] as Bool;
+                             let plts  = theCase["plts"] as String;
+                            
+                             let q1Answer  = theCase["q1Answer"] as String;
+                            
+                             let q1ImageTitleA  = theCase["q1ImageTitleA"] as String;
+                            let q1ImageTitleB  = theCase["q1ImageTitleB"] as String;
+                            let q1ImageTitleC  = theCase["q1ImageTitleC"] as String;
+                            let q1ImageTitleD  = theCase["q1ImageTitleD"] as String;
+                            
+                            let q2OptionA  = theCase["q2OptionA"] as String;
+                            let q2OptionADialog  = theCase["q2OptionADialog"] as String;
+                            let q2OptionB  = theCase["q2OptionB"] as String;
+                            let q2OptionBDialog  = theCase["q2OptionBDialog"] as String;
+                            let q2OptionC  = theCase["q2OptionC"] as String;
+                            let q2OptionCDialog  = theCase["q2OptionCDialog"] as String;
+                            let q2OptionD  = theCase["q2OptionD"] as String;
+                            let q2OptionDDialog  = theCase["q2OptionDDialog"] as String;
+                            
+                            /*Images are Files in Parse so handle differently below*/
+                            
+//                            let question1Image1  = theCase["question1Image1"] as String;
+//                            let question1Image2  = theCase["question1Image2"] as String;
+//                            let question1Image3  = theCase["question1Image3"] as String;
+//                            let question1Image4  = theCase["question1Image4"] as String;
+                            
+                            let question2Answer  = theCase["question2Answer"] as String;
+                            let question3Answer  = theCase["question3Answer"] as String;
+                            let question3OptionA  = theCase["question3OptionA"] as String;
+                            let question3OptionB  = theCase["question3OptionB"] as String;
+                        
+                            let question3OptionC  = theCase["question3OptionC"] as String;
+                            let question3OptionD  = theCase["question3OptionD"] as String;
+                            
+                            let question_image1OptionA  = theCase["question_image1OptionA"] as String;
+                            let question_image1OptionB  = theCase["question_image1OptionB"] as String;
+                            let question_image1OptionC  = theCase["question_image1OptionC"] as String;
+                            let question_image1OptionD  = theCase["question_image1OptionD"] as String;
+                            
+                            let sex  = theCase["sex"] as String;
+                            let summary  = theCase["summary"] as String;
+                            
+                            let temperature  = theCase["temperature"] as String;
+                            let theQuestion2  = theCase["theQuestion2"] as String;
+                            let theQuestion3  = theCase["theQuestion3"] as String;
+                            let wcc  = theCase["wcc"] as String;
+                            
                             
                             
                             //if(saveToDataBase){
                                 
                                 // Save from parse to core data Entty TestParse
-                                newEntry3.setValue(history, forKey: "history");
-                                newEntry3.setValue(q1, forKey: "q1");
-                                newEntry3.setValue(q2, forKey: "q2");
-                                newEntry3.setValue(caseNumber , forKey: "casenumber");
-                            newEntry3.setValue(isCaseFromParse, forKey: "is_a_parsecase");
+                                newEntry3.setValue(age, forKey: "age");
+                                newEntry3.setValue(apgar, forKey: "apgar");
+                                newEntry3.setValue(caseNumber, forKey: "caseNumber");
+                                newEntry3.setValue(caseSummary , forKey: "caseSummary");
+                            newEntry3.setValue(hgb, forKey: "hgb");
+                            
+                            newEntry3.setValue(history, forKey: "history");
+                            newEntry3.setValue(mch, forKey: "mch");
+                            newEntry3.setValue(mchc, forKey: "mchc");
+                            newEntry3.setValue(mcv, forKey: "mcv");
+                            newEntry3.setValue(others, forKey: "others");
+                            
+                            newEntry3.setValue(plts, forKey: "plts");
+                             newEntry3.setValue(parsecase, forKey: "parsecase");
+                            newEntry3.setValue(q1Answer, forKey: "q1Answer");
+                            newEntry3.setValue(q1ImageTitleA, forKey: "q1ImageTitleA");
+                            newEntry3.setValue(q1ImageTitleB, forKey: "q1ImageTitleB");
+                            
+                            newEntry3.setValue(q1ImageTitleC, forKey: "q1ImageTitleC"); newEntry3.setValue(q1ImageTitleD, forKey: "q1ImageTitleD");
+                            newEntry3.setValue(q2OptionA, forKey: "q2OptionA");
+                            newEntry3.setValue(q2OptionADialog, forKey: "q2OptionADialog");
+                            newEntry3.setValue(q2OptionB, forKey: "q2OptionB");
+                            newEntry3.setValue(q2OptionBDialog, forKey: "q2OptionBDialog");
+                            
+                            newEntry3.setValue(q2OptionC, forKey: "q2OptionC");
+                            newEntry3.setValue(q2OptionCDialog, forKey: "q2OptionCDialog");
+                            newEntry3.setValue(q2OptionD, forKey: "q2OptionD");
+                            newEntry3.setValue(q2OptionDDialog, forKey: "q2OptionDDialog");
+                           
+                            /*Images are Files in Parse so handle differently below*/
+
+//                            newEntry3.setValue(question1Image1, forKey: "question1Image1");
+//                            
+//                            newEntry3.setValue(question1Image2, forKey: "question1Image2");
+//                            newEntry3.setValue(question1Image3, forKey: "question1Image3");
+//                            newEntry3.setValue(question1Image4, forKey: "question1Image4");
+                            
+                            newEntry3.setValue(question2Answer, forKey: "question2Answer");
+                            newEntry3.setValue(question3Answer, forKey: "question3Answer");
+                            
+                            newEntry3.setValue(question3OptionA, forKey: "question3OptionA");
+                            newEntry3.setValue(question3OptionB, forKey: "question3OptionB");
+                            newEntry3.setValue(question3OptionC, forKey: "question3OptionC");
+                            newEntry3.setValue(question3OptionD, forKey: "question3OptionD");
+                            
+                            
+                            newEntry3.setValue(question_image1OptionA, forKey: "question_image1OptionA");
+                            newEntry3.setValue(question_image1OptionB, forKey: "question_image1OptionB");
+                            newEntry3.setValue(question_image1OptionC, forKey: "question_image1OptionC");
+                            newEntry3.setValue(question_image1OptionD, forKey: "question_image1OptionD");
+                            newEntry3.setValue(sex, forKey: "sex");
+                            
+                            newEntry3.setValue(summary, forKey: "summary");
+                            newEntry3.setValue(temperature, forKey: "temperature");
+                            newEntry3.setValue(theQuestion2, forKey: "theQuestion2");
+                            newEntry3.setValue(theQuestion3, forKey: "theQuestion3");
+                            newEntry3.setValue(wcc, forKey: "wcc");
                             
                                 println("\n\nCOMMIT STRIGS TO DATABASE\n\n");
                             
@@ -523,17 +678,14 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                             
                             context.save(&error);
                                 
-                           // }
-                            //var error : NSError? = nil;
-                            
-                            // save to DB and handle error if present
-                            // context.save(&error);
+                          
                             
                             
+                            /*Download image fils from parse and convert to UIIMage, save it o phone directpry then save image title only (not dirctory plus title) to the core data base, when we load back we load with image name from core data plus durectiory using the dirctory fucntions*/
                             
                             var fileExtenion = "";
                             
-                            let caseImageFile1 = theCase["image1File"] as PFFile
+                            let caseImageFile1 = theCase["question1Image1"] as PFFile
                             caseImageFile1.getDataInBackgroundWithBlock {
                                 (imageData: NSData!, error: NSError!) -> Void in
                                 
@@ -591,7 +743,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image1");
+                                    newEntry3.setValue(imgaeURLName, forKey: "question1Image1");
                                     
                                     context.save(&error);
                                     
@@ -630,9 +782,11 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                 }
                             }// caseimage
                             
-                            let caseImageFile2 = theCase["image2File"] as PFFile
+                            let caseImageFile2 = theCase["question1Image2"] as PFFile
+                            
                             caseImageFile2.getDataInBackgroundWithBlock {
                                 (imageData: NSData!, error: NSError!) -> Void in
+                                
                                 if error == nil {
                                     
                                     println("\n\nTHREAD - STARTED SAVING IMAGE42 FROM PARSE TO CORE\n");
@@ -675,7 +829,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image2");
+                                    newEntry3.setValue(imgaeURLName, forKey: "question1Image2");
                                     
                                     context.save(&error);
                                     
@@ -708,7 +862,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                 }
                             }// caseimage
                             
-                            let caseImageFile3 = theCase["image3File"] as PFFile
+                            let caseImageFile3 = theCase["question1Image3"] as PFFile
                             caseImageFile3.getDataInBackgroundWithBlock {
                                 (imageData: NSData!, error: NSError!) -> Void in
                                 
@@ -761,7 +915,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image3");
+                                    newEntry3.setValue(imgaeURLName, forKey: "question1Image3");
                                     
                                     context.save(&error);
                                     
@@ -795,7 +949,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                 }
                             }// caseimage
                             
-                            let caseImageFile4 = theCase["image4File"] as PFFile
+                            let caseImageFile4 = theCase["question1Image4"] as PFFile
                             caseImageFile4.getDataInBackgroundWithBlock {
                                 
                                 
@@ -851,7 +1005,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     var error : NSError? = nil;
                                     
-                                    newEntry3.setValue(imgaeURLName, forKey: "image4");
+                                    newEntry3.setValue(imgaeURLName, forKey: "question1Image4");
                                     
                                     context.save(&error);
                                     
@@ -972,6 +1126,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             
         case MFMailComposeResultSaved.value:
             println("Mail Saved")
+            
         case MFMailComposeResultSent.value:
             println("Mail Sent")
             
@@ -1037,12 +1192,12 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         var context : NSManagedObjectContext = appDel.managedObjectContext!;
         
-        var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("TestParse", inManagedObjectContext: context) as NSManagedObject;
+        var newEntry3 = NSEntityDescription.insertNewObjectForEntityForName("Case", inManagedObjectContext: context) as NSManagedObject;
         
         var error : NSError? = nil;
         
         
-        var request = NSFetchRequest(entityName: "TestParse");
+        var request = NSFetchRequest(entityName: "Case");
         
         // for beta 4 xcode only
         request.returnsObjectsAsFaults = false;
@@ -1086,8 +1241,11 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         } // method
 
         
-    // GET IMAGE FROM CORE DATA DEBUGGING ONLY
+    
     func loadImageFromPath(path : String) -> UIImage{
+    
+        
+        // GET IMAGE FROM CORE DATA DEBUGGING ONLY
         
         let image = UIImage(contentsOfFile: path); // returns an image from specofoed file (string)
         

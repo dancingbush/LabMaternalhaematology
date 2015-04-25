@@ -80,6 +80,7 @@ var numberOfCorrectANswers = "0";
 var numberOfIncorrectAnswers = "0";
 var usersAnsersToAllQuestions = "Your Answers: \nQ1: ";
 var summary = ""
+var ParseCase : Bool = false;
 
 
 // Jaundcie case
@@ -259,9 +260,10 @@ class History: UIViewController {
                     println(result);
                     
                     
-                    // assign to globals 
+                    /* assign to globals
+                    Is the case from Parse, if so load the questoin1Image1 etc String and get the image from the String+document directory in the LayoutController2 collection view */
                     
-                    
+
                     
                     historyText = result.valueForKey("history") as String;
                         
@@ -321,6 +323,9 @@ class History: UIViewController {
                     // Summary
                     summary = result.valueForKey("summary")  as String;
                     
+                    //Is the case from Parse, if so load the questoin1Image1 etc String and get the image from the String+document directory in the LayoutController2 collection view
+                    
+                    ParseCase = result.valueForKey("parsecase") as Bool;
                     
 
                 
