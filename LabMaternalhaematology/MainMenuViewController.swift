@@ -296,7 +296,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                     println("Case succesfully from Parse: \(theCase)");
                     
                     
-                    let caseNumber = theCase["CaseNumber"] as String;
+                    let caseNumber = theCase["caseNumber"] as String;
                     
                     self.arrayParseCases.append(caseNumber);
                     
@@ -532,7 +532,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 var newCase = PFQuery(className:"NewCase");
 
                 
-                newCase.whereKey("CaseNumber", equalTo: caseNoInParseArray)
+                newCase.whereKey("caseNumber", equalTo: caseNoInParseArray)
                 
                 newCase.findObjectsInBackgroundWithBlock { (objects : [AnyObject]!, error: NSError!) -> Void in
                     
@@ -1361,7 +1361,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         if(yesorno){
             
             //animate and disable user interaction
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge;
             view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()

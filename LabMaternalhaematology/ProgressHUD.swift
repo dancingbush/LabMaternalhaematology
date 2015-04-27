@@ -31,6 +31,9 @@ import UIKit
 
 class ProgressHUD: UIVisualEffectView {
     
+    
+    
+    
     var text: String? {
         didSet {
             label.text = text
@@ -54,7 +57,12 @@ class ProgressHUD: UIVisualEffectView {
         super.init(coder: aDecoder)
         self.setup()
         
+        
     }
+    
+//    required init(coder aDecoder: NSCoder!) {
+//        super.init(coder: aDecoder)
+//    }
     
     func setup() {
         contentView.addSubview(vibrancyView)

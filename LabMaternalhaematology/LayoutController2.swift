@@ -317,7 +317,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         /* Check if the image has been downlaoded form parse, if so we need to retrive the name fro core data and the image then from docs directory*/
         
-        if(ParseCase){
+        if(ParseCase && !arrayOfParseImages.isEmpty){
             
             //image form parse so its in docs dir
             if let imageToAdd  = arrayOfParseImages[indexPath.row] as UIImage?{
