@@ -170,7 +170,7 @@ class Question3: UIViewController {
             
             // get he anser form button passed
             
-            usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ2: \(button.titleLabel!.text!) - InCorrect!";
+            usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ3: \(button.titleLabel!.text!) - InCorrect!";
             
             
             

@@ -451,6 +451,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         var isAnswerCorrect:Bool;
         
+        var questionNumberAnswreed = "Q1: ";
         
         if(usersGuess == theAnswer){
             
@@ -471,7 +472,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
                 buttonA.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " - Correct!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonA.titleLabel!.text! + " - Correct!";
                 
                 
             case "B":
@@ -482,7 +483,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
                 buttonB.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " - Correct!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonB.titleLabel!.text! + " - Correct!";
                 
             case "C":
                 
@@ -490,7 +491,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
                 buttonC.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonC.titleLabel!.text! + " - Correct!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonC.titleLabel!.text! + " - Correct!";
                 
             case "D":
                 
@@ -498,7 +499,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
                 buttonD.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " - Correct!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonD.titleLabel!.text! + " - Correct!";
                 
             default:
                 
@@ -519,7 +520,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "A":
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonA.titleLabel!.text! + " - InCorrect!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonA.titleLabel!.text! + " - InCorrect!";
                 
                 
                 buttonA.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
@@ -529,7 +530,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "B":
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonB.titleLabel!.text! + " - InCorrect!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonB.titleLabel!.text! + " - InCorrect!";
                 //buttonB.backgroundColor = UIColor.redColor();
                 buttonB.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
                 
@@ -537,7 +538,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
                 
             case "C":
                 
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonC.titleLabel!.text! + " InCorrect!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonC.titleLabel!.text! + " InCorrect!";
                 
                 buttonC.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
                 
@@ -546,7 +547,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             case "D":
                 
             
-                usersAnsersToAllQuestions = usersAnsersToAllQuestions + buttonD.titleLabel!.text! + " - InCorrect!";
+                usersAnsersToAllQuestions = usersAnsersToAllQuestions + questionNumberAnswreed + buttonD.titleLabel!.text! + " - InCorrect!";
                 
                 buttonD.backgroundColor = UIColor(red: 246/255.0, green: 54/255.0, blue: 15/255.0, alpha: 0.75);
                 

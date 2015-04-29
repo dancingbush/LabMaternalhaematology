@@ -159,7 +159,7 @@ class Question2: UIViewController {
         
         if (firstButtonAnswerPressed && userGuess == theAnswer && !questionAlreadyAnswered){
             
-            // get he anser form button passed
+            // get he anser form button passed, answer correct
             
             usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ2: \(button.titleLabel!.text!) - Correct!";
             
@@ -170,7 +170,7 @@ class Question2: UIViewController {
                 
             } else {
                 
-                numberOfCorrectANswers = "0";
+                numberOfCorrectANswers = "1";
             }
             
             
@@ -186,7 +186,7 @@ class Question2: UIViewController {
         } else if (firstButtonAnswerPressed && userGuess != theAnswer && !questionAlreadyAnswered){
             
             
-            // get he anser form button passed
+            // get he anser form button passed, incoorect answer
             
             usersAnsersToAllQuestions = usersAnsersToAllQuestions + "\nQ2: \(button.titleLabel!.text!) - InCorrect!";
             
@@ -197,7 +197,7 @@ class Question2: UIViewController {
                 
             } else {
                 
-                numberOfIncorrectAnswers = "0";
+                numberOfIncorrectAnswers = "1";
             }
             
             println("INCORRECT ANSWER CHOSEN \(userGuess) should of been \(self.theAnswer)");

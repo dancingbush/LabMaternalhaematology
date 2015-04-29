@@ -86,7 +86,16 @@ class Summary: UIViewController {
         
         theCaseNumber = caseNumberString; //get from global
         
-        noOfCorrectAnwsers = numberOfCorrectANswers;
+        if(numberOfCorrectANswers != ""){
+            
+             noOfCorrectAnwsers = numberOfCorrectANswers;
+            
+        }else{
+            
+            noOfCorrectAnwsers = "0";
+            numberOfCorrectANswers = "0";
+        }
+       
 
         
         println("USERS ANSWERS : \(usersAnsersToAllQuestions)");
@@ -132,6 +141,10 @@ class Summary: UIViewController {
         
         // once set the summary must rset userAnserwers so they dont collate
         usersAnsersToAllQuestions = "";
+        
+        numberOfCorrectANswers = "";
+        
+        noOfCorrectAnwsers = "";
         
            }
     

@@ -677,7 +677,16 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
                 //                }
                 
                 
-                // reload table but get data form parse first
+                // reload table but get data form parse first, however empty pur arrays from our intial call to Parse commenst object otherwise we will add every comment twice
+                
+                self.arrayOfComments.removeAll(keepCapacity: true);
+                
+                self.arrayOfUserNames.removeAll(keepCapacity: true);
+                
+                self.arrayOfTimeStamps.removeAll(keepCapacity: true);
+                
+                self.arrayOfCaseImages.removeAll(keepCapacity: true);
+
                 self.loadDataFromParse();
                 
             }// add comments func
