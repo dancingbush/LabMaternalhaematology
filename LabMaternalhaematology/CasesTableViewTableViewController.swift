@@ -39,7 +39,7 @@ class CasesTableViewTableViewController: UITableViewController {
     
     var arrayOfCaseNumbers : [String] = [];
     
-    var totalCases = 0;
+    //var totalCases = totalCases;
     
     var arrayOfCaseSummaries : [String] = [];
     
@@ -105,6 +105,7 @@ class CasesTableViewTableViewController: UITableViewController {
                 
                 if(result.valueForKey("caseNumber") != nil ){
                     
+                    // get case numbers and sort in alphabletcal order
                     
                     caseNumberForResultCheck = result.valueForKey("caseNumber") as String;
                     
@@ -113,21 +114,103 @@ class CasesTableViewTableViewController: UITableViewController {
                 
                 
                 
-                arrayOfCaseSummaries.append(result.valueForKey("caseSummary") as String);
+               // arrayOfCaseSummaries.append(result.valueForKey("caseSummary") as String);
                 
-                arrayOfIMageNames.append(result.valueForKey("question1Image1")as String);
+                //arrayOfIMageNames.append(result.valueForKey("question1Image1")as String);
                 
-                totalCases = results!.count;
+                //totalCases = results!.count;
+                    
+                    
                 
-                println("DB Data : CAse Number : \(arrayOfCaseNumbers[index]) Case Summary: \(arrayOfCaseSummaries[index]) Image Name : \(arrayOfIMageNames[index]) and Total Cases: \(totalCases) ");
+               // println("DB Data : CAse Number : \(arrayOfCaseNumbers[index]) Case Summary: \(arrayOfCaseSummaries[index]) Image Name : \(arrayOfIMageNames[index]) and Total Cases: \(totalCases) ");
                 
                 
                 index = 1+index;
                 }
                 
                 
+            }// for results
+            
+            
+                // sort the case number order in arrayOfCases
                 
-                           }
+               arrayOfCaseNumbers = sorted(self.arrayOfCaseNumbers, {
+                    (str1: String , str2 : String) -> Bool in
+                    
+                    return str1.toInt() < str2.toInt();
+                })
+            
+            
+                
+                println("\n\nSorted Addray Of Core Case Numbers in order of ccase no: \(self.arrayOfCaseNumbers)");
+            
+            var caseBNumberArrayIndex = 0;
+            
+            
+            for theCase in arrayOfCaseNumbers{
+            
+            for result : AnyObject in results! {
+                
+                // sort the resulst object
+                
+                
+                // loop agian to get correct order of data according to case Number
+                //for theCase in arrayOfCaseNumbers{
+                //var corecasenumber = result.valueForKey("caseNumber") as String;
+                
+                println("Array of case numbers sorted: \(arrayOfCaseNumbers) and pos index 0 = \(arrayOfCaseNumbers[0])");
+
+                if(result.valueForKey("caseNumber") != nil ){
+                
+                //if let theCase = arrayOfCaseNumbers[caseBNumberArrayIndex] as String?{
+                    
+                    //for theCase in arrayOfCaseNumbers{
+                        
+                    if(result.valueForKey("caseNumber") as String == theCase){
+                        
+                        
+                        var coreCaseNumber = result.valueForKey("caseNumber") as String;
+                        
+                        var summaryCase = result.valueForKey("caseSummary") as String;
+                        
+                        println("The Case Number = \(theCase) adding teh case summary \(summaryCase) for case core umber \(coreCaseNumber)");
+                        
+                        arrayOfCaseSummaries.append(result.valueForKey("caseSummary") as String);
+                        
+                        arrayOfIMageNames.append(result.valueForKey("question1Image1")as String);
+                        
+                        
+                        
+                    }else{
+                        
+                         var coreCaseNumber = result.valueForKey("caseNumber") as String;
+                        
+                        println("case number array\(theCase) bot equal to corecase number :\(coreCaseNumber)");
+                        
+                        
+                        
+                        
+                        }
+                    //}/// for theCase    (was if let theCase in arrayofcases)
+                    
+                    
+                    
+                }// if result not nil
+                
+//                caseBNumberArrayIndex = caseBNumberArrayIndex + 1;
+//                
+//                println("Array CAse Index : \(caseBNumberArrayIndex)");
+                
+                
+            }// for results 2
+                
+            }// for theCase
+            
+            
+            println("Sorted DB results for tablevoew : cases \(arrayOfCaseNumbers)\n case Summaores \(arrayOfCaseSummaries) \n Images: \(arrayOfIMageNames)");
+            
+            
+            
         } else{
             
             println("No Data, no of entries = \(results?.count)");
@@ -174,7 +257,7 @@ class CasesTableViewTableViewController: UITableViewController {
         
         caseCell.imageLeft.image = UIImage(named: arrayOfIMageNames[indexPath.row] as String);
         
-        caseCell.labelCaseNo.text = arrayOfCaseNumbers[indexPath.row] as String + "/\(totalCases)";
+        caseCell.labelCaseNo.text = arrayOfCaseNumbers[indexPath.row] as String + "/\(arrayOfCaseNumbers.last!)";
         
         caseCell.labelTop.text = arrayOfCaseSummaries[indexPath.row];
         

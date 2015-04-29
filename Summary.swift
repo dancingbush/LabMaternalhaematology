@@ -129,6 +129,10 @@ class Summary: UIViewController {
         
         setImageAndResult();
         
+        
+        // once set the summary must rset userAnserwers so they dont collate
+        usersAnsersToAllQuestions = "";
+        
            }
     
     

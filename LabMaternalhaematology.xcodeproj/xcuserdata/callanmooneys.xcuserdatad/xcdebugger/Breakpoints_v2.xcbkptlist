@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450283903.581738"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "animate()"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450283903.581738"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "animate()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
-            timestampString = "450366712.18989"
+            timestampString = "451953078.348121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "492"
-            endingLineNumber = "492"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
             landmarkName = "checkAnswer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450283903.581738"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "animate()"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
-            timestampString = "450366712.18989"
+            timestampString = "451953078.348121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "checkAnswer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450277483.000934"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/History.swift"
-            timestampString = "449699359.749842"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450368535.262033"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "515"
+            endingLineNumber = "515"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/History.swift"
-            timestampString = "449699359.749842"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "assignglobalVariblesFromDataBase(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/History.swift"
-            timestampString = "449699359.749842"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "assignglobalVariblesFromDataBase(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/History.swift"
-            timestampString = "449699359.749842"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "assignglobalVariblesFromDataBase(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450353269.024222"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -436,11 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450277483.000934"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -452,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450352533.556674"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "setImageAndResult()"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450352533.556674"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
             landmarkName = "setImageAndResult()"
             landmarkType = "5">
          </BreakpointContent>
@@ -500,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450353269.024222"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -516,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450277483.000934"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/ScrollView.swift"
-            timestampString = "449780410.379907"
+            timestampString = "451957102.55317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -564,59 +564,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/ScrollView.swift"
-            timestampString = "449780208.745095"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/ScrollView.swift"
-            timestampString = "449783766.490082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/ScrollView.swift"
-            timestampString = "449783766.490082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/ScrollView.swift"
-            timestampString = "449783766.490082"
+            timestampString = "451957102.55317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/ScrollView.swift"
+            timestampString = "451957102.55317"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/ScrollView.swift"
+            timestampString = "451957102.55317"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/ScrollView.swift"
+            timestampString = "451957102.55317"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -644,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/FeedController3TableViewController.swift"
-            timestampString = "450212657.396281"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -660,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/FeedController3TableViewController.swift"
-            timestampString = "450214353.282296"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "addComment()"
             landmarkType = "5">
          </BreakpointContent>
@@ -676,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/FeedController3TableViewController.swift"
-            timestampString = "450214353.282296"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "addComment()"
             landmarkType = "5">
          </BreakpointContent>
@@ -692,11 +692,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/FeedController3TableViewController.swift"
-            timestampString = "450214353.282296"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "addComment()"
             landmarkType = "5">
          </BreakpointContent>
@@ -708,11 +708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/FeedController3TableViewController.swift"
-            timestampString = "450214353.282296"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -724,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/FeedController3TableViewController.swift"
-            timestampString = "450214353.282296"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "displayAlert(_:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -740,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LogInViewController.swift"
-            timestampString = "451827686.585188"
+            timestampString = "452028141.860529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -756,11 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598544.71305"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "buttonInivite(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -772,11 +772,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598544.71305"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "MainMenuViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -788,11 +788,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598544.71305"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "fileInDocumentsDirectory(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -804,11 +804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598544.71305"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "MainMenuViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -820,11 +820,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598544.71305"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "buttonLogOut(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -848,7 +848,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LogInViewController.swift"
@@ -864,7 +864,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LogInViewController.swift"
@@ -916,11 +916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598544.71305"
+            timestampString = "451946712.56056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "buttonInivite(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -948,11 +948,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450353269.024222"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -964,11 +964,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450352533.556674"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "setImageAndResult()"
             landmarkType = "5">
          </BreakpointContent>
@@ -980,11 +980,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450352533.556674"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "setImageAndResult()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1012,11 +1012,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450352533.556674"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "setImageAndResult()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1028,11 +1028,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
-            timestampString = "450352533.556674"
+            timestampString = "452035312.617461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
             landmarkName = "setImageAndResult()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1044,11 +1044,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450353269.024222"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1060,11 +1060,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450368535.262033"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1108,11 +1108,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
-            timestampString = "450368177.12352"
+            timestampString = "452034321.632376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1565,12 +1565,12 @@
                   symbolName = "LabMaternalhaematology.testParseCollectionViewViewController.(viewDidLoad (LabMaternalhaematology.testParseCollectionViewViewController) -&gt; () -&gt; ()).(closure #1).(closure #3)"
                   moduleName = "LabMaternalhaematology"
                   urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/testParseCollectionViewViewController.swift"
-                  timestampString = "451842893.806485"
+                  timestampString = "452035313.010886"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "563"
                   endingLineNumber = "563"
-                  offsetFromSymbolStart = "2080">
+                  offsetFromSymbolStart = "2502">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1579,12 +1579,12 @@
                   symbolName = "LabMaternalhaematology.testParseCollectionViewViewController.(viewDidLoad (LabMaternalhaematology.testParseCollectionViewViewController) -&gt; () -&gt; ()).(closure #1).(closure #3)"
                   moduleName = "LabMaternalhaematology"
                   urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/testParseCollectionViewViewController.swift"
-                  timestampString = "451842893.80667"
+                  timestampString = "452035313.011068"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "563"
                   endingLineNumber = "563"
-                  offsetFromSymbolStart = "3176">
+                  offsetFromSymbolStart = "3616">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1836,11 +1836,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "downloadCaseNumbersFromParse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1848,15 +1848,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1054"
-            endingLineNumber = "1054"
+            startingLineNumber = "1037"
+            endingLineNumber = "1037"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1864,15 +1864,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1062"
-            endingLineNumber = "1062"
+            startingLineNumber = "1044"
+            endingLineNumber = "1044"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1880,15 +1880,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "downloadCaseNumbersFromParse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1900,11 +1900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
             landmarkName = "getCaseNumbersFromCoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1916,11 +1916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "getCaseNumbersFromCoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1932,11 +1932,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
             landmarkName = "downloadCaseNumbersFromParse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1944,15 +1944,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "464"
-            endingLineNumber = "464"
+            startingLineNumber = "443"
+            endingLineNumber = "443"
             landmarkName = "getCaseNumbersFromCoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1964,11 +1964,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "getCaseNumbersFromCoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1980,11 +1980,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "checkParseForNewCase()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1992,31 +1992,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
-            landmarkName = "loadCaseFromParseTo_CoreData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "608"
-            endingLineNumber = "608"
+            startingLineNumber = "491"
+            endingLineNumber = "491"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2028,11 +2012,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "697"
-            endingLineNumber = "697"
+            startingLineNumber = "591"
+            endingLineNumber = "591"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2040,15 +2024,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "782"
-            endingLineNumber = "782"
+            startingLineNumber = "680"
+            endingLineNumber = "680"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2056,15 +2040,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "862"
-            endingLineNumber = "862"
+            startingLineNumber = "765"
+            endingLineNumber = "765"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2072,20 +2056,36 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "845"
+            endingLineNumber = "845"
+            landmarkName = "loadCaseFromParseTo_CoreData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
+            timestampString = "452034805.667149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "downloadCaseNumbersFromParse()"
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "LabMaternalhaematology.MainMenuViewController.(downloadCaseNumbersFromParse (LabMaternalhaematology.MainMenuViewController) -&gt; () -&gt; Swift.Array&lt;Swift.String&gt;).(closure #1)"
@@ -2099,7 +2099,7 @@
                   offsetFromSymbolStart = "3000">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "LabMaternalhaematology.MainMenuViewController.(downloadCaseNumbersFromParse (LabMaternalhaematology.MainMenuViewController) -&gt; () -&gt; Swift.Array&lt;Swift.String&gt;).(closure #1).(closure #1)"
@@ -2113,7 +2113,7 @@
                   offsetFromSymbolStart = "60">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "reabstraction thunk helper from @callee_owned (@owned Swift.String, @owned Swift.String) -&gt; (@unowned Swift.Bool) to @callee_owned (@in Swift.String, @in Swift.String) -&gt; (@unowned Swift.Bool)"
@@ -2132,15 +2132,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "442"
-            endingLineNumber = "442"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "getCaseNumbersFromCoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2148,63 +2148,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "612"
-            endingLineNumber = "612"
-            landmarkName = "loadCaseFromParseTo_CoreData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "695"
-            endingLineNumber = "695"
-            landmarkName = "loadCaseFromParseTo_CoreData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "781"
-            endingLineNumber = "781"
-            landmarkName = "loadCaseFromParseTo_CoreData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
+            startingLineNumber = "595"
+            endingLineNumber = "595"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2216,11 +2168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "500"
-            endingLineNumber = "500"
+            startingLineNumber = "678"
+            endingLineNumber = "678"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2228,15 +2180,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "764"
+            endingLineNumber = "764"
+            landmarkName = "loadCaseFromParseTo_CoreData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
+            timestampString = "452034805.667149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
+            landmarkName = "loadCaseFromParseTo_CoreData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
+            timestampString = "452034805.667149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "483"
+            endingLineNumber = "483"
+            landmarkName = "loadCaseFromParseTo_CoreData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
+            timestampString = "452034805.667149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "checkParseForNewCase()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2244,15 +2244,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "checkParseForNewCase()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2260,15 +2260,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "downloadCaseNumbersFromParse()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2276,15 +2276,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1207"
-            endingLineNumber = "1207"
+            startingLineNumber = "1189"
+            endingLineNumber = "1189"
             landmarkName = "checkCoreDataForNewCase()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2292,15 +2292,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451598770.222352"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1214"
-            endingLineNumber = "1214"
+            startingLineNumber = "1196"
+            endingLineNumber = "1196"
             landmarkName = "checkCoreDataForNewCase()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2308,15 +2308,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451604692.288128"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1081"
-            endingLineNumber = "1081"
+            startingLineNumber = "1063"
+            endingLineNumber = "1063"
             landmarkName = "loadCaseFromParseTo_CoreData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2324,15 +2324,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
-            timestampString = "451611882.013549"
+            timestampString = "451947696.986058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2340,7 +2340,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
@@ -2356,7 +2356,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
@@ -2372,7 +2372,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
@@ -2388,7 +2388,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
@@ -2399,12 +2399,42 @@
             endingLineNumber = "319"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LabMaternalhaematology.LayoutController2.collectionView (LabMaternalhaematology.LayoutController2)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell"
+                  moduleName = "LabMaternalhaematology"
+                  urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/LayoutController2.swift"
+                  timestampString = "451947697.057193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "3432">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LabMaternalhaematology.LayoutController2.collectionView (LabMaternalhaematology.LayoutController2)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell"
+                  moduleName = "LabMaternalhaematology"
+                  urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/LayoutController2.swift"
+                  timestampString = "451947697.057321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "3708">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
@@ -2415,12 +2445,42 @@
             endingLineNumber = "316"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LabMaternalhaematology.LayoutController2.collectionView (LabMaternalhaematology.LayoutController2)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell"
+                  moduleName = "LabMaternalhaematology"
+                  urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/LayoutController2.swift"
+                  timestampString = "451947697.05795"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "3432">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LabMaternalhaematology.LayoutController2.collectionView (LabMaternalhaematology.LayoutController2)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell"
+                  moduleName = "LabMaternalhaematology"
+                  urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/LayoutController2.swift"
+                  timestampString = "451947697.058073"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "3708">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LayoutController2.swift"
@@ -2436,16 +2496,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
-            timestampString = "451842863.811811"
+            timestampString = "452034805.667149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "535"
-            endingLineNumber = "535"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "loadCaseFromParseTo_CoreData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
+            timestampString = "452034805.667149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "downloadCaseNumbersFromParse()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/MainMenuViewController.swift"
+            timestampString = "452034805.667149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
+            landmarkName = "getCaseNumbersFromCoreData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/LayoutController2.swift"
+            timestampString = "451948216.676006"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "loadImagesFromCoreDataAndDocsDirc()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/LogInViewController.swift"
+            timestampString = "452028141.860529"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/LayoutController2.swift"
+            timestampString = "451957452.86393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
+            timestampString = "452034321.632376"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
+            timestampString = "452034321.632376"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
+            timestampString = "452034321.632376"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
+            timestampString = "452034321.632376"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -39,6 +39,8 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
 //        
 //    }
     
+   // @IBOutlet weak var imageScollView: UIScrollView!
+    
     @IBOutlet weak var imageScollView: UIScrollView!
     
     @IBOutlet weak var myLabel: UILabel!
@@ -46,10 +48,12 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
     
 //    Just like the scrolling buttons we just have to make a view, add it to the scroll view and set the content size. Next make an UIImageView in the declaration just below the outlets:
     
-   var imageView = UIImageView(image: UIImage(named: "pizza")); //imahe os in image assets and is 70kn 400w x 400h
-    
     var currImage: UIImage?
     var textHeading: String?
+
+    
+   var imageView = UIImageView(image: UIImage(named: "pizza.jpg")); //imahe os in image assets and is 70kn 400w x 400h
+    
     
     
     
@@ -70,6 +74,8 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
        // myLabel.text = textHeading
         imageView.image = currImage
         
+        println("Image from collection voew : \(currImage)");
+        
         
         imageScollView.contentSize = imageView.frame.size;
         imageScollView.addSubview(imageView);
@@ -77,8 +83,9 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
         
         //zooming photo, must also overide didLayotSubviews and
         imageSize = imageView.frame.size
+        //imageScollView.backgroundColor = UIColor.blueColor();
         imageScollView.delegate = self
-        imageScollView.addSubview(imageView)
+        //imageScollView.addSubview(imageView)
         imageScollView.showsHorizontalScrollIndicator = false
         imageScollView.showsVerticalScrollIndicator = false
         

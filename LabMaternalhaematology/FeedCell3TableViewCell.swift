@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Ciaran Mooney. All rights reserved.
 //
 
+/* DEBOG ON:LY AND TESTING CLASS*/
+
+
 import UIKit
 
 class FeedCell3TableViewCell: UITableViewCell {

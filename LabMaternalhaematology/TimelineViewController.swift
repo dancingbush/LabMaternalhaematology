@@ -95,10 +95,22 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
         
         println("Comments, tome stamp and case : \(userComments) : \(tome) : \(caseNumber)");
         
-        //addComment();
+        if(Reachability.isConnectedToNetwork() == true){
+            
+            println("Internet connection estabished");
+            
+           self.loadDataFromParse();
+            
+        }else if (Reachability.isConnectedToNetwork() == false) {
+            
+            println("No wifi or 3g detecetd");
+            
+            displayAlert("Wi-Fi/3G", message: "No internet connection detected...please try againg later.")
+            
+        }
         
         
-        self.loadDataFromParse();
+        
         
         
 
@@ -707,6 +719,17 @@ class TimelineViewController : UIViewController, UITableViewDelegate, UITableVie
             
         }
         
+    }
+
+    
+    
+    func displayAlert(title : String, message : String){
+        
+        //self.loader.stopAnimating();
+        
+        var alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
 

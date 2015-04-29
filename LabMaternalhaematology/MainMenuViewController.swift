@@ -17,6 +17,7 @@ import CoreData
 
 var datdaBaseHasBeenCheckedOnceDuringThisAppLaunch : Bool = false;
 
+var totalCases = ""; //used in CasesTavbleview Line 448
 
 func documentsDirectory() -> String {
     
@@ -69,6 +70,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     var noOfImagesDownloaded = 1; //track the asyn downloading of images
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    
     
     
     
@@ -183,56 +186,15 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         - Parse has two more cases higher than the last Core data Case = ok
 
         */
+        // create the loader, called in sepreate func
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+
         
         
         
         
-        
-        
-//        /*add a case to test corde dtabase here*/
-//
-//       // writeToPracticeCoreData();
-//        
-//        // Debugging see if new case added correctly
-//        //checkCoreDataForNewCase();
-//        
-//        //deleteALlObjectsFromCoredAta();
-//        
-//        // check for new arse case, if this has been done once during this app launch and we have moved bacvk to main menbu then dont do again
-//        
-//        if(!datdaBaseHasBeenCheckedOnceDuringThisAppLaunch){
-//            
-//            // create the loader, called in sepreate func
-//            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-//            activityIndicator.center = self.view.center
-//            activityIndicator.hidesWhenStopped = true
-//
-//            
-//            arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
-//            
-//       arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
-//            
-//            
-//        }
-//        datdaBaseHasBeenCheckedOnceDuringThisAppLaunch=true;
-        
-        
-//        var lastCaseNuberFromParse : Int = arrayOfParseCaseNumbers.last!.toInt()!;
-//        
-//        var lastCaseNuberFromCore : Int = arrayOfCoreDataCaseNumbers.last!.toInt()!;
-//        
-//        
-//        if(lastCaseNuberFromParse > lastCaseNuberFromCore){
-//            
-//            // write case from parse to core data
-//            
-//            loadCaseFromParseTo_CoreData();
-//            
-//            
-//        }
-        
-        
-        checkParseForNewCase();
         
     }// view did load
     
@@ -251,22 +213,36 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         // check for new arse case, if this has been done once during this app launch and we have moved bacvk to main menbu then dont do again
         
+        if(Reachability.isConnectedToNetwork() == true){
+            
+            println("Internet connection estabished");
+            
+            //checkParseForNewCase();
+            
+       
         if(!datdaBaseHasBeenCheckedOnceDuringThisAppLaunch){
             
-            // create the loader, called in sepreate func
-            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
+//            // create the loader, called in sepreate func
+//            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+//            activityIndicator.center = self.view.center
+//            activityIndicator.hidesWhenStopped = true
             
             
             arrayOfCoreDataCaseNumbers = getCaseNumbersFromCoreData();
             
-            arrayOfParseCaseNumbers = downloadCaseNumbersFromParse();
+            arrayOfParseCaseNumbers = downloadCaseNumbersFromParse(); // check for new case made here
             
             
         }
         datdaBaseHasBeenCheckedOnceDuringThisAppLaunch=true;
         
+        }else if (Reachability.isConnectedToNetwork() == false) {
+            
+            println("No wifi or 3g detecetd");
+            
+            displayAlert("Wi-Fi/3G", message: "No internet connection detected...cannot check for new cases right now....")
+            
+        }
 
     }
     
@@ -309,6 +285,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             else{
                 
                 println("\nCant download case from parse error = : \(error)");
+                
+                self.startLoader(false);
             }
             
             
@@ -350,6 +328,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 }else{
                     
                     println("NOT ADDING A CASE TO CORE DATA FROM PARSE AS BOTH DB'S ARE SYNCHED..core last case = \(lastCaseNuberFromCore) and Parse DB last case : \(lastCaseNuberFromParse)");
+                    
+                    self.startLoader(false);
                 }
 
                 
@@ -359,8 +339,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 
                 println("Core Data Base empty, cant add  aparse case unless CD base has at least one entry with a cse number\n");
                 
-                self.loader.stopAnimating();
-                self.loader.hidden = true;
+               self.startLoader(false);
             }
             
             
@@ -369,8 +348,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 
                 println("PAsre Data Base empty, cant add  aparse case unless CD base has at least one entry with a cse number\n");
                 
-                self.loader.stopAnimating();
-                self.loader.hidden = true;
+                    self.startLoader(false);
             }
             
             println("\n\nTHREAD - CASE FROM PARSE FINISH \n\n");
@@ -383,6 +361,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         }// bgrd task
         
         
+       // self.startLoader(false);
         
         return arrayParseCases;
         
@@ -457,8 +436,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                         
                         println("No Data, no of entries = \(results?.count)");
                         
-                        self.loader.stopAnimating();
-                        self.loader.hidden = true;
+//                        self.loader.stopAnimating();
+//                        self.loader.hidden = true;
                         
                         
                     } // else
@@ -481,6 +460,9 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         })
        
         
+        // assign the total cases for use in CaseTableView\
+        totalCases = arrayCoreCases.last! as String;
+        
         println("\n\nSorted Addray Of Core Data Cases in order of ccase no: \(arrayCoreCases)");
         return arrayCoreCases;
     }
@@ -494,6 +476,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         // query Parse Object and load to core data
         
        
+        self.startLoader(true);
         
         println("Animating and Loading case from parse.....array Parse \(arrayParseCases.count)");
         
@@ -514,7 +497,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 get context objxt and create a user entry with it*/
                 
                 
-                 startLoader(true);
+                 //startLoader(true);
                 
                 
                 var appDel : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate;
@@ -765,8 +748,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     if(self.noOfImagesDownloaded == 5){
                                         
-                                        self.loader.stopAnimating();
-                                        self.loader.hidden = true;
+//                                        self.loader.stopAnimating();
+//                                        self.loader.hidden = true;
                                         
                                         //reset
                                         self.noOfImagesDownloaded = 1;
@@ -846,8 +829,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     if(self.noOfImagesDownloaded == 5){
                                         
-                                        self.loader.stopAnimating();
-                                        self.loader.hidden = true;
+//                                        self.loader.stopAnimating();
+//                                        self.loader.hidden = true;
                                         
                                         //reset
                                         self.noOfImagesDownloaded = 1;
@@ -932,8 +915,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     if(self.noOfImagesDownloaded == 5){
                                         
-                                        self.loader.stopAnimating();
-                                        self.loader.hidden = true;
+//                                        self.loader.stopAnimating();
+//                                        self.loader.hidden = true;
                                         
                                         
                                         // reset
@@ -1022,8 +1005,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                                     
                                     if(self.noOfImagesDownloaded == 5){
                                         
-                                        self.loader.stopAnimating();
-                                        self.loader.hidden = true;
+//                                        self.loader.stopAnimating();
+//                                        self.loader.hidden = true;
                                         
                                         
                                         // reset
@@ -1054,9 +1037,8 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                         
                         self.displayAlert("Opps", message: "Soemthing went worig retriving new case study, please try later : \(error)");
                         
-                        self.loader.hidden = true;
-                        self.loader.stopAnimating();
-                        
+
+                        self.startLoader(false);
                     }
                 
                     println("\n\nTHREAD - CASE FROM PARSE TO CORE DATA FINISH - NOW CHECK CORED DATA FUNC CALL\n\n");
@@ -1361,7 +1343,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         if(yesorno){
             
             //animate and disable user interaction
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge;
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray;
             view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()

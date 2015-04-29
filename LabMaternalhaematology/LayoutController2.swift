@@ -175,7 +175,8 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         activityIndicator.hidesWhenStopped = true
         
         
-        
+        arrayOfIUmages = [questoin1Image1, question1Image2, question1Image3, question1Image4 ];
+
         
         /* If images from Pasre intilay then they are store din the docs dir, so must retive them*/
         if(ParseCase){
@@ -192,7 +193,6 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         theAnswer = question1_answer;
         
         
-        arrayOfIUmages = [questoin1Image1, question1Image2, question1Image3, question1Image4 ];
         
         titles = [questoin1Image1Description,questoin1Image2Description,questoin1Image3Description,  questoin1Image4Description ];
         
@@ -317,7 +317,7 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
         
         /* Check if the image has been downlaoded form parse, if so we need to retrive the name fro core data and the image then from docs directory*/
         
-        if(ParseCase && !arrayOfParseImages.isEmpty){
+        if(ParseCase && arrayOfParseImages.count > 2){
             
             //image form parse so its in docs dir
             if let imageToAdd  = arrayOfParseImages[indexPath.row] as UIImage?{
@@ -423,8 +423,22 @@ class LayoutController2 : UIViewController , UICollectionViewDataSource, UIColle
             
             println("The vew controller \(vc)");
             
+            // check of image orginanly form parse and reloaed fro docs dir or not
+            if(ParseCase && arrayOfParseImages.count > 2){
+                
+                vc.currImage = arrayOfParseImages[indexPath!.row] as UIImage;
+                vc.textHeading = self.titles[indexPath!.row];
+                
+                
+            }else{
+            
+                // image directly from app asset voa core data
             vc.currImage = UIImage(named: arrayOfIUmages[indexPath!.row]);
             vc.textHeading = self.titles[indexPath!.row];
+                
+            }
+            
+            
             
           
         }

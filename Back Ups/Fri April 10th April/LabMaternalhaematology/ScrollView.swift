@@ -68,7 +68,7 @@ class ScrollView: UIViewController, UIScrollViewDelegate {
         
         println("Scroll Detail view controller")
        // myLabel.text = textHeading
-        imageView.image = currImage
+       imageView.image = currImage
         
         
         imageScollView.contentSize = imageView.frame.size;
