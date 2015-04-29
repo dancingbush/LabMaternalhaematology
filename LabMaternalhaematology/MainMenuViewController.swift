@@ -191,7 +191,7 @@ class MainMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
 
-        
+        checkParseForNewCase();
         
         
         

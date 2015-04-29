@@ -217,9 +217,11 @@ class LogInViewController: UIViewController {
             
             
             
-            caseLoadedToCoreData = true;
+            caseLoadedToCoreData = caseLoadedToCoreDataTest;
             
             println("Cases already loaded : \(caseLoadedToCoreData)");
+            
+            
             
             
         }else{
@@ -231,7 +233,7 @@ class LogInViewController: UIViewController {
         
         if (!caseLoadedToCoreData){
             
-            
+            startLoader(true);
             
             
         // set up database
@@ -385,7 +387,10 @@ class LogInViewController: UIViewController {
      
             defaults.setObject(true, forKey: "casesLoadedToCore");
        
-
+            startLoader(false);
+            
+            
+            println("Data succesfully loaded to core...\n\n");
         
             
         }// if !caseLoadedToCoreData

@@ -142,9 +142,7 @@ class Summary: UIViewController {
         // once set the summary must rset userAnserwers so they dont collate
         usersAnsersToAllQuestions = "";
         
-        numberOfCorrectANswers = "";
-        
-        noOfCorrectAnwsers = "";
+       
         
            }
     
@@ -270,6 +268,10 @@ class Summary: UIViewController {
 
 
         }
+        
+        
+        
+        
         
         
     }
@@ -466,14 +468,20 @@ class Summary: UIViewController {
 
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        // reset after animation
+        
+        numberOfCorrectANswers = "";
+        
+        noOfCorrectAnwsers = "";
     }
-    */
+    
 
 }

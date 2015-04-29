@@ -45,6 +45,8 @@ class CasesTableViewTableViewController: UITableViewController {
     
     var arrayOfIMageNames : [String] = [];
     
+    var arrayOfParseBooleans : [Bool] = [];
+    
     
 
     override func prefersStatusBarHidden() -> Bool {
@@ -179,6 +181,8 @@ class CasesTableViewTableViewController: UITableViewController {
                         
                         arrayOfIMageNames.append(result.valueForKey("question1Image1")as String);
                         
+                        arrayOfParseBooleans.append(result.valueForKey("parsecase") as Bool);
+                        
                         
                         
                     }else{
@@ -255,11 +259,21 @@ class CasesTableViewTableViewController: UITableViewController {
         
         let caseCell : CasesTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as CasesTableViewCell;
         
-        caseCell.imageLeft.image = UIImage(named: arrayOfIMageNames[indexPath.row] as String);
+       
         
         caseCell.labelCaseNo.text = arrayOfCaseNumbers[indexPath.row] as String + "/\(arrayOfCaseNumbers.last!)";
         
         caseCell.labelTop.text = arrayOfCaseSummaries[indexPath.row];
+        
+        
+       if (arrayOfParseBooleans[indexPath.row]){
+        
+        caseCell.imageLeft.image = UIImage(named: "history1");
+        
+        }else{
+        
+             caseCell.imageLeft.image = UIImage(named: arrayOfIMageNames[indexPath.row] as String);
+        }
         
         
         // Set label scroe according to how user scored the case, saved to NSUserdefaults in Summary.swift
@@ -310,7 +324,7 @@ class CasesTableViewTableViewController: UITableViewController {
                 
                 case "Study Up!":
                     
-                    caseCell.imageTrophy.image = UIImage(named: "trophy1.jpg");
+                    caseCell.imageTrophy.image = UIImage(named: "trophy1");
                     
                 case "Average!" :
                     caseCell.imageTrophy.image = UIImage(named: "trophy2a1.jpg");
@@ -322,7 +336,7 @@ class CasesTableViewTableViewController: UITableViewController {
                 default:
                     
                     println();
-                     caseCell.imageTrophy.image = UIImage(named: "trophy3.jpg");
+                     //caseCell.imageTrophy.image = UIImage(named: "trophy3.jpg");
                 
                 }
                 
