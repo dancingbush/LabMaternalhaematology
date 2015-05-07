@@ -1565,7 +1565,7 @@
                   symbolName = "LabMaternalhaematology.testParseCollectionViewViewController.(viewDidLoad (LabMaternalhaematology.testParseCollectionViewViewController) -&gt; () -&gt; ()).(closure #1).(closure #3)"
                   moduleName = "LabMaternalhaematology"
                   urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/testParseCollectionViewViewController.swift"
-                  timestampString = "452044091.819921"
+                  timestampString = "452682502.027504"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "563"
@@ -1579,7 +1579,7 @@
                   symbolName = "LabMaternalhaematology.testParseCollectionViewViewController.(viewDidLoad (LabMaternalhaematology.testParseCollectionViewViewController) -&gt; () -&gt; ()).(closure #1).(closure #3)"
                   moduleName = "LabMaternalhaematology"
                   urlString = "file:///Users/callanmooneys/Desktop/iOS%20Deveolpment/Swit/LabMaternalhaematology/LabMaternalhaematology/testParseCollectionViewViewController.swift"
-                  timestampString = "452044091.82005"
+                  timestampString = "452682502.02765"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "563"
@@ -2560,7 +2560,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LogInViewController.swift"
@@ -2768,7 +2768,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/LogInViewController.swift"
@@ -2784,7 +2784,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/MainMenuViewController.swift"
@@ -2816,7 +2816,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Summary.swift"
@@ -2832,7 +2832,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
@@ -2848,7 +2848,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
@@ -2864,7 +2864,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
@@ -2880,7 +2880,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
@@ -2896,7 +2896,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabMaternalhaematology/CasesTableViewTableViewController.swift"
